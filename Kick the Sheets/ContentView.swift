@@ -15,6 +15,9 @@ struct ContentView: View {
         NavigationStack(path: $path) {
             Home(path: $path)
         }
+        .navigationDestination(for: Int64.self) { dayId in
+            DayView(dayId: dayId)
+        }
     }
 }
 

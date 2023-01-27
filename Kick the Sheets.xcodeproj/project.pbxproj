@@ -27,6 +27,9 @@
 		ED81A14D2983247900556661 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1482983247800556661 /* DayView.swift */; };
 		ED81A14E2983247900556661 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1492983247900556661 /* BaseView.swift */; };
 		ED81A151298324F300556661 /* KTSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A150298324F300556661 /* KTSColors.swift */; };
+		ED81A1562983699600556661 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1552983699600556661 /* RoundedButton.swift */; };
+		ED81A1582983745700556661 /* Todo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1572983745700556661 /* Todo+Extension.swift */; };
+		ED81A15A2983793500556661 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1592983793500556661 /* View+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +70,9 @@
 		ED81A1482983247800556661 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
 		ED81A1492983247900556661 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		ED81A150298324F300556661 /* KTSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTSColors.swift; sourceTree = "<group>"; };
+		ED81A1552983699600556661 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		ED81A1572983745700556661 /* Todo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+Extension.swift"; sourceTree = "<group>"; };
+		ED81A1592983793500556661 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +195,8 @@
 			isa = PBXGroup;
 			children = (
 				ED81A1442983247800556661 /* Date+Extension.swift */,
+				ED81A1572983745700556661 /* Todo+Extension.swift */,
+				ED81A1592983793500556661 /* View+Extension.swift */,
 			);
 			name = Extensions;
 			path = "Kick the Sheets/Extensions";
@@ -197,6 +205,7 @@
 		ED81A1452983247800556661 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED81A1542983698700556661 /* Shared */,
 				ED81A1532983256300556661 /* TodoView */,
 				ED81A1522983255C00556661 /* Home */,
 				ED81A1492983247900556661 /* BaseView.swift */,
@@ -227,6 +236,14 @@
 				ED81A1482983247800556661 /* DayView.swift */,
 			);
 			path = TodoView;
+			sourceTree = "<group>";
+		};
+		ED81A1542983698700556661 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1552983699600556661 /* RoundedButton.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -374,13 +391,16 @@
 				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
 				ED81A102298321A700556661 /* ContentView.swift in Sources */,
 				ED81A13B2983229800556661 /* Day.swift in Sources */,
+				ED81A1582983745700556661 /* Todo+Extension.swift in Sources */,
 				ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */,
+				ED81A15A2983793500556661 /* View+Extension.swift in Sources */,
 				ED81A13D2983229800556661 /* DbDay.swift in Sources */,
 				ED81A151298324F300556661 /* KTSColors.swift in Sources */,
 				ED81A14A2983247900556661 /* Date+Extension.swift in Sources */,
 				ED81A13E2983229800556661 /* DbTodo.swift in Sources */,
 				ED81A14D2983247900556661 /* DayView.swift in Sources */,
 				ED81A13C2983229800556661 /* Todo.swift in Sources */,
+				ED81A1562983699600556661 /* RoundedButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
