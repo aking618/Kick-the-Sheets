@@ -14,6 +14,19 @@
 		ED81A111298321A800556661 /* Kick_the_SheetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A110298321A800556661 /* Kick_the_SheetsTests.swift */; };
 		ED81A11B298321A800556661 /* Kick_the_SheetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */; };
 		ED81A11D298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */; };
+		ED81A12C2983222F00556661 /* SelectableCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = ED81A12B2983222F00556661 /* SelectableCalendarView */; };
+		ED81A12F2983225000556661 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = ED81A12E2983225000556661 /* SQLite */; };
+		ED81A1322983226000556661 /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = ED81A1312983226000556661 /* PopupView */; };
+		ED81A13A2983229800556661 /* TodoDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1332983229800556661 /* TodoDataStore.swift */; };
+		ED81A13B2983229800556661 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1352983229800556661 /* Day.swift */; };
+		ED81A13C2983229800556661 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1362983229800556661 /* Todo.swift */; };
+		ED81A13D2983229800556661 /* DbDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1382983229800556661 /* DbDay.swift */; };
+		ED81A13E2983229800556661 /* DbTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1392983229800556661 /* DbTodo.swift */; };
+		ED81A14A2983247900556661 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1442983247800556661 /* Date+Extension.swift */; };
+		ED81A14C2983247900556661 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1472983247800556661 /* Home.swift */; };
+		ED81A14D2983247900556661 /* DayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1482983247800556661 /* DayView.swift */; };
+		ED81A14E2983247900556661 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1492983247900556661 /* BaseView.swift */; };
+		ED81A151298324F300556661 /* KTSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A150298324F300556661 /* KTSColors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +57,16 @@
 		ED81A116298321A800556661 /* Kick the SheetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kick the SheetsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsUITests.swift; sourceTree = "<group>"; };
 		ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ED81A1332983229800556661 /* TodoDataStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoDataStore.swift; sourceTree = "<group>"; };
+		ED81A1352983229800556661 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
+		ED81A1362983229800556661 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
+		ED81A1382983229800556661 /* DbDay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbDay.swift; sourceTree = "<group>"; };
+		ED81A1392983229800556661 /* DbTodo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbTodo.swift; sourceTree = "<group>"; };
+		ED81A1442983247800556661 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		ED81A1472983247800556661 /* Home.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		ED81A1482983247800556661 /* DayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DayView.swift; sourceTree = "<group>"; };
+		ED81A1492983247900556661 /* BaseView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		ED81A150298324F300556661 /* KTSColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTSColors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED81A1322983226000556661 /* PopupView in Frameworks */,
+				ED81A12F2983225000556661 /* SQLite in Frameworks */,
+				ED81A12C2983222F00556661 /* SelectableCalendarView in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +120,10 @@
 		ED81A0FE298321A700556661 /* Kick the Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				ED81A14F298324C900556661 /* Assets */,
+				ED81A1432983247800556661 /* Extensions */,
+				ED81A1452983247800556661 /* Views */,
+				ED81A129298321DF00556661 /* Database */,
 				ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */,
 				ED81A101298321A700556661 /* ContentView.swift */,
 				ED81A103298321A800556661 /* Assets.xcassets */,
@@ -127,6 +157,78 @@
 			path = "Kick the SheetsUITests";
 			sourceTree = "<group>";
 		};
+		ED81A129298321DF00556661 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1372983229800556661 /* Entities */,
+				ED81A1342983229800556661 /* Models */,
+				ED81A1332983229800556661 /* TodoDataStore.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		ED81A1342983229800556661 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1352983229800556661 /* Day.swift */,
+				ED81A1362983229800556661 /* Todo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		ED81A1372983229800556661 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1382983229800556661 /* DbDay.swift */,
+				ED81A1392983229800556661 /* DbTodo.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		ED81A1432983247800556661 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1442983247800556661 /* Date+Extension.swift */,
+			);
+			name = Extensions;
+			path = "Kick the Sheets/Extensions";
+			sourceTree = SOURCE_ROOT;
+		};
+		ED81A1452983247800556661 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1532983256300556661 /* TodoView */,
+				ED81A1522983255C00556661 /* Home */,
+				ED81A1492983247900556661 /* BaseView.swift */,
+			);
+			name = Views;
+			path = "Kick the Sheets/Views";
+			sourceTree = SOURCE_ROOT;
+		};
+		ED81A14F298324C900556661 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A150298324F300556661 /* KTSColors.swift */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		ED81A1522983255C00556661 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1472983247800556661 /* Home.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		ED81A1532983256300556661 /* TodoView */ = {
+			isa = PBXGroup;
+			children = (
+				ED81A1482983247800556661 /* DayView.swift */,
+			);
+			path = TodoView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +245,11 @@
 			dependencies = (
 			);
 			name = "Kick the Sheets";
+			packageProductDependencies = (
+				ED81A12B2983222F00556661 /* SelectableCalendarView */,
+				ED81A12E2983225000556661 /* SQLite */,
+				ED81A1312983226000556661 /* PopupView */,
+			);
 			productName = "Kick the Sheets";
 			productReference = ED81A0FC298321A700556661 /* Kick the Sheets.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +322,11 @@
 				Base,
 			);
 			mainGroup = ED81A0F3298321A700556661;
+			packageReferences = (
+				ED81A12A2983222F00556661 /* XCRemoteSwiftPackageReference "Selectable-Calendar-View" */,
+				ED81A12D2983225000556661 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+				ED81A1302983226000556661 /* XCRemoteSwiftPackageReference "PopupView" */,
+			);
 			productRefGroup = ED81A0FD298321A700556661 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -257,8 +369,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED81A13A2983229800556661 /* TodoDataStore.swift in Sources */,
+				ED81A14C2983247900556661 /* Home.swift in Sources */,
+				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
 				ED81A102298321A700556661 /* ContentView.swift in Sources */,
+				ED81A13B2983229800556661 /* Day.swift in Sources */,
 				ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */,
+				ED81A13D2983229800556661 /* DbDay.swift in Sources */,
+				ED81A151298324F300556661 /* KTSColors.swift in Sources */,
+				ED81A14A2983247900556661 /* Date+Extension.swift in Sources */,
+				ED81A13E2983229800556661 /* DbTodo.swift in Sources */,
+				ED81A14D2983247900556661 /* DayView.swift in Sources */,
+				ED81A13C2983229800556661 /* Todo.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -583,6 +705,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED81A12A2983222F00556661 /* XCRemoteSwiftPackageReference "Selectable-Calendar-View" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/aking618/Selectable-Calendar-View";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+		ED81A12D2983225000556661 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		ED81A1302983226000556661 /* XCRemoteSwiftPackageReference "PopupView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/exyte/PopupView";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED81A12B2983222F00556661 /* SelectableCalendarView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED81A12A2983222F00556661 /* XCRemoteSwiftPackageReference "Selectable-Calendar-View" */;
+			productName = SelectableCalendarView;
+		};
+		ED81A12E2983225000556661 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED81A12D2983225000556661 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+		ED81A1312983226000556661 /* PopupView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED81A1302983226000556661 /* XCRemoteSwiftPackageReference "PopupView" */;
+			productName = PopupView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED81A0F4298321A700556661 /* Project object */;
 }
