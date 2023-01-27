@@ -14,9 +14,9 @@ struct ContentView: View {
     var body: some View {
         NavigationStack(path: $path) {
             Home(path: $path)
-        }
-        .navigationDestination(for: Int64.self) { dayId in
-            DayView(dayId: dayId)
+            .navigationDestination(for: Int64.self) { dayId in
+                DayView(dayId: dayId)
+            }
         }
     }
 }
