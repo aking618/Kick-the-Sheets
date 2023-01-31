@@ -30,6 +30,7 @@
 		ED81A1562983699600556661 /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1552983699600556661 /* RoundedButton.swift */; };
 		ED81A1582983745700556661 /* Todo+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1572983745700556661 /* Todo+Extension.swift */; };
 		ED81A15A2983793500556661 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1592983793500556661 /* View+Extension.swift */; };
+		ED81A15C298862EC00556661 /* TodoRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A15B298862EC00556661 /* TodoRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		ED81A1552983699600556661 /* RoundedButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
 		ED81A1572983745700556661 /* Todo+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo+Extension.swift"; sourceTree = "<group>"; };
 		ED81A1592983793500556661 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		ED81A15B298862EC00556661 /* TodoRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				ED81A1482983247800556661 /* DayView.swift */,
+				ED81A15B298862EC00556661 /* TodoRow.swift */,
 			);
 			path = TodoView;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				ED81A102298321A700556661 /* ContentView.swift in Sources */,
 				ED81A13B2983229800556661 /* Day.swift in Sources */,
 				ED81A1582983745700556661 /* Todo+Extension.swift in Sources */,
+				ED81A15C298862EC00556661 /* TodoRow.swift in Sources */,
 				ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */,
 				ED81A15A2983793500556661 /* View+Extension.swift in Sources */,
 				ED81A13D2983229800556661 /* DbDay.swift in Sources */,
