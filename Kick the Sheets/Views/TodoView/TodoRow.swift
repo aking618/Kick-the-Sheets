@@ -12,12 +12,17 @@ struct TodoRow: View {
     @Binding var todo: Todo
     
     var body: some View {
-        Text("• \(todo.description)")
-            .font(.title3)
-            .foregroundColor(KTSColors.textColor.color)
-            .background(KTSColors.purple.color)
-            .listRowBackground(KTSColors.purple.color)
-            .listRowSeparatorTint(KTSColors.textColor.color)
+        HStack {
+            Text(todo.description)
+                .font(.title3)
+                .foregroundColor(KTSColors.textColor.color)
+                .background(KTSColors.darkPurple.color)
+        }
+        .frame(maxWidth: .infinity)
+        .padding()
+        .background(KTSColors.darkPurple.color)
+        .listRowBackground(KTSColors.lightPurple.color)
+        .cornerRadius(12)
     }
 }
 
