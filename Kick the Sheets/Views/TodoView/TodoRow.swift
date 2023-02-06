@@ -17,6 +17,8 @@ struct TodoRow: View {
                 .font(.title3)
                 .foregroundColor(KTSColors.textColor.color)
                 .background(KTSColors.darkPurple.color)
+                .strikethrough(todo.status)
+                .frame(maxWidth: .infinity, alignment: .leading)
         }
         .frame(maxWidth: .infinity)
         .padding()
