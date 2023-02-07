@@ -10,10 +10,8 @@ import SwiftUI
 
 struct DayView: View {
     let dayId: Int64
-    @State var todos: [Todo] = []
     
-    @State var searchText: String = ""
-    @State var showPopup: Bool = false
+    @StateObject private var viewModel = DayViewModel()
     
     var body: some View {
         BaseView(color: KTSColors.lightPurple.color) {
@@ -25,7 +23,7 @@ struct DayView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // subheader
-                Text("🔥 \(Todo.completedCount(from: todos)) / \(todos.count) completed!")
+                Text("🔥 \(Todo.completedCount(from: viewModel.todos)) / \(viewModel.todos.count) completed!")
                     .font(.title3)
                     .foregroundColor(KTSColors.textColor.color)
                     .padding(.bottom)
@@ -36,9 +34,9 @@ struct DayView: View {
                     Image(systemName: "magnifyingglass")
                         .foregroundColor(KTSColors.textColor.color)
                         .padding([.leading, .top, .bottom], 8)
-                    TextField("", text: $searchText)
+                    TextField("", text: $viewModel.searchText)
                         .foregroundColor(KTSColors.textColor.color)
-                        .placeholder("Search...", when: searchText.isEmpty)
+                        .placeholder("Search...", when: viewModel.searchText.isEmpty)
                         .padding([.trailing, .top, .bottom], 8)
                 }
                 .padding([.leading, .trailing])
@@ -47,39 +45,24 @@ struct DayView: View {
                 
                 
                 // todo list
-                List(Array(todos.indices), id: \.hashValue) { index in
-                        TodoRow(todo: $todos[index])
+                List(Array(viewModel.todos.indices), id: \.hashValue) { index in
+                    TodoRow(todo: $viewModel.todos[index])
                         .swipeActions(allowsFullSwipe: false) {
                             Button(role: .destructive) {
-                                print("Deleting todo")
-                                if TodoDataStore.shared.deleteTodo(entry: todos[index]) {
-                                    print("Deleted todo")
-                                    todos.remove(at: index)
-                                } else {
-                                    print("Unable to delete todo")
-                                }
+                                viewModel.deleteSwipeAction(index: index)
                             } label: {
                                 Label("Delete", systemImage: "trash.fill")
                             }
                             
                             Button {
-                                print("Editing todo")
+                                viewModel.editSwipeAction(index: index)
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
                             .tint(.blue)
                             
                             Button {
-                                print("Completing todo")
-                                todos[index].status.toggle()
-                                if TodoDataStore.shared.updateTodo(entry: todos[index]) {
-                                    print("Updated todo")
-                                } else {
-                                    print("Unable to update todo")
-                                }
-                                
-                                _ = TodoDataStore.shared.updateDayCompletion(for: dayId, with: Day.isDayComplete(todos))
-                                
+                                viewModel.updateSwipeAction(index: index)
                             } label: {
                                 Label("Complete", systemImage: "checkmark")
                             }
@@ -89,13 +72,15 @@ struct DayView: View {
                 }
                 .listStyle(.plain)
                 .scrollContentBackground(.hidden)
-                .animation(.spring(), value: todos)
-                .modifier(EmptyDataModifier(
-                    items: todos,
-                    placeholder: Text("No todos found")
-                        .padding()
-                        .foregroundColor(KTSColors.textColor.color)
-                        .font(.title3))
+                .animation(.spring(), value: viewModel.todos)
+                .modifier(
+                    EmptyDataModifier(
+                        items: viewModel.todos,
+                        placeholder: Text("No todos found")
+                            .padding()
+                            .foregroundColor(KTSColors.textColor.color)
+                            .font(.title3)
+                    )
                 )
                 
                 Spacer()
@@ -104,8 +89,12 @@ struct DayView: View {
             }
             .padding(.top)
         }
-        .popup(isPresented: $showPopup) {
-            AddTodoSheetView(dayId: dayId, todos: $todos, showPopup: $showPopup)
+        .popup(isPresented: $viewModel.showPopup) {
+            AddTodoSheetView(
+                dayId: viewModel.dayId ?? 0,
+                todos: $viewModel.todos,
+                showPopup: $viewModel.showPopup
+            )
         } customize: {
             $0
                 .type(.toast)
@@ -113,22 +102,20 @@ struct DayView: View {
                 .closeOnTap(false)
                 .backgroundColor(.black.opacity(0.4))
         }
-        .onAppear(perform: handleOnAppear)
+        .onAppear{
+            viewModel.setup(dayId: dayId)
+        }
     }
 }
 
 extension DayView {
-    private func handleOnAppear() {
-        todos = TodoDataStore.shared.getTodosForDayById(dayId: dayId)
-    }
-    
     private func handleButtonTap() {
-        showPopup = true
+        viewModel.togglePopup()
     }
 }
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        DayView(dayId: 1, todos: Todo.demoList)
+        DayView(dayId: 1)
     }
 }

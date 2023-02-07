@@ -30,6 +30,6 @@ struct TodoRow: View {
 
 struct TodoRow_Previews: PreviewProvider {
     static var previews: some View {
-        DayView(dayId: 1, todos: Todo.demoList)
+        DayView(dayId: 1)
     }
 }
