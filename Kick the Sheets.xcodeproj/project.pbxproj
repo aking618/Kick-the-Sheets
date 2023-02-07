@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED4CE53E2991A998005A4737 /* AddTodoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */; };
 		ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */; };
+		ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE5422992F04B005A4737 /* HomeViewModel.swift */; };
 		ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */; };
 		ED81A102298321A700556661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A101298321A700556661 /* ContentView.swift */; };
 		ED81A104298321A800556661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A103298321A800556661 /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 /* Begin PBXFileReference section */
 		ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSheetView.swift; sourceTree = "<group>"; };
 		ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewModifier.swift; sourceTree = "<group>"; };
+		ED4CE5422992F04B005A4737 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ED81A0FC298321A700556661 /* Kick the Sheets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kick the Sheets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsApp.swift; sourceTree = "<group>"; };
 		ED81A101298321A700556661 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -111,6 +113,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED4CE5412992EF85005A4737 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				ED4CE5422992F04B005A4737 /* HomeViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		ED81A0F3298321A700556661 = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +144,7 @@
 		ED81A0FE298321A700556661 /* Kick the Sheets */ = {
 			isa = PBXGroup;
 			children = (
+				ED4CE5412992EF85005A4737 /* ViewModels */,
 				ED81A14F298324C900556661 /* Assets */,
 				ED81A1432983247800556661 /* Extensions */,
 				ED81A1452983247800556661 /* Views */,
@@ -401,6 +412,7 @@
 				ED81A13A2983229800556661 /* TodoDataStore.swift in Sources */,
 				ED81A14C2983247900556661 /* Home.swift in Sources */,
 				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
+				ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */,
 				ED81A102298321A700556661 /* ContentView.swift in Sources */,
 				ED81A13B2983229800556661 /* Day.swift in Sources */,
 				ED81A1582983745700556661 /* Todo+Extension.swift in Sources */,
