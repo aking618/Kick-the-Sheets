@@ -11,13 +11,13 @@ import SwiftUI
 struct Home: View {
     @Binding var path: NavigationPath
      
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject private var viewModel = HomeViewModel(demo: true)
     
     var body: some View {
         BaseView {
             VStack(alignment: .center) {
                 Text("Kick the Sheets")
-                    .font(.title.bold())
+                    .ktcFont(.title)
                     .foregroundColor(KTSColors.textColor.color)
                     .padding()
                 

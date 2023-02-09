@@ -18,13 +18,13 @@ struct DayView: View {
             VStack(alignment: .center, spacing: 15){
                 // header
                 Text("Day \(Date().calendarDay)")
-                    .font(.title.bold())
+                    .ktcFont(.title)
                     .foregroundColor(KTSColors.textColor.color)
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
                 // subheader
                 Text("🔥 \(Todo.completedCount(from: viewModel.todos)) / \(viewModel.todos.count) completed!")
-                    .font(.title3)
+                    .ktcFont(.button)
                     .foregroundColor(KTSColors.textColor.color)
                     .padding(.bottom)
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -35,6 +35,7 @@ struct DayView: View {
                         .foregroundColor(KTSColors.textColor.color)
                         .padding([.leading, .top, .bottom], 8)
                     TextField("", text: $viewModel.searchText)
+                        .ktcFont(.body)
                         .foregroundColor(KTSColors.textColor.color)
                         .placeholder("Search...", when: viewModel.searchText.isEmpty)
                         .padding([.trailing, .top, .bottom], 8)
@@ -79,7 +80,7 @@ struct DayView: View {
                         placeholder: Text("No todos found")
                             .padding()
                             .foregroundColor(KTSColors.textColor.color)
-                            .font(.title3)
+                            .ktcFont(.title3)
                     )
                 )
                 

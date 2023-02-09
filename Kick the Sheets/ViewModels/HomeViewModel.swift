@@ -28,6 +28,8 @@ class HomeViewModel: ObservableObject {
         }
     }
     
+    init(demo: Bool) {}
+    
     func createDayIfNeeded() {
         if currentDayId == nil {
             if let currentDayId = TodoDataStore.shared.insertDay() {

@@ -11,6 +11,11 @@
 		ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */; };
 		ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE5422992F04B005A4737 /* HomeViewModel.swift */; };
 		ED4CE5452992F483005A4737 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE5442992F483005A4737 /* DayViewModel.swift */; };
+		ED4CE54A29946595005A4737 /* Andika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54629946595005A4737 /* Andika-Regular.ttf */; };
+		ED4CE54B29946595005A4737 /* Andika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54729946595005A4737 /* Andika-Bold.ttf */; };
+		ED4CE54C29946595005A4737 /* Andika-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54829946595005A4737 /* Andika-Italic.ttf */; };
+		ED4CE54D29946595005A4737 /* Andika-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54929946595005A4737 /* Andika-BoldItalic.ttf */; };
+		ED4CE553299469D6005A4737 /* KTSFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE552299469D6005A4737 /* KTSFonts.swift */; };
 		ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */; };
 		ED81A102298321A700556661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A101298321A700556661 /* ContentView.swift */; };
 		ED81A104298321A800556661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A103298321A800556661 /* Assets.xcassets */; };
@@ -60,6 +65,12 @@
 		ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewModifier.swift; sourceTree = "<group>"; };
 		ED4CE5422992F04B005A4737 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		ED4CE5442992F483005A4737 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
+		ED4CE54629946595005A4737 /* Andika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andika-Regular.ttf"; sourceTree = "<group>"; };
+		ED4CE54729946595005A4737 /* Andika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andika-Bold.ttf"; sourceTree = "<group>"; };
+		ED4CE54829946595005A4737 /* Andika-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andika-Italic.ttf"; sourceTree = "<group>"; };
+		ED4CE54929946595005A4737 /* Andika-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andika-BoldItalic.ttf"; sourceTree = "<group>"; };
+		ED4CE54F299465F8005A4737 /* Kick-the-Sheets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Kick-the-Sheets-Info.plist"; sourceTree = SOURCE_ROOT; };
+		ED4CE552299469D6005A4737 /* KTSFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTSFonts.swift; sourceTree = "<group>"; };
 		ED81A0FC298321A700556661 /* Kick the Sheets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kick the Sheets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsApp.swift; sourceTree = "<group>"; };
 		ED81A101298321A700556661 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,10 +129,21 @@
 		ED4CE5412992EF85005A4737 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				ED4CE5422992F04B005A4737 /* HomeViewModel.swift */,
 				ED4CE5442992F483005A4737 /* DayViewModel.swift */,
+				ED4CE5422992F04B005A4737 /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		ED4CE54E2994659E005A4737 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ED4CE54729946595005A4737 /* Andika-Bold.ttf */,
+				ED4CE54929946595005A4737 /* Andika-BoldItalic.ttf */,
+				ED4CE54829946595005A4737 /* Andika-Italic.ttf */,
+				ED4CE54629946595005A4737 /* Andika-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		ED81A0F3298321A700556661 = {
@@ -147,15 +169,15 @@
 		ED81A0FE298321A700556661 /* Kick the Sheets */ = {
 			isa = PBXGroup;
 			children = (
-				ED4CE5412992EF85005A4737 /* ViewModels */,
+				ED4CE54F299465F8005A4737 /* Kick-the-Sheets-Info.plist */,
 				ED81A14F298324C900556661 /* Assets */,
-				ED81A1432983247800556661 /* Extensions */,
-				ED81A1452983247800556661 /* Views */,
-				ED81A129298321DF00556661 /* Database */,
-				ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */,
 				ED81A101298321A700556661 /* ContentView.swift */,
-				ED81A103298321A800556661 /* Assets.xcassets */,
+				ED81A129298321DF00556661 /* Database */,
+				ED81A1432983247800556661 /* Extensions */,
+				ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */,
 				ED81A105298321A800556661 /* Preview Content */,
+				ED4CE5412992EF85005A4737 /* ViewModels */,
+				ED81A1452983247800556661 /* Views */,
 			);
 			path = "Kick the Sheets";
 			sourceTree = "<group>";
@@ -217,10 +239,10 @@
 			isa = PBXGroup;
 			children = (
 				ED81A1442983247800556661 /* Date+Extension.swift */,
+				ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */,
+				ED81A15E298F245400556661 /* String+Extension.swift */,
 				ED81A1572983745700556661 /* Todo+Extension.swift */,
 				ED81A1592983793500556661 /* View+Extension.swift */,
-				ED81A15E298F245400556661 /* String+Extension.swift */,
-				ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */,
 			);
 			name = Extensions;
 			path = "Kick the Sheets/Extensions";
@@ -229,10 +251,10 @@
 		ED81A1452983247800556661 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED81A1492983247900556661 /* BaseView.swift */,
+				ED81A1522983255C00556661 /* Home */,
 				ED81A1542983698700556661 /* Shared */,
 				ED81A1532983256300556661 /* TodoView */,
-				ED81A1522983255C00556661 /* Home */,
-				ED81A1492983247900556661 /* BaseView.swift */,
 			);
 			name = Views;
 			path = "Kick the Sheets/Views";
@@ -241,7 +263,10 @@
 		ED81A14F298324C900556661 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				ED4CE54E2994659E005A4737 /* Fonts */,
+				ED81A103298321A800556661 /* Assets.xcassets */,
 				ED81A150298324F300556661 /* KTSColors.swift */,
+				ED4CE552299469D6005A4737 /* KTSFonts.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -257,9 +282,9 @@
 		ED81A1532983256300556661 /* TodoView */ = {
 			isa = PBXGroup;
 			children = (
+				ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */,
 				ED81A1482983247800556661 /* DayView.swift */,
 				ED81A15B298862EC00556661 /* TodoRow.swift */,
-				ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */,
 			);
 			path = TodoView;
 			sourceTree = "<group>";
@@ -386,6 +411,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED4CE54A29946595005A4737 /* Andika-Regular.ttf in Resources */,
+				ED4CE54B29946595005A4737 /* Andika-Bold.ttf in Resources */,
+				ED4CE54C29946595005A4737 /* Andika-Italic.ttf in Resources */,
+				ED4CE54D29946595005A4737 /* Andika-BoldItalic.ttf in Resources */,
 				ED81A107298321A800556661 /* Preview Assets.xcassets in Resources */,
 				ED81A104298321A800556661 /* Assets.xcassets in Resources */,
 			);
@@ -431,6 +460,7 @@
 				ED81A14D2983247900556661 /* DayView.swift in Sources */,
 				ED81A13C2983229800556661 /* Todo.swift in Sources */,
 				ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */,
+				ED4CE553299469D6005A4737 /* KTSFonts.swift in Sources */,
 				ED81A1562983699600556661 /* RoundedButton.swift in Sources */,
 				ED4CE5452992F483005A4737 /* DayViewModel.swift in Sources */,
 			);
@@ -594,6 +624,7 @@
 				DEVELOPMENT_TEAM = P649CF844Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Kick-the-Sheets-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -623,6 +654,7 @@
 				DEVELOPMENT_TEAM = P649CF844Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Kick-the-Sheets-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

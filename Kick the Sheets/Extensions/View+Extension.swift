@@ -24,7 +24,7 @@ extension View {
         when shouldShow: Bool,
         alignment: Alignment = .leading) -> some View {
             
-        placeholder(when: shouldShow, alignment: alignment) { Text(text).foregroundColor(.gray) }
+            placeholder(when: shouldShow, alignment: alignment) { Text(text).foregroundColor(.gray).ktcFont(.body) }
     }
 }
 

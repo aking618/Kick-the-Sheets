@@ -21,7 +21,7 @@ struct RoundedButton: View {
         Button(action: action) {
                 Text(text)
                     .frame(minWidth: 0, maxWidth: .infinity)
-                    .font(.system(size: 18))
+                    .ktcFont(.button)
                     .padding()
                     .foregroundColor(KTSColors.textColor.color)
                     .overlay(
