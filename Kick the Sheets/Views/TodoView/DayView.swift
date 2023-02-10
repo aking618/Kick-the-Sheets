@@ -14,7 +14,7 @@ struct DayView: View {
     @StateObject private var viewModel = DayViewModel()
     
     var body: some View {
-        BaseView(color: KTSColors.lightPurple.color) {
+        BaseView {
             VStack(alignment: .center, spacing: 15){
                 // header
                 Text("Day \(Date().calendarDay)")
@@ -41,7 +41,7 @@ struct DayView: View {
                         .padding([.trailing, .top, .bottom], 8)
                 }
                 .padding([.leading, .trailing])
-                .background(KTSColors.darkPurple.color)
+                .background(KTSColors.gray.color)
                 .cornerRadius(10)
                 
                 
@@ -54,20 +54,21 @@ struct DayView: View {
                             } label: {
                                 Label("Delete", systemImage: "trash.fill")
                             }
+                            .tint(KTSColors.red.color)
                             
                             Button {
                                 viewModel.editSwipeAction(index: index)
                             } label: {
                                 Label("Edit", systemImage: "pencil")
                             }
-                            .tint(.blue)
+                            .tint(KTSColors.saffron.color)
                             
                             Button {
                                 viewModel.updateSwipeAction(index: index)
                             } label: {
                                 Label("Complete", systemImage: "checkmark")
                             }
-                            .tint(.green)
+                            .tint(KTSColors.persianGreen.color)
                         }
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                 }
@@ -92,6 +93,7 @@ struct DayView: View {
         }
         .popup(isPresented: $viewModel.showPopup) {
             AddTodoSheetView(
+                // TODO: pass in view model instead
                 dayId: viewModel.dayId ?? 0,
                 todos: $viewModel.todos,
                 showPopup: $viewModel.showPopup

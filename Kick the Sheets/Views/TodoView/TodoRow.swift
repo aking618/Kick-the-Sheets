@@ -14,16 +14,16 @@ struct TodoRow: View {
     var body: some View {
         HStack {
             Text(todo.description)
-                .font(.title3)
+                .ktcFont(.title3)
                 .foregroundColor(KTSColors.textColor.color)
-                .background(KTSColors.darkPurple.color)
+                .background(KTSColors.gray.color)
                 .strikethrough(todo.status)
                 .frame(maxWidth: .infinity, alignment: .leading)
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(KTSColors.darkPurple.color)
-        .listRowBackground(KTSColors.lightPurple.color)
+        .background(KTSColors.gray.color)
+        .listRowBackground(KTSColors.background.color)
         .cornerRadius(12)
     }
 }

@@ -33,13 +33,15 @@ struct AddTodoSheetView: View {
                 ScrollView {
                     VStack {
                         Text("Add Todo")
+                            .ktcFont(.button)
                         
                         HStack {
                             Image(systemName: "checklist")
-                                .foregroundColor(KTSColors.purple.color)
+                                .foregroundColor(KTSColors.textColor.color)
                                 .padding([.leading, .top, .bottom], 8)
                             TextField("", text: $textFieldText)
-                                .foregroundColor(.black)
+                                .ktcFont(.body)
+                                .foregroundColor(KTSColors.textColor.color)
                                 .placeholder("Todo description...", when: textFieldText.isEmpty)
                                 .padding([.trailing, .top, .bottom], 8)
                         }
@@ -54,6 +56,7 @@ struct AddTodoSheetView: View {
                             }
                         } label: {
                             Text("Submit")
+                                .ktcFont(.button)
                         }
                     }
                 }

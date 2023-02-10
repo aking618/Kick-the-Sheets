@@ -10,10 +10,12 @@ import SwiftUI
 struct RoundedButton: View {
     
     let text: String
+    let color: KTSColors
     let action: () -> Void
     
-    init(_ text: String, action: @escaping () -> Void) {
+    init(_ text: String, color: KTSColors = KTSColors.charcoal, action: @escaping () -> Void) {
         self.text = text
+        self.color = color
         self.action = action
     }
     
@@ -23,13 +25,13 @@ struct RoundedButton: View {
                     .frame(minWidth: 0, maxWidth: .infinity)
                     .ktcFont(.button)
                     .padding()
-                    .foregroundColor(KTSColors.textColor.color)
+                    .foregroundColor(KTSColors.button.color)
                     .overlay(
                         RoundedRectangle(cornerRadius: 25)
-                            .stroke(KTSColors.red.color, lineWidth: 2)
+                            .stroke(color.color, lineWidth: 2)
                 )
             }
-        .background(KTSColors.red.color)
+        .background(color.color)
         .cornerRadius(10)
     }
 }

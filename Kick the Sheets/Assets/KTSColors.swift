@@ -16,11 +16,15 @@ enum KTSColors {
     case green
     case textColor
     
+    case gray
+    
     case charcoal
     case persianGreen
     case saffron
     case sandyBrown
     case burntSienna
+    
+    case button
     case background
     
     var color: Color {
@@ -36,8 +40,10 @@ enum KTSColors {
         case .green:
             return Color.fromRGBA(red: 0, green: 85, blue: 0)
         case .textColor:
-            return Color.fromRGBA(red: 255, green: 255, blue: 255)
+            return .black
             
+        case .gray:
+            return Color.fromRGBA(red: 217, green: 217, blue: 217)
         case .charcoal:
             return Color.fromRGBA(red: 38, green: 70, blue: 83)
         case .persianGreen:
@@ -48,7 +54,7 @@ enum KTSColors {
             return Color.fromRGBA(red: 244, green: 162, blue: 97)
         case .burntSienna:
             return Color.fromRGBA(red: 231, green: 111, blue: 81)
-        case .background:
+        case .background, .button:
             return .white
         }
     }
@@ -57,11 +63,5 @@ enum KTSColors {
 extension Color {
     static func fromRGBA(red r: Double, green g: Double, blue b: Double, opacity a: Double = 100) -> Color {
         Color(red: r / 255.0, green: g / 255.0, blue: b / 255.0, opacity: a / 100.0)
-    }
-}
-
-struct Color_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
     }
 }
