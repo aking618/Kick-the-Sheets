@@ -8,6 +8,8 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
+    var initialLoad: Bool = true
+    
     @Published var currentDayId: Int64?
     @Published var todosForToday: [Todo] = []
     @Published var days: [Day] = []
@@ -39,7 +41,7 @@ class HomeViewModel: ObservableObject {
     func getStreakCount() -> Int {
         guard !days.isEmpty else { return 0 }
         
-        var sortedDays = days.sorted(by: { $0.id > $1.id })
+        var sortedDays = days.sorted(by: { $0.id < $1.id })
         var day = sortedDays.popLast()!
         var streak = day.status ? 1 : 0;
         while (sortedDays.last != nil) {
@@ -52,6 +54,22 @@ class HomeViewModel: ObservableObject {
         }
         
         return streak;
+    }
+    
+    func refreshDays() {
+        guard !initialLoad else {
+            initialLoad = false
+            return
+        }
+        
+        days = TodoDataStore.shared.getAllDays()
+        if let currenDay = days.first(where: {
+            $0.date.isSameDay(comparingTo: Date())
+        }) {
+            currentDayId = currenDay.id
+            todosForToday =
+                TodoDataStore.shared.getTodosForDayById(dayId: currenDay.id)
+        }
     }
 }
 

@@ -72,6 +72,12 @@ struct Home: View {
                 }
             }
         }
+        .onAppear {
+            viewModel.refreshDays()
+        }
+        .refreshable {
+            viewModel.refreshDays()
+        }
     }
 }
 

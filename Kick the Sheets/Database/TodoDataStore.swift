@@ -205,4 +205,19 @@ public class TodoDataStore: TodoService {
         }
         return result
     }
+    
+    internal func deleteDaysWithIds(ids: [Int64]) {
+        guard let database = db else { return }
+        
+        for id in ids {
+            let todo = dbDay.table.filter(dbDay.id == id)
+            do {
+                if try database.run(todo.delete()) > 0 {
+                    print("Removed \(id)")
+                }
+            } catch {
+                print(error)
+            }
+        }
+    }
 }
