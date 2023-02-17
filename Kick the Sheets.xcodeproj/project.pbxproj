@@ -17,6 +17,7 @@
 		ED4CE54D29946595005A4737 /* Andika-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54929946595005A4737 /* Andika-BoldItalic.ttf */; };
 		ED4CE553299469D6005A4737 /* KTSFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE552299469D6005A4737 /* KTSFonts.swift */; };
 		ED6B13352995D0C100634B47 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B13342995D0C100634B47 /* CircularProgressView.swift */; };
+		ED6B1338299F1CB300634B47 /* CalendarWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B1337299F1CB300634B47 /* CalendarWrapperView.swift */; };
 		ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */; };
 		ED81A102298321A700556661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A101298321A700556661 /* ContentView.swift */; };
 		ED81A104298321A800556661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A103298321A800556661 /* Assets.xcassets */; };
@@ -73,6 +74,7 @@
 		ED4CE54F299465F8005A4737 /* Kick-the-Sheets-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Kick-the-Sheets-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ED4CE552299469D6005A4737 /* KTSFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTSFonts.swift; sourceTree = "<group>"; };
 		ED6B13342995D0C100634B47 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
+		ED6B1337299F1CB300634B47 /* CalendarWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWrapperView.swift; sourceTree = "<group>"; };
 		ED81A0FC298321A700556661 /* Kick the Sheets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kick the Sheets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsApp.swift; sourceTree = "<group>"; };
 		ED81A101298321A700556661 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -154,6 +156,14 @@
 				ED6B13342995D0C100634B47 /* CircularProgressView.swift */,
 			);
 			path = CircularProgressView;
+			sourceTree = "<group>";
+		};
+		ED6B1336299F1CA000634B47 /* CalendarWrapperView */ = {
+			isa = PBXGroup;
+			children = (
+				ED6B1337299F1CB300634B47 /* CalendarWrapperView.swift */,
+			);
+			path = CalendarWrapperView;
 			sourceTree = "<group>";
 		};
 		ED81A0F3298321A700556661 = {
@@ -261,6 +271,7 @@
 		ED81A1452983247800556661 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED6B1336299F1CA000634B47 /* CalendarWrapperView */,
 				ED6B13332995D0AE00634B47 /* CircularProgressView */,
 				ED81A1492983247900556661 /* BaseView.swift */,
 				ED81A1522983255C00556661 /* Home */,
@@ -462,6 +473,7 @@
 				ED81A15C298862EC00556661 /* TodoRow.swift in Sources */,
 				ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */,
 				ED81A15F298F245400556661 /* String+Extension.swift in Sources */,
+				ED6B1338299F1CB300634B47 /* CalendarWrapperView.swift in Sources */,
 				ED81A15A2983793500556661 /* View+Extension.swift in Sources */,
 				ED81A13D2983229800556661 /* DbDay.swift in Sources */,
 				ED81A151298324F300556661 /* KTSColors.swift in Sources */,

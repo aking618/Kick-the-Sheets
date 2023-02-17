@@ -16,6 +16,7 @@ struct AddTodoSheetView: View {
     var dayId: Int64
     @Binding var todos: [Todo]
     @Binding var showPopup: Bool
+    @Binding var errorPopup: Bool
     
     @State var textFieldText: String = ""
 
@@ -46,21 +47,27 @@ struct AddTodoSheetView: View {
                                 .padding([.trailing, .top, .bottom], 8)
                         }
                         .padding([.leading, .trailing])
+                        .background(KTSColors.gray.color)
+                        .cornerRadius(10)
                         
-                        Button(role: .destructive) {
+                        RoundedButton("Submit", color: .persianGreen) {
+                            guard !textFieldText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+                                errorPopup.toggle()
+                                return
+                            }
+                            
+                            
                             // add todo to db
                             if let todoId = TodoDataStore.shared.insertTodoForDayById(description: textFieldText, for: dayId) {
                                 let todo = Todo(id: todoId, dayId: dayId, description: textFieldText, status: false)
                                 todos.append(todo)
                                 showPopup.toggle()
                             }
-                        } label: {
-                            Text("Submit")
-                                .ktcFont(.button)
                         }
                     }
+                    .padding([.leading, .trailing])
                 }
-                    .padding(.bottom, 30)
+                    .padding(.bottom, 40)
                     .applyIf(fixedHeight) {
                         $0.frame(height: UIScreen.main.bounds.height - topPadding)
                     }
@@ -75,6 +82,6 @@ struct AddTodoSheetView: View {
 
 struct AddTodoSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTodoSheetView(dayId: 0, todos: .constant([]), showPopup: .constant(false))
+        AddTodoSheetView(dayId: 0, todos: .constant([]), showPopup: .constant(false), errorPopup: .constant(false))
     }
 }

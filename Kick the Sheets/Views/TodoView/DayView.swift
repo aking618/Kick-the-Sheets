@@ -91,19 +91,40 @@ struct DayView: View {
             }
             .padding(.top)
         }
-        .popup(isPresented: $viewModel.showPopup) {
+        .popup(isPresented: $viewModel.showAddTodoPopup) {
             AddTodoSheetView(
                 // TODO: pass in view model instead
                 dayId: viewModel.dayId ?? 0,
                 todos: $viewModel.todos,
-                showPopup: $viewModel.showPopup
+                showPopup: $viewModel.showAddTodoPopup,
+                errorPopup: $viewModel.showErrorPopup
             )
         } customize: {
             $0
                 .type(.toast)
                 .position(.bottom)
                 .closeOnTap(false)
+                .animation(.spring())
                 .backgroundColor(.black.opacity(0.4))
+            
+            // TODO: try using a tost in the middle of the screen instead of a bottom sheet
+            // TODO: test with a keyboard and look at layout changes
+            
+        }
+        .popup(isPresented: $viewModel.showErrorPopup) {
+            Text("New todos cannot be blank")
+                .ktcFont(.body)
+                .foregroundColor(.white)
+                .padding(EdgeInsets(top: 60, leading: 32, bottom: 16, trailing: 32))
+                .frame(maxWidth: .infinity)
+                .background(Color(hex: "FE504E"))
+        } customize: {
+            $0
+                .type(.toast)
+                .position(.top)
+                .animation(.easeInOut)
+                .closeOnTapOutside(true)
+                .autohideIn(3)
         }
         .onAppear{
             viewModel.setup(dayId: dayId)
@@ -113,7 +134,7 @@ struct DayView: View {
 
 extension DayView {
     private func handleButtonTap() {
-        viewModel.togglePopup()
+        viewModel.toggleTodoPopup()
     }
 }
 

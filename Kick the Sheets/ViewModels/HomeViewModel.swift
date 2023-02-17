@@ -43,6 +43,11 @@ class HomeViewModel: ObservableObject {
         
         var sortedDays = days.sorted(by: { $0.id < $1.id })
         var day = sortedDays.popLast()!
+        
+        if !day.date.isSameDay(comparingTo: Date()) || !day.date.isSameDay(comparingTo: Calendar.current.date(byAdding: .day, value: -1, to: Date())!) {
+            return 0
+        }
+        
         var streak = day.status ? 1 : 0;
         while (sortedDays.last != nil) {
             if sortedDays.last!.status {

@@ -22,38 +22,17 @@ struct Home: View {
                         .foregroundColor(KTSColors.textColor.color)
                         .padding()
                     
-                    Image(systemName: "bed.double")
-                        .resizable()
-                        .foregroundColor(KTSColors.textColor.color)
-                        .frame(width: 36, height: 36)
-                        .padding(.bottom)
-                    
-                    SelectableCalendarView(
-                        monthToDisplay: Date(),
-                        dateSelected: $viewModel.dateSelected,
-                        dateBackgroundBuilder: { date in
-                            AnyView(
-                                Circle()
-                                    .foregroundColor(date.backgroundColor(viewModel.days))
-                                    .frame(width: 35, height: 35)
-                                 )
-                        },
-                        dateForgroundBuilder: {date in
-                            // TODO: Change to NavLink to show previous days
-                            AnyView(
-                                Text("\(date.calendarDay)")
-                                    .foregroundColor(date.foregroundColor(viewModel.days))
-                            )
-                        }
-                    ){ date in date.backgroundColor(viewModel.days) }
-                        .foregroundColor(KTSColors.textColor.color)
-                        .padding(.bottom)
-                        .ktcFont(.body)
+                    CalendarWrapperView(
+                        days: $viewModel.days,
+                        selectedDate: $viewModel.dateSelected
+                    )
                     
                     RoundedButton(viewModel.buttonText, action: handleButtonTap)
                     
                     Text("🔥 \(viewModel.getStreakCount()) Day Streak")
-                        .padding(.bottom)
+                        .padding(.bottom, 16)
+                    
+                    Spacer()
                     
                     VStack(spacing: 0){
                         Text(Date().getDayString())
@@ -68,7 +47,6 @@ struct Home: View {
                         total: viewModel.todosForToday.count,
                         15
                     )
-                    Spacer()
                 }
             }
         }

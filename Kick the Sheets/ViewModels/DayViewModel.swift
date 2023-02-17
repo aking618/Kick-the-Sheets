@@ -18,15 +18,20 @@ class DayViewModel: ObservableObject {
     
     @Published var todos: [Todo] = []
     @Published var searchText: String = ""
-    @Published var showPopup: Bool = false
+    @Published var showAddTodoPopup: Bool = false
+    @Published var showErrorPopup: Bool = false
     
     func setup(dayId: Int64) {
         self.dayId = dayId
         todos = TodoDataStore.shared.getTodosForDayById(dayId: dayId)
     }
     
-    func togglePopup() {
-        showPopup.toggle()
+    func toggleTodoPopup() {
+        showAddTodoPopup.toggle()
+    }
+    
+    func toggleErrorPopup() {
+        showErrorPopup.toggle()
     }
 }
 
