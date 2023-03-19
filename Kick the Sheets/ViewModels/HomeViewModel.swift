@@ -8,7 +8,7 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    var initialLoad: Bool = true
+    @Published var viewDidLoad: Bool = false
     
     @Published var currentDayId: Int64?
     @Published var todosForToday: [Todo] = []
@@ -62,11 +62,6 @@ class HomeViewModel: ObservableObject {
     }
     
     func refreshDays() {
-        guard !initialLoad else {
-            initialLoad = false
-            return
-        }
-        
         days = TodoDataStore.shared.getAllDays()
         if let currenDay = days.first(where: {
             $0.date.isSameDay(comparingTo: Date())
@@ -75,6 +70,13 @@ class HomeViewModel: ObservableObject {
             todosForToday =
                 TodoDataStore.shared.getTodosForDayById(dayId: currenDay.id)
         }
+    }
+    
+    func viewDidLoad(completion: @escaping () -> Void) {
+        guard !viewDidLoad else { return }
+        
+        viewDidLoad = true
+        completion()
     }
 }
 

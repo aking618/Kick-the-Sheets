@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED42579129A456CB0064F8AA /* AnimatedLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = ED42579029A456CB0064F8AA /* AnimatedLogo.svg */; };
 		ED4CE53E2991A998005A4737 /* AddTodoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */; };
 		ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */; };
 		ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE5422992F04B005A4737 /* HomeViewModel.swift */; };
@@ -18,6 +19,9 @@
 		ED4CE553299469D6005A4737 /* KTSFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE552299469D6005A4737 /* KTSFonts.swift */; };
 		ED6B13352995D0C100634B47 /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B13342995D0C100634B47 /* CircularProgressView.swift */; };
 		ED6B1338299F1CB300634B47 /* CalendarWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B1337299F1CB300634B47 /* CalendarWrapperView.swift */; };
+		ED6B133B299F1FF100634B47 /* LaunchScreenStep.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B133A299F1FF000634B47 /* LaunchScreenStep.swift */; };
+		ED6B133D299F203500634B47 /* LaunchScreenStateManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B133C299F203500634B47 /* LaunchScreenStateManager.swift */; };
+		ED6B133F299F20AD00634B47 /* LaunchScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B133E299F20AD00634B47 /* LaunchScreenView.swift */; };
 		ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */; };
 		ED81A102298321A700556661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A101298321A700556661 /* ContentView.swift */; };
 		ED81A104298321A800556661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A103298321A800556661 /* Assets.xcassets */; };
@@ -63,6 +67,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		ED42579029A456CB0064F8AA /* AnimatedLogo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AnimatedLogo.svg; sourceTree = "<group>"; };
 		ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSheetView.swift; sourceTree = "<group>"; };
 		ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewModifier.swift; sourceTree = "<group>"; };
 		ED4CE5422992F04B005A4737 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
@@ -75,6 +80,9 @@
 		ED4CE552299469D6005A4737 /* KTSFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KTSFonts.swift; sourceTree = "<group>"; };
 		ED6B13342995D0C100634B47 /* CircularProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularProgressView.swift; sourceTree = "<group>"; };
 		ED6B1337299F1CB300634B47 /* CalendarWrapperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarWrapperView.swift; sourceTree = "<group>"; };
+		ED6B133A299F1FF000634B47 /* LaunchScreenStep.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStep.swift; sourceTree = "<group>"; };
+		ED6B133C299F203500634B47 /* LaunchScreenStateManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenStateManager.swift; sourceTree = "<group>"; };
+		ED6B133E299F20AD00634B47 /* LaunchScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenView.swift; sourceTree = "<group>"; };
 		ED81A0FC298321A700556661 /* Kick the Sheets.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Kick the Sheets.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsApp.swift; sourceTree = "<group>"; };
 		ED81A101298321A700556661 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -166,6 +174,16 @@
 			path = CalendarWrapperView;
 			sourceTree = "<group>";
 		};
+		ED6B1339299F1FCA00634B47 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				ED6B133A299F1FF000634B47 /* LaunchScreenStep.swift */,
+				ED6B133C299F203500634B47 /* LaunchScreenStateManager.swift */,
+				ED6B133E299F20AD00634B47 /* LaunchScreenView.swift */,
+			);
+			path = LaunchScreen;
+			sourceTree = "<group>";
+		};
 		ED81A0F3298321A700556661 = {
 			isa = PBXGroup;
 			children = (
@@ -190,11 +208,12 @@
 			isa = PBXGroup;
 			children = (
 				ED4CE54F299465F8005A4737 /* Kick-the-Sheets-Info.plist */,
-				ED81A14F298324C900556661 /* Assets */,
 				ED81A101298321A700556661 /* ContentView.swift */,
+				ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */,
+				ED81A14F298324C900556661 /* Assets */,
 				ED81A129298321DF00556661 /* Database */,
 				ED81A1432983247800556661 /* Extensions */,
-				ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */,
+				ED6B1339299F1FCA00634B47 /* LaunchScreen */,
 				ED81A105298321A800556661 /* Preview Content */,
 				ED4CE5412992EF85005A4737 /* ViewModels */,
 				ED81A1452983247800556661 /* Views */,
@@ -287,6 +306,7 @@
 			children = (
 				ED4CE54E2994659E005A4737 /* Fonts */,
 				ED81A103298321A800556661 /* Assets.xcassets */,
+				ED42579029A456CB0064F8AA /* AnimatedLogo.svg */,
 				ED81A150298324F300556661 /* KTSColors.swift */,
 				ED4CE552299469D6005A4737 /* KTSFonts.swift */,
 			);
@@ -438,6 +458,7 @@
 				ED4CE54C29946595005A4737 /* Andika-Italic.ttf in Resources */,
 				ED4CE54D29946595005A4737 /* Andika-BoldItalic.ttf in Resources */,
 				ED81A107298321A800556661 /* Preview Assets.xcassets in Resources */,
+				ED42579129A456CB0064F8AA /* AnimatedLogo.svg in Resources */,
 				ED81A104298321A800556661 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -463,6 +484,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED6B133D299F203500634B47 /* LaunchScreenStateManager.swift in Sources */,
 				ED81A13A2983229800556661 /* TodoDataStore.swift in Sources */,
 				ED81A14C2983247900556661 /* Home.swift in Sources */,
 				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
@@ -483,10 +505,12 @@
 				ED4CE53E2991A998005A4737 /* AddTodoSheetView.swift in Sources */,
 				ED81A14D2983247900556661 /* DayView.swift in Sources */,
 				ED81A13C2983229800556661 /* Todo.swift in Sources */,
+				ED6B133B299F1FF100634B47 /* LaunchScreenStep.swift in Sources */,
 				ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */,
 				ED4CE553299469D6005A4737 /* KTSFonts.swift in Sources */,
 				ED81A1562983699600556661 /* RoundedButton.swift in Sources */,
 				ED4CE5452992F483005A4737 /* DayViewModel.swift in Sources */,
+				ED6B133F299F20AD00634B47 /* LaunchScreenView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -651,7 +675,6 @@
 				INFOPLIST_FILE = "Kick-the-Sheets-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -681,7 +704,6 @@
 				INFOPLIST_FILE = "Kick-the-Sheets-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

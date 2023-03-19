@@ -9,18 +9,28 @@ import SelectableCalendarView
 import SwiftUI
 
 struct Home: View {
+    @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
+    
     @Binding var path: NavigationPath
      
     @StateObject private var viewModel = HomeViewModel()
+    
+//    @ViewBuilder
+//    private var header: some View {
+//        Text("Kick the Sheets")
+//            .ktcFont(.title2)
+//            .foregroundColor(KTSColors.textColor.color)
+//            .padding()
+//    }
+//    
+//    @ViewBuilder
+//    priv
     
     var body: some View {
         BaseView {
             ScrollView{
                 VStack(alignment: .center) {
-                    Text("Kick the Sheets")
-                        .ktcFont(.title2)
-                        .foregroundColor(KTSColors.textColor.color)
-                        .padding()
+                    header
                     
                     CalendarWrapperView(
                         days: $viewModel.days,
