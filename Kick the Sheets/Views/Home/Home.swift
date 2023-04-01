@@ -10,53 +10,54 @@ import SwiftUI
 
 struct Home: View {
     @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
-    
-    @Binding var path: NavigationPath
      
     @StateObject private var viewModel = HomeViewModel()
     
-//    @ViewBuilder
-//    private var header: some View {
-//        Text("Kick the Sheets")
-//            .ktcFont(.title2)
-//            .foregroundColor(KTSColors.textColor.color)
-//            .padding()
-//    }
-//    
-//    @ViewBuilder
-//    priv
+    @ViewBuilder
+    private var header: some View {
+        Text("Kick the Sheets")
+            .ktcFont(.title2)
+            .foregroundColor(KTSColors.textColor.color)
+            .padding()
+    }
+    
+    @ViewBuilder
+    private var calendar: some View {
+        CalendarWrapperView(
+            days: $viewModel.days,
+            selectedDate: $viewModel.dateSelected
+        )
+    }
+    
+    @ViewBuilder
+    private var footer: some View {
+        Text("🔥 \(viewModel.getStreakCount()) Day Streak")
+            .padding(.bottom, 16)
+        
+        Spacer()
+        
+        VStack(spacing: 0){
+            Text(Date().getDayString())
+                .frame(maxWidth: .infinity, alignment: .leading)
+            Rectangle()
+                .frame(height: 1)
+        }
+        .padding(.bottom)
+        
+        CircularProgressView(
+            progress: Todo.completedCount(from: viewModel.todosForToday),
+            total: viewModel.todosForToday.count,
+            15
+        )
+    }
     
     var body: some View {
         BaseView {
             ScrollView{
                 VStack(alignment: .center) {
                     header
-                    
-                    CalendarWrapperView(
-                        days: $viewModel.days,
-                        selectedDate: $viewModel.dateSelected
-                    )
-                    
-                    RoundedButton(viewModel.buttonText, action: handleButtonTap)
-                    
-                    Text("🔥 \(viewModel.getStreakCount()) Day Streak")
-                        .padding(.bottom, 16)
-                    
-                    Spacer()
-                    
-                    VStack(spacing: 0){
-                        Text(Date().getDayString())
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                        Rectangle()
-                            .frame(height: 1)
-                    }
-                    .padding(.bottom)
-                    
-                    CircularProgressView(
-                        progress: Todo.completedCount(from: viewModel.todosForToday),
-                        total: viewModel.todosForToday.count,
-                        15
-                    )
+                    calendar
+                    footer
                 }
             }
         }
@@ -65,17 +66,6 @@ struct Home: View {
         }
         .refreshable {
             viewModel.refreshDays()
-        }
-    }
-}
-
-// MARK: - UI Actions
-extension Home {
-    private func handleButtonTap() {
-        viewModel.createDayIfNeeded()
-        
-        if let currentDayId = viewModel.currentDayId {
-            path.append(currentDayId)
         }
     }
 }

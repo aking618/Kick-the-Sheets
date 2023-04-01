@@ -15,10 +15,6 @@ class HomeViewModel: ObservableObject {
     @Published var days: [Day] = []
     @Published var dateSelected: Date = Date()
     
-    var buttonText: String {
-        currentDayId != nil ? "Continue your day!" : "Start your day!"
-    }
-    
     init() {
         days = TodoDataStore.shared.getAllDays()
         if let currenDay = days.first(where: {
