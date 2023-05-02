@@ -11,7 +11,7 @@ import SwiftUI
 struct Home: View {
     @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
      
-    @StateObject private var viewModel = HomeViewModel()
+    @StateObject var viewModel: HomeViewModel
     
     @ViewBuilder
     private var header: some View {
@@ -44,9 +44,15 @@ struct Home: View {
         }
         .padding(.bottom)
         
+//        CircularProgressView(
+//            progress: Todo.completedCount(from: viewModel.todosForToday),
+//            total: viewModel.todosForToday.count,
+//            15
+//        )
+        
         CircularProgressView(
-            progress: Todo.completedCount(from: viewModel.todosForToday),
-            total: viewModel.todosForToday.count,
+            progress: 1,
+            total: 3,
             15
         )
     }
@@ -60,9 +66,6 @@ struct Home: View {
                     footer
                 }
             }
-        }
-        .onAppear {
-            viewModel.refreshDays()
         }
         .refreshable {
             viewModel.refreshDays()

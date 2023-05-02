@@ -10,28 +10,12 @@ import SwiftUI
 class HomeViewModel: ObservableObject {
     @Published var viewDidLoad: Bool = false
     
-    @Published var currentDayId: Int64?
-    @Published var todosForToday: [Todo] = []
-    @Published var days: [Day] = []
+    @Binding var days: [Day]
     @Published var dateSelected: Date = Date()
     
-    init() {
-        days = TodoDataStore.shared.getAllDays()
-        if let currenDay = days.first(where: {
-            $0.date.isSameDay(comparingTo: Date())
-        }) {
-            currentDayId = currenDay.id
-            todosForToday =
-                TodoDataStore.shared.getTodosForDayById(dayId: currenDay.id)
-        }
-    }
-    
-    func createDayIfNeeded() {
-        if currentDayId == nil {
-            if let currentDayId = TodoDataStore.shared.insertDay() {
-                self.currentDayId = currentDayId
-            }
-        }
+    // broken
+    init(days: Binding<[Day]>) {
+        _days = days
     }
     
     func getStreakCount() -> Int {
@@ -59,13 +43,6 @@ class HomeViewModel: ObservableObject {
     
     func refreshDays() {
         days = TodoDataStore.shared.getAllDays()
-        if let currenDay = days.first(where: {
-            $0.date.isSameDay(comparingTo: Date())
-        }) {
-            currentDayId = currenDay.id
-            todosForToday =
-                TodoDataStore.shared.getTodosForDayById(dayId: currenDay.id)
-        }
     }
     
     func viewDidLoad(completion: @escaping () -> Void) {
