@@ -19,10 +19,15 @@ struct CalendarWrapperView: View {
             dateSelected: $selectedDate,
             dateBackgroundBuilder: { date in
                 AnyView(
-                    Circle()
-                        .foregroundColor(date.backgroundColor(days))
-                        .frame(width: 35, height: 35)
-                     )
+                    ZStack {
+                        Circle()
+                            .foregroundColor(date.backgroundColor(days))
+                        Circle()
+                            .strokeBorder(KTSColors.charcoal.color, lineWidth: 2)
+                            .opacity($selectedDate.wrappedValue.isSameDay(comparingTo: date) ? 1 : 0)
+                    }
+                    .frame(width: 35, height: 35)
+                )
             },
             dateForgroundBuilder: {date in
                 // TODO: Change to NavLink to show previous days
