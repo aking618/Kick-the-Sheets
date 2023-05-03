@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		ED101EF529DA5D330034F62D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED101EF429DA5D330034F62D /* ContentViewModel.swift */; };
+		ED3166702A00B0EF003DB752 /* CircleCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31666F2A00B0EF003DB752 /* CircleCheckmarkView.swift */; };
+		ED3166722A00B467003DB752 /* DeleteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3166712A00B467003DB752 /* DeleteIconView.swift */; };
 		ED42579129A456CB0064F8AA /* AnimatedLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = ED42579029A456CB0064F8AA /* AnimatedLogo.svg */; };
 		ED4CE53E2991A998005A4737 /* AddTodoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */; };
 		ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */; };
@@ -72,6 +74,8 @@
 
 /* Begin PBXFileReference section */
 		ED101EF429DA5D330034F62D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		ED31666F2A00B0EF003DB752 /* CircleCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCheckmarkView.swift; sourceTree = "<group>"; };
+		ED3166712A00B467003DB752 /* DeleteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteIconView.swift; sourceTree = "<group>"; };
 		ED42579029A456CB0064F8AA /* AnimatedLogo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AnimatedLogo.svg; sourceTree = "<group>"; };
 		ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSheetView.swift; sourceTree = "<group>"; };
 		ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewModifier.swift; sourceTree = "<group>"; };
@@ -196,6 +200,7 @@
 		ED81A0F3298321A700556661 = {
 			isa = PBXGroup;
 			children = (
+				ED3166712A00B467003DB752 /* DeleteIconView.swift */,
 				ED81A0FE298321A700556661 /* Kick the Sheets */,
 				ED81A10F298321A800556661 /* Kick the SheetsTests */,
 				ED81A119298321A800556661 /* Kick the SheetsUITests */,
@@ -338,6 +343,7 @@
 				ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */,
 				ED81A1482983247800556661 /* DayView.swift */,
 				ED81A15B298862EC00556661 /* TodoRow.swift */,
+				ED31666F2A00B0EF003DB752 /* CircleCheckmarkView.swift */,
 			);
 			path = TodoView;
 			sourceTree = "<group>";
@@ -517,11 +523,13 @@
 				ED81A13A2983229800556661 /* TodoDataStore.swift in Sources */,
 				ED81A14C2983247900556661 /* Home.swift in Sources */,
 				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
+				ED3166722A00B467003DB752 /* DeleteIconView.swift in Sources */,
 				ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */,
 				ED81A102298321A700556661 /* ContentView.swift in Sources */,
 				ED81A13B2983229800556661 /* Day.swift in Sources */,
 				ED81A1582983745700556661 /* Todo+Extension.swift in Sources */,
 				ED81A15C298862EC00556661 /* TodoRow.swift in Sources */,
+				ED3166702A00B0EF003DB752 /* CircleCheckmarkView.swift in Sources */,
 				ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */,
 				ED81A15F298F245400556661 /* String+Extension.swift in Sources */,
 				ED6B1338299F1CB300634B47 /* CalendarWrapperView.swift in Sources */,

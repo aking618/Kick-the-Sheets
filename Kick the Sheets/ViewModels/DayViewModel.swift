@@ -7,10 +7,9 @@
 
 import SwiftUI
 
-protocol SwipeActionHandler {
-    func deleteSwipeAction(index: Int)
-    func editSwipeAction(index: Int)
-    func updateSwipeAction(index: Int)
+protocol TodoRowActionHandler {
+    func deleteAction(index: Int)
+    func updateAction(index: Int)
 }
 
 class DayViewModel: ObservableObject {
@@ -36,8 +35,8 @@ class DayViewModel: ObservableObject {
 }
 
 // MARK: - Swipe Action Handlers
-extension DayViewModel: SwipeActionHandler {
-    func deleteSwipeAction(index: Int) {
+extension DayViewModel: TodoRowActionHandler {
+    func deleteAction(index: Int) {
         print("Deleting todo")
         if TodoDataStore.shared.deleteTodo(entry: todos[index]) {
             print("Deleted todo")
@@ -47,11 +46,7 @@ extension DayViewModel: SwipeActionHandler {
         }
     }
     
-    func editSwipeAction(index: Int) {
-        print("Editing todo")
-    }
-    
-    func updateSwipeAction(index: Int) {
+    func updateAction(index: Int) {
         guard let dayId = dayId else { return }
         
         print("Completing todo")

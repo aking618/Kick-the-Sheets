@@ -47,29 +47,9 @@ struct DayView: View {
                 
                 // todo list
                 List(Array(viewModel.todos.indices), id: \.hashValue) { index in
-                    TodoRow(todo: $viewModel.todos[index])
-                        .swipeActions(allowsFullSwipe: false) {
-                            Button(role: .destructive) {
-                                viewModel.deleteSwipeAction(index: index)
-                            } label: {
-                                Label("Delete", systemImage: "trash.fill")
-                            }
-                            .tint(KTSColors.red.color)
-                            
-                            Button {
-                                viewModel.editSwipeAction(index: index)
-                            } label: {
-                                Label("Edit", systemImage: "pencil")
-                            }
-                            .tint(KTSColors.saffron.color)
-                            
-                            Button {
-                                viewModel.updateSwipeAction(index: index)
-                            } label: {
-                                Label("Complete", systemImage: "checkmark")
-                            }
-                            .tint(KTSColors.persianGreen.color)
-                        }
+                    TodoRow(todo: $viewModel.todos[index],
+                            doneAction: { viewModel.updateAction(index: index) },
+                            deleteAction: { viewModel.deleteAction(index: index) })
                         .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
                 }
                 .listStyle(.plain)
