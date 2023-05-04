@@ -53,3 +53,21 @@ class HomeViewModel: ObservableObject {
     }
 }
 
+extension HomeViewModel {
+    var dayForSelectedDate: Day? {
+        days.first { $0.date.isSameDay(comparingTo: dateSelected) }
+    }
+    
+    var totalCountForSelectedDate: Int {
+        guard let dayForSelectedDate else { return 0 }
+        let todos = TodoDataStore.shared.getTodosForDayById(dayId: dayForSelectedDate.id)
+        return todos.count
+    }
+    
+    var completedCountForSelectedDate: Int {
+        guard let dayForSelectedDate else { return 0 }
+        let todos = TodoDataStore.shared.getTodosForDayById(dayId: dayForSelectedDate.id)
+        return Todo.completedCount(from: todos)
+    }
+}
+

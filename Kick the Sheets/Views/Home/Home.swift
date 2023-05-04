@@ -37,22 +37,16 @@ struct Home: View {
         Spacer()
         
         VStack(spacing: 0){
-            Text(Date().getDayString())
+            Text(viewModel.dateSelected.getDayString())
                 .frame(maxWidth: .infinity, alignment: .leading)
             Rectangle()
                 .frame(height: 1)
         }
         .padding(.bottom)
         
-//        CircularProgressView(
-//            progress: Todo.completedCount(from: viewModel.todosForToday),
-//            total: viewModel.todosForToday.count,
-//            15
-//        )
-        
         CircularProgressView(
-            progress: 1,
-            total: 3,
+            progress: viewModel.completedCountForSelectedDate,
+            total: viewModel.totalCountForSelectedDate,
             15
         )
     }
@@ -77,9 +71,6 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .previewDevice("iPhone 14")
-        
         ContentView()
             .previewDevice("iPhone 13 Mini")
     }
