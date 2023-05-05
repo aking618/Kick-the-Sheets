@@ -40,6 +40,7 @@ struct ContentView: View {
             Divider()
             bottomNavBar
         }
+        .background(.white)
     }
 }
 

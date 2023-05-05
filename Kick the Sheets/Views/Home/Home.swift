@@ -32,6 +32,7 @@ struct Home: View {
     @ViewBuilder
     private var footer: some View {
         Text("🔥 \(viewModel.getStreakCount()) Day Streak")
+            .foregroundColor(KTSColors.textColor.color)
             .padding(.bottom, 16)
         
         Spacer()

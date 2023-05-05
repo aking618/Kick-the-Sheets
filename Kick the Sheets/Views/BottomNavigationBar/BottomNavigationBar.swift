@@ -26,7 +26,6 @@ struct BottomNavigationBar: View {
                         .padding(.vertical, 10)
                     Spacer()
                 }
-                .background(Color.clear)
             }
         }
     }

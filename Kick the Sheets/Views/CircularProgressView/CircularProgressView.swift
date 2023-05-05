@@ -52,9 +52,11 @@ struct CircularProgressView: View {
 
             VStack{
                 Text(percentageString)
+                    .foregroundColor(KTSColors.textColor.color)
                     .ktcFont(.title)
                 
                 Text("\(progress)/\(total)")
+                    .foregroundColor(KTSColors.textColor.color)
                     .ktcFont(.title3)
             }
         }
