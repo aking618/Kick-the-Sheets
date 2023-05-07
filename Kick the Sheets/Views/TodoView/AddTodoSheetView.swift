@@ -19,6 +19,7 @@ struct AddTodoSheetView: View {
     @Binding var errorPopup: Bool
     
     @State var textFieldText: String = ""
+    @FocusState var focusField: Bool
 
     var body: some View {
         ZStack {
@@ -45,6 +46,7 @@ struct AddTodoSheetView: View {
                                 .foregroundColor(KTSColors.textColor.color)
                                 .placeholder("Todo description...", when: textFieldText.isEmpty)
                                 .padding([.trailing, .top, .bottom], 8)
+                                .focused($focusField, equals: true)
                         }
                         .padding([.leading, .trailing])
                         .background(KTSColors.gray.color)
@@ -77,6 +79,9 @@ struct AddTodoSheetView: View {
             }
         }
         .fixedSize(horizontal: false, vertical: true)
+        .onAppear {
+            focusField = true
+        }
     }
 }
 
