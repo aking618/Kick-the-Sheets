@@ -84,5 +84,53 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B7C1F6CC-3B0A-4BE4-913B-CF902AB8FD50"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kick the Sheets/Views/BottomNavigationBar/BottomNavigationBar.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "B7C1F6CC-3B0A-4BE4-913B-CF902AB8FD50 - 3ab669713b72f594"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Kick_the_Sheets.Tab) -&gt; SwiftUI.Button&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Kick_the_Sheets.Tab&gt;, Kick_the_Sheets.Tab, SwiftUI.Button&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;&gt; in Kick_the_Sheets.BottomNavigationBar.body.getter : some"
+                  moduleName = "Kick the Sheets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Views/BottomNavigationBar/BottomNavigationBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "176">
+               </Location>
+               <Location
+                  uuid = "B7C1F6CC-3B0A-4BE4-913B-CF902AB8FD50 - 3ab669713b72f594"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in closure #1 (Kick_the_Sheets.Tab) -&gt; SwiftUI.Button&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt; in closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;Kick_the_Sheets.Tab&gt;, Kick_the_Sheets.Tab, SwiftUI.Button&lt;SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0, SwiftUI.Spacer)&gt;&gt;&gt; in Kick_the_Sheets.BottomNavigationBar.body.getter : some"
+                  moduleName = "Kick the Sheets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Views/BottomNavigationBar/BottomNavigationBar.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "160">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

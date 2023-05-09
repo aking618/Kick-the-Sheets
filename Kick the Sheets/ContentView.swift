@@ -10,11 +10,10 @@ import SwiftUI
 struct ContentView: View {
     
     @StateObject private var viewModel = ContentViewModel()
-    @State var selectedTab: Tab = Tab.home
     
     @ViewBuilder
     private var tabView: some View {
-        switch selectedTab {
+        switch viewModel.selectedTab {
         case .home:
             DayView(dayId: viewModel.currentDayId, todos: $viewModel.todosForToday)
                 .tag(Tab.home)
@@ -22,28 +21,25 @@ struct ContentView: View {
         case .calendar:
             Home(viewModel: HomeViewModel(days: $viewModel.days))
                 .tag(Tab.calendar)
-                .transition(selectedTab != .settings ? .backslide : .leadingSlide)
+                .transition(viewModel.calendarTransition)
         case .settings:
-            Text("Settings Page")
+            BaseView {
+                Text("Settings Page")
+            }
                 .tag(Tab.settings)
                 .transition(.backslide)
         }
     }
     
     @ViewBuilder private var bottomNavBar: some View {
-        BottomNavigationBar(selectedTab: $selectedTab)
-        .background(AnimatedIndicator(selectedTab: $selectedTab))
+        BottomNavigationBar(selectedTab: $viewModel.selectedTab, transition: $viewModel.calendarTransition)
+        .background(AnimatedIndicator(selectedTab: $viewModel.selectedTab))
         .padding(.horizontal)
-        .onChange(of: selectedTab) { tab in
-            guard Tab.allCases.contains(tab) else { return }
-            print("Selected tab: \(tab)")
-        }
     }
     
     var body: some View {
         VStack(spacing: 0) {
             tabView
-                .animation(.easeOut, value: selectedTab)
                 .padding(.bottom)
             Divider()
             bottomNavBar

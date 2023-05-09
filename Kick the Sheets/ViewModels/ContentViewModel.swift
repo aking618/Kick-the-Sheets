@@ -9,9 +9,12 @@ import SwiftUI
 
 class ContentViewModel: ObservableObject {
     
+    @Published var selectedTab: Tab = Tab.home
     @Published var currentDayId: Int64 = 0
     @Published var todosForToday: [Todo] = []
     @Published var days: [Day] = []
+    
+    @Published var calendarTransition: AnyTransition = .backslide
     
     init() {
         days = TodoDataStore.shared.getAllDays()

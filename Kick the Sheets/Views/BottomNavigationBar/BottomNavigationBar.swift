@@ -10,11 +10,20 @@ import SwiftUI
 struct BottomNavigationBar: View {
     
     @Binding var selectedTab: Tab
+    @Binding var transition: AnyTransition
     
     var body: some View {
         HStack(spacing: 0) {
             ForEach(Tab.allCases, id: \.self) { tab in
                 Button(action: {
+                    if selectedTab == .calendar && tab == .settings {
+                        transition = .leadingSlide
+                    }
+                    else if selectedTab == .settings && tab == .calendar {
+                        transition = .leadingSlide
+                    }
+                    else { transition = .backslide }
+                    
                     withAnimation {
                         selectedTab = tab
                     }
