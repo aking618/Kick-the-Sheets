@@ -11,7 +11,12 @@ import SwiftUI
 struct DayView: View {
     let dayId: Int64
     
-    @StateObject private var viewModel = DayViewModel()
+    @ObservedObject private var viewModel: DayViewModel
+    
+    init(dayId: Int64, todos: Binding<[Todo]>) {
+        self.dayId = dayId
+        self.viewModel = DayViewModel(todos)
+    }
     
     var body: some View {
         BaseView {
@@ -120,6 +125,6 @@ extension DayView {
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        DayView(dayId: 1)
+        DayView(dayId: 1, todos: .constant(.init()))
     }
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED101EF529DA5D330034F62D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED101EF429DA5D330034F62D /* ContentViewModel.swift */; };
+		ED2B03F82A08881F00AA8ABB /* Animation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */; };
 		ED3166702A00B0EF003DB752 /* CircleCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31666F2A00B0EF003DB752 /* CircleCheckmarkView.swift */; };
 		ED3166722A00B467003DB752 /* DeleteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3166712A00B467003DB752 /* DeleteIconView.swift */; };
 		ED42579129A456CB0064F8AA /* AnimatedLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = ED42579029A456CB0064F8AA /* AnimatedLogo.svg */; };
@@ -74,6 +75,7 @@
 
 /* Begin PBXFileReference section */
 		ED101EF429DA5D330034F62D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Extension.swift"; sourceTree = "<group>"; };
 		ED31666F2A00B0EF003DB752 /* CircleCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCheckmarkView.swift; sourceTree = "<group>"; };
 		ED3166712A00B467003DB752 /* DeleteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteIconView.swift; sourceTree = "<group>"; };
 		ED42579029A456CB0064F8AA /* AnimatedLogo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AnimatedLogo.svg; sourceTree = "<group>"; };
@@ -297,6 +299,7 @@
 				ED81A15E298F245400556661 /* String+Extension.swift */,
 				ED81A1572983745700556661 /* Todo+Extension.swift */,
 				ED81A1592983793500556661 /* View+Extension.swift */,
+				ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */,
 			);
 			name = Extensions;
 			path = "Kick the Sheets/Extensions";
@@ -518,6 +521,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2B03F82A08881F00AA8ABB /* Animation+Extension.swift in Sources */,
 				ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */,
 				ED6B133D299F203500634B47 /* LaunchScreenStateManager.swift in Sources */,
 				ED81A13A2983229800556661 /* TodoDataStore.swift in Sources */,

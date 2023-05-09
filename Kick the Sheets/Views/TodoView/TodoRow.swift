@@ -38,9 +38,3 @@ struct TodoRow: View {
         .cornerRadius(12)
     }
 }
-
-struct TodoRow_Previews: PreviewProvider {
-    static var previews: some View {
-        DayView(dayId: 1)
-    }
-}

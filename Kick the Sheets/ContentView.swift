@@ -14,14 +14,20 @@ struct ContentView: View {
     
     @ViewBuilder
     private var tabView: some View {
-        TabView(selection: $selectedTab) {
-            DayView(dayId: viewModel.currentDayId)
+        switch selectedTab {
+        case .home:
+            DayView(dayId: viewModel.currentDayId, todos: $viewModel.todosForToday)
                 .tag(Tab.home)
+                .transition(.leadingSlide)
+        case .calendar:
             Home(viewModel: HomeViewModel(days: $viewModel.days))
                 .tag(Tab.calendar)
+                .transition(selectedTab != .settings ? .backslide : .leadingSlide)
+        case .settings:
+            Text("Settings Page")
+                .tag(Tab.settings)
+                .transition(.backslide)
         }
-        .tabViewStyle(.page(indexDisplayMode: .never))
-        .padding(.bottom)
     }
     
     @ViewBuilder private var bottomNavBar: some View {
@@ -37,6 +43,8 @@ struct ContentView: View {
     var body: some View {
         VStack(spacing: 0) {
             tabView
+                .animation(.easeOut, value: selectedTab)
+                .padding(.bottom)
             Divider()
             bottomNavBar
         }
