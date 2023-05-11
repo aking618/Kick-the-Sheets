@@ -23,9 +23,7 @@ struct ContentView: View {
                 .tag(Tab.calendar)
                 .transition(viewModel.calendarTransition)
         case .settings:
-            BaseView {
-                Text("Settings Page")
-            }
+            SettingsView()
                 .tag(Tab.settings)
                 .transition(.backslide)
         }

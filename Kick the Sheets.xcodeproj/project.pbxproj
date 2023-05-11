@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		ED101EF529DA5D330034F62D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED101EF429DA5D330034F62D /* ContentViewModel.swift */; };
 		ED2B03F82A08881F00AA8ABB /* Animation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */; };
+		ED2B03FB2A0B26BA00AA8ABB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */; };
+		ED2B03FD2A0B2A7300AA8ABB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */; };
+		ED2B03FF2A0B2A8600AA8ABB /* SettingsOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03FE2A0B2A8600AA8ABB /* SettingsOption.swift */; };
 		ED3166702A00B0EF003DB752 /* CircleCheckmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED31666F2A00B0EF003DB752 /* CircleCheckmarkView.swift */; };
 		ED3166722A00B467003DB752 /* DeleteIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED3166712A00B467003DB752 /* DeleteIconView.swift */; };
 		ED42579129A456CB0064F8AA /* AnimatedLogo.svg in Resources */ = {isa = PBXBuildFile; fileRef = ED42579029A456CB0064F8AA /* AnimatedLogo.svg */; };
@@ -76,6 +79,9 @@
 /* Begin PBXFileReference section */
 		ED101EF429DA5D330034F62D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
 		ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Extension.swift"; sourceTree = "<group>"; };
+		ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
+		ED2B03FE2A0B2A8600AA8ABB /* SettingsOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOption.swift; sourceTree = "<group>"; };
 		ED31666F2A00B0EF003DB752 /* CircleCheckmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleCheckmarkView.swift; sourceTree = "<group>"; };
 		ED3166712A00B467003DB752 /* DeleteIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteIconView.swift; sourceTree = "<group>"; };
 		ED42579029A456CB0064F8AA /* AnimatedLogo.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AnimatedLogo.svg; sourceTree = "<group>"; };
@@ -152,6 +158,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ED2B03F92A0B26A800AA8ABB /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */,
+				ED2B03FE2A0B2A8600AA8ABB /* SettingsOption.swift */,
+				ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		ED4CE5412992EF85005A4737 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -308,6 +324,7 @@
 		ED81A1452983247800556661 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				ED2B03F92A0B26A800AA8ABB /* Settings */,
 				ED84D49929D9C66C0094CF09 /* BottomNavigationBar */,
 				ED6B1336299F1CA000634B47 /* CalendarWrapperView */,
 				ED6B13332995D0AE00634B47 /* CircularProgressView */,
@@ -521,6 +538,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED2B03FB2A0B26BA00AA8ABB /* SettingsView.swift in Sources */,
 				ED2B03F82A08881F00AA8ABB /* Animation+Extension.swift in Sources */,
 				ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */,
 				ED6B133D299F203500634B47 /* LaunchScreenStateManager.swift in Sources */,
@@ -533,6 +551,7 @@
 				ED81A13B2983229800556661 /* Day.swift in Sources */,
 				ED81A1582983745700556661 /* Todo+Extension.swift in Sources */,
 				ED81A15C298862EC00556661 /* TodoRow.swift in Sources */,
+				ED2B03FF2A0B2A8600AA8ABB /* SettingsOption.swift in Sources */,
 				ED3166702A00B0EF003DB752 /* CircleCheckmarkView.swift in Sources */,
 				ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */,
 				ED81A15F298F245400556661 /* String+Extension.swift in Sources */,
@@ -555,6 +574,7 @@
 				ED6B133F299F20AD00634B47 /* LaunchScreenView.swift in Sources */,
 				ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */,
 				ED84D49829D70CAE0094CF09 /* Tab.swift in Sources */,
+				ED2B03FD2A0B2A7300AA8ABB /* SettingsViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
