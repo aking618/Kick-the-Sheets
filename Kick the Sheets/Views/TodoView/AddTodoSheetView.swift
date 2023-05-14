@@ -11,7 +11,7 @@ struct AddTodoSheetView: View {
     
     let topPadding: CGFloat = 100
     let fixedHeight: Bool = false
-    let bgColor: Color = .white
+    let bgColor: Color = KTSColors.background.color
     
     var dayId: Int64
     @Binding var todos: [Todo]
@@ -49,8 +49,9 @@ struct AddTodoSheetView: View {
                                 .focused($focusField, equals: true)
                         }
                         .padding([.leading, .trailing])
-                        .background(KTSColors.gray.color)
+                        .background(KTSColors.rowBackground.color)
                         .cornerRadius(10)
+                        .shadow(radius: 1)
                         
                         RoundedButton("Submit", color: .persianGreen) {
                             guard !textFieldText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {

@@ -19,8 +19,8 @@ struct CircleCheckmarkView: View {
             if isChecked {
                 Path { path in
                     let size: CGFloat = 10
-                    let x = CGFloat(15) - size/2 // Center the checkmark horizontally in the circle
-                    let y = CGFloat(15) - size/2 // Center the checkmark vertically in the circle
+                    let x = CGFloat(15) - size/2
+                    let y = CGFloat(15) - size/2
                     path.move(to: CGPoint(x: x, y: y + size/2))
                     path.addLine(to: CGPoint(x: x + size/2, y: y + size))
                     path.addLine(to: CGPoint(x: x + size, y: y))

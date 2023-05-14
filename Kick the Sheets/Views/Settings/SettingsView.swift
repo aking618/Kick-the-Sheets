@@ -14,13 +14,16 @@ struct SettingsView: View {
     @ViewBuilder
     private var header: some View {
         Text("Settings")
+            .ktcFont(.title2)
+            .foregroundColor(KTSColors.textColor.color)
+            .padding()
         
     }
     
     @ViewBuilder
     private var options: some View {
         VStack(spacing: 5){
-            ForEach(viewModel.options) { option in
+            List(viewModel.options) { option in
                     HStack{
                         Image(systemName: option.image)
                         Text(option.title)
@@ -29,8 +32,10 @@ struct SettingsView: View {
                         Image(systemName: "chevron.right")
                     }
                     .padding()
-                    .background(KTSColors.background.color)
+                    .listRowSeparator(.hidden)
             }
+            .listStyle(.plain)
+            .scrollContentBackground(.hidden)
         }
     }
     
@@ -41,6 +46,7 @@ struct SettingsView: View {
                 options
             }
         }
+        .foregroundColor(KTSColors.textColor.color)
         .onAppear {
             viewModel.setup()
         }

@@ -16,14 +16,13 @@ struct TodoRow: View {
     
     var body: some View {
         HStack {
-            CircleCheckmarkView(isChecked: $todo.status)
-                .onTapGesture {
-                    doneAction()
-                }
+            Button(action: doneAction) {
+                CircleCheckmarkView(isChecked: $todo.status)
+            }
+            
             Text(todo.description)
                 .ktcFont(.title3)
                 .foregroundColor(KTSColors.textColor.color)
-                .background(KTSColors.gray.color)
                 .strikethrough(todo.status)
                 .frame(maxWidth: .infinity, alignment: .leading)
             DeleteIconView()
@@ -33,8 +32,13 @@ struct TodoRow: View {
         }
         .frame(maxWidth: .infinity)
         .padding()
-        .background(KTSColors.gray.color)
+        .background(KTSColors.rowBackground.color)
         .listRowBackground(KTSColors.background.color)
+        .listRowSeparator(.hidden)
         .cornerRadius(12)
+        .overlay(
+            RoundedRectangle(cornerRadius: 12)
+                .stroke(KTSColors.border.color, lineWidth: 1)
+        )
     }
 }

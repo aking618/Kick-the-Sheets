@@ -9,7 +9,7 @@ import SwiftUI
 
 class ContentViewModel: ObservableObject {
     
-    @Published var selectedTab: Tab = Tab.settings
+    @Published var selectedTab: Tab = Tab.home
     @Published var currentDayId: Int64 = 0
     @Published var todosForToday: [Todo] = []
     @Published var days: [Day] = []

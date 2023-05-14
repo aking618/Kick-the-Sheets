@@ -26,6 +26,8 @@ enum KTSColors {
     
     case button
     case background
+    case rowBackground
+    case border
     
     var color: Color {
         switch self {
@@ -54,8 +56,14 @@ enum KTSColors {
             return Color.fromRGBA(red: 244, green: 162, blue: 97)
         case .burntSienna:
             return Color.fromRGBA(red: 231, green: 111, blue: 81)
-        case .background, .button:
+        case .background:
+            return Color.fromRGBA(red: 250, green: 250, blue: 250)
+        case .rowBackground:
+            return Color.white
+        case .button:
             return .white
+        case .border:
+            return Color.fromRGBA(red: 240, green: 240, blue: 240)
         }
     }
 }

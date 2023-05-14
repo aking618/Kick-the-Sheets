@@ -13,19 +13,16 @@ protocol TodoRowActionHandler {
 }
 
 class DayViewModel: ObservableObject {
-    var dayId: Int64?
+    @Published var dayId: Int64
     
     @Binding var todos: [Todo]
     @Published var searchText: String = ""
     @Published var showAddTodoPopup: Bool = false
     @Published var showErrorPopup: Bool = false
     
-    init(_ todos: Binding<[Todo]> = .constant([])) {
+    init(id: Int64, todos: Binding<[Todo]> = .constant([])) {
+        dayId = id
         _todos = todos
-    }
-    
-    func setup(dayId: Int64) {
-        self.dayId = dayId
     }
     
     func toggleTodoPopup() {
@@ -50,8 +47,6 @@ extension DayViewModel: TodoRowActionHandler {
     }
     
     func updateAction(index: Int) {
-        guard let dayId = dayId else { return }
-        
         print("Completing todo")
         todos[index].status.toggle()
         if TodoDataStore.shared.updateTodo(entry: todos[index]) {

@@ -39,10 +39,10 @@ struct ContentView: View {
         VStack(spacing: 0) {
             tabView
                 .padding(.bottom)
+                .background(KTSColors.background.color)
             Divider()
             bottomNavBar
         }
-        .background(.white)
     }
 }
 
