@@ -115,6 +115,7 @@ struct DayView: View {
                 .closeOnTap(false)
                 .animation(.spring())
                 .backgroundColor(.black.opacity(0.4))
+                .isOpaque(true)
             
             // TODO: try using a tost in the middle of the screen instead of a bottom sheet
             // TODO: test with a keyboard and look at layout changes

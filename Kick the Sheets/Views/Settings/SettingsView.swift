@@ -23,16 +23,8 @@ struct SettingsView: View {
     @ViewBuilder
     private var options: some View {
         VStack(spacing: 5){
-            List(viewModel.options) { option in
-                    HStack{
-                        Image(systemName: option.image)
-                        Text(option.title)
-                            .foregroundColor(KTSColors.textColor.color)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                    }
-                    .padding()
-                    .listRowSeparator(.hidden)
+            List($viewModel.options) { $option in
+                SettingsOptionRow(option: $option)
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)

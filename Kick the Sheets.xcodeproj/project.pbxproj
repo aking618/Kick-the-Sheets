@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		ED101EF529DA5D330034F62D /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED101EF429DA5D330034F62D /* ContentViewModel.swift */; };
+		ED2A08512A11A5FF002AC216 /* SettingsOptionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A08502A11A5FF002AC216 /* SettingsOptionRow.swift */; };
 		ED2B03F82A08881F00AA8ABB /* Animation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */; };
 		ED2B03FB2A0B26BA00AA8ABB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */; };
 		ED2B03FD2A0B2A7300AA8ABB /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */; };
@@ -78,6 +79,7 @@
 
 /* Begin PBXFileReference section */
 		ED101EF429DA5D330034F62D /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		ED2A08502A11A5FF002AC216 /* SettingsOptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionRow.swift; sourceTree = "<group>"; };
 		ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Extension.swift"; sourceTree = "<group>"; };
 		ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */,
+				ED2A08502A11A5FF002AC216 /* SettingsOptionRow.swift */,
 				ED2B03FE2A0B2A8600AA8ABB /* SettingsOption.swift */,
 				ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */,
 			);
@@ -572,6 +575,7 @@
 				ED81A1562983699600556661 /* RoundedButton.swift in Sources */,
 				ED4CE5452992F483005A4737 /* DayViewModel.swift in Sources */,
 				ED6B133F299F20AD00634B47 /* LaunchScreenView.swift in Sources */,
+				ED2A08512A11A5FF002AC216 /* SettingsOptionRow.swift in Sources */,
 				ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */,
 				ED84D49829D70CAE0094CF09 /* Tab.swift in Sources */,
 				ED2B03FD2A0B2A7300AA8ABB /* SettingsViewModel.swift in Sources */,
