@@ -16,7 +16,7 @@ struct Home: View {
     @ViewBuilder
     private var header: some View {
         Text("Kick the Sheets")
-            .ktcFont(.title2)
+            .ktsFont(.title2)
             .foregroundColor(KTSColors.textColor.color)
             .padding()
     }
@@ -37,7 +37,7 @@ struct Home: View {
         
         Spacer()
         
-        VStack(spacing: 0){
+        VStack(spacing: 0) {
             Text(viewModel.dateSelected.getDayString())
                 .frame(maxWidth: .infinity, alignment: .leading)
             Rectangle()
@@ -54,7 +54,7 @@ struct Home: View {
     
     var body: some View {
         BaseView {
-            ScrollView{
+            ScrollView {
                 VStack(alignment: .center) {
                     header
                     calendar

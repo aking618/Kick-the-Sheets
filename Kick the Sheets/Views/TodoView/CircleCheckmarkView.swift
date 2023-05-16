@@ -9,13 +9,13 @@ import SwiftUI
 
 struct CircleCheckmarkView: View {
     @Binding var isChecked: Bool
-    
+
     var body: some View {
         ZStack {
             Circle()
                 .stroke(Color.gray, lineWidth: 2)
                 .background(Circle().foregroundColor(isChecked ? KTSColors.persianGreen.color : .clear))
-            
+
             if isChecked {
                 Path { path in
                     let size: CGFloat = 10
@@ -35,7 +35,6 @@ struct CircleCheckmarkView: View {
         .frame(width: 30, height: 30)
     }
 }
-
 
 struct CircleCheckmarkView_Previews: PreviewProvider {
     static var previews: some View {

@@ -13,13 +13,13 @@ struct CircularProgressView: View {
     let lineWidth: CGFloat
     
     var percentage: Double {
-        guard total > 0 else { return 0}
+        guard total > 0 else { return 0 }
         
         return Double(progress) / Double(total)
     }
     
     var percentageString: String {
-        guard total > 0 else { return "0%"}
+        guard total > 0 else { return "0%" }
         
         let percentage = percentage * 100
         return "\(percentage.formatted(.number.precision(.fractionLength(0))))%"
@@ -50,14 +50,14 @@ struct CircularProgressView: View {
                 .rotationEffect(.degrees(-90))
                 .animation(.easeOut, value: progress)
 
-            VStack{
+            VStack {
                 Text(percentageString)
                     .foregroundColor(KTSColors.textColor.color)
-                    .ktcFont(.title)
+                    .ktsFont(.title)
                 
                 Text("\(progress)/\(total)")
                     .foregroundColor(KTSColors.textColor.color)
-                    .ktcFont(.title3)
+                    .ktsFont(.title3)
             }
         }
         .frame(height: 125)

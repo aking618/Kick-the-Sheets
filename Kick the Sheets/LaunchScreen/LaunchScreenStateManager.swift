@@ -8,7 +8,6 @@
 import Foundation
 
 final class LaunchScreenStateManager: ObservableObject {
-
     @MainActor
     @Published
     private(set) var state: LaunchScreenStep = .firstStep

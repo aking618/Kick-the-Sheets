@@ -35,6 +35,7 @@ class DayViewModel: ObservableObject {
 }
 
 // MARK: - Swipe Action Handlers
+
 extension DayViewModel: TodoRowActionHandler {
     func deleteAction(index: Int) {
         print("Deleting todo")

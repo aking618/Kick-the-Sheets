@@ -9,10 +9,9 @@ import SelectableCalendarView
 import SwiftUI
 
 struct CalendarWrapperView: View {
-    
     @Binding var days: [Day]
     @Binding var selectedDate: Date
-    
+
     var body: some View {
         SelectableCalendarView(
             monthToDisplay: Date(),
@@ -29,16 +28,15 @@ struct CalendarWrapperView: View {
                     .frame(width: 35, height: 35)
                 )
             },
-            dateForgroundBuilder: {date in
-                // TODO: Change to NavLink to show previous days
+            dateForgroundBuilder: { date in
                 AnyView(
                     Text("\(date.calendarDay)")
                         .foregroundColor(date.foregroundColor(days))
                 )
             }
-        ){ date in date.backgroundColor(days) }
+        ) { date in date.backgroundColor(days) }
             .foregroundColor(KTSColors.textColor.color)
             .padding(.bottom)
-            .ktcFont(.body)
+            .ktsFont(.body)
     }
 }

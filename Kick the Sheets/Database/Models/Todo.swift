@@ -13,5 +13,3 @@ public struct Todo: Hashable {
     public var description: String
     public var status: Bool
 }
-
-

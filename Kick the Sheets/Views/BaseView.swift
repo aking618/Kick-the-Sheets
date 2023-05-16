@@ -10,12 +10,12 @@ import SwiftUI
 struct BaseView<Content>: View where Content: View {
     let color: Color
     let content: Content
-    
+
     public init(color: Color = KTSColors.background.color, @ViewBuilder content: () -> Content) {
         self.color = color
         self.content = content()
     }
-    
+
     var body: some View {
         GeometryReader { geometry in
             ZStack {

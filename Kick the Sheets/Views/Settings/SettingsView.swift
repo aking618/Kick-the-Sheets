@@ -8,21 +8,19 @@
 import SwiftUI
 
 struct SettingsView: View {
-    
-    @StateObject var viewModel: SettingsViewModel = SettingsViewModel()
+    @StateObject var viewModel: SettingsViewModel = .init()
     
     @ViewBuilder
     private var header: some View {
         Text("Settings")
-            .ktcFont(.title2)
+            .ktsFont(.title2)
             .foregroundColor(KTSColors.textColor.color)
             .padding()
-        
     }
     
     @ViewBuilder
     private var options: some View {
-        VStack(spacing: 5){
+        VStack(spacing: 5) {
             List($viewModel.options) { $option in
                 SettingsOptionRow(option: $option)
             }

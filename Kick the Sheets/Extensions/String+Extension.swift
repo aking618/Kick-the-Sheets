@@ -11,7 +11,7 @@ extension String {
     func caseInsensitiveContains(_ otherString: String) -> Bool {
         let trimmedString = otherString.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmedString.isEmpty { return true }
-        
+
         return self.lowercased().contains(trimmedString.lowercased())
     }
 }

@@ -9,13 +9,12 @@ import Foundation
 import SwiftUI
 
 struct SettingsOptionRow: View {
-    
     @Binding var option: SettingsOption
-    
+
     @State var tapped: Bool = false
-    
+
     var body: some View {
-        HStack{
+        HStack {
             Image(systemName: option.image)
             Text(option.title)
                 .foregroundColor(KTSColors.textColor.color)
@@ -41,7 +40,7 @@ struct SettingsOptionRow: View {
                     tapped = false
                 }
             }
-            
+
             option.action()
         }
     }

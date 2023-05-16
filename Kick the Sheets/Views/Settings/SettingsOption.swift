@@ -8,13 +8,12 @@
 import Foundation
 
 struct SettingsOption: Identifiable {
-    let id: UUID = UUID()
+    let id: UUID = .init()
     let title: String
     let image: String
     let style: OptionStyle
-    let action: (() -> Void)
-    
-    
+    let action: () -> Void
+
     enum OptionStyle {
         case generic
         case toggle

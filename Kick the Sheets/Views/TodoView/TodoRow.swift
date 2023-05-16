@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct TodoRow: View {
-    
     @Binding var todo: Todo
     
     var doneAction: () -> Void
@@ -21,7 +20,7 @@ struct TodoRow: View {
             }
             
             Text(todo.description)
-                .ktcFont(.title3)
+                .ktsFont(.title3)
                 .foregroundColor(KTSColors.textColor.color)
                 .strikethrough(todo.status)
                 .frame(maxWidth: .infinity, alignment: .leading)

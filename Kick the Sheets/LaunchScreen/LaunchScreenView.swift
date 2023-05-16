@@ -13,7 +13,7 @@ struct LaunchScreenView: View {
     @State private var firstAnimation = false
     @State private var secondAnimation = false
     @State private var startFadeoutAnimation = false
-    
+
     @ViewBuilder
     private var image: some View {
         Image("Logo")
@@ -22,12 +22,12 @@ struct LaunchScreenView: View {
             .padding([.leading, .trailing], 48)
             .animation(.spring())
     }
-    
+
     @ViewBuilder
     private var backgroundColor: some View {
         KTSColors.background.color.ignoresSafeArea()
     }
-    
+
     var body: some View {
         ZStack {
             backgroundColor
@@ -37,7 +37,7 @@ struct LaunchScreenView: View {
             launchScreenState.dismiss()
         }
     }
-    
+
     private func updateAnimation() {
         switch launchScreenState.state {
         case .firstStep:
@@ -55,7 +55,6 @@ struct LaunchScreenView: View {
             break
         }
     }
-    
 }
 
 struct LaunchScreenView_Previews: PreviewProvider {

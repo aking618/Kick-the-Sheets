@@ -23,5 +23,4 @@ class SettingsViewModel: ObservableObject {
     private func handleAbout() {}
     
     private func handleDarkMode() {}
-    
 }

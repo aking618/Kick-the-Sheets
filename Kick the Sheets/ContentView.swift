@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    
     @StateObject private var viewModel = ContentViewModel()
-    
+
     @ViewBuilder
     private var tabView: some View {
         switch viewModel.selectedTab {
@@ -28,13 +27,13 @@ struct ContentView: View {
                 .transition(.backslide)
         }
     }
-    
+
     @ViewBuilder private var bottomNavBar: some View {
         BottomNavigationBar(selectedTab: $viewModel.selectedTab, transition: $viewModel.calendarTransition)
-        .background(AnimatedIndicator(selectedTab: $viewModel.selectedTab))
-        .padding(.horizontal)
+            .background(AnimatedIndicator(selectedTab: $viewModel.selectedTab))
+            .padding(.horizontal)
     }
-    
+
     var body: some View {
         VStack(spacing: 0) {
             tabView
@@ -51,4 +50,3 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
-

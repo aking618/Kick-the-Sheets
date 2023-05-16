@@ -33,7 +33,6 @@
 		ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */; };
 		ED81A102298321A700556661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A101298321A700556661 /* ContentView.swift */; };
 		ED81A104298321A800556661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A103298321A800556661 /* Assets.xcassets */; };
-		ED81A107298321A800556661 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A106298321A800556661 /* Preview Assets.xcassets */; };
 		ED81A111298321A800556661 /* Kick_the_SheetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A110298321A800556661 /* Kick_the_SheetsTests.swift */; };
 		ED81A11B298321A800556661 /* Kick_the_SheetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */; };
 		ED81A11D298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */; };
@@ -106,7 +105,6 @@
 		ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsApp.swift; sourceTree = "<group>"; };
 		ED81A101298321A700556661 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED81A103298321A800556661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		ED81A106298321A800556661 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED81A10C298321A800556661 /* Kick the SheetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kick the SheetsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A110298321A800556661 /* Kick_the_SheetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsTests.swift; sourceTree = "<group>"; };
 		ED81A116298321A800556661 /* Kick the SheetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kick the SheetsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -245,24 +243,16 @@
 				ED4CE54F299465F8005A4737 /* Kick-the-Sheets-Info.plist */,
 				ED81A101298321A700556661 /* ContentView.swift */,
 				ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */,
-				ED84D49629D70C900094CF09 /* Models */,
 				ED81A14F298324C900556661 /* Assets */,
 				ED81A129298321DF00556661 /* Database */,
 				ED81A1432983247800556661 /* Extensions */,
 				ED6B1339299F1FCA00634B47 /* LaunchScreen */,
-				ED81A105298321A800556661 /* Preview Content */,
+				ED84D49629D70C900094CF09 /* Models */,
+				EDE7C21B2A1302B800CB43A6 /* Preview Content */,
 				ED4CE5412992EF85005A4737 /* ViewModels */,
 				ED81A1452983247800556661 /* Views */,
 			);
 			path = "Kick the Sheets";
-			sourceTree = "<group>";
-		};
-		ED81A105298321A800556661 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				ED81A106298321A800556661 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		ED81A10F298321A800556661 /* Kick the SheetsTests */ = {
@@ -396,6 +386,13 @@
 			path = BottomNavigationBar;
 			sourceTree = "<group>";
 		};
+		EDE7C21B2A1302B800CB43A6 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -514,7 +511,6 @@
 				ED4CE54B29946595005A4737 /* Andika-Bold.ttf in Resources */,
 				ED4CE54C29946595005A4737 /* Andika-Italic.ttf in Resources */,
 				ED4CE54D29946595005A4737 /* Andika-BoldItalic.ttf in Resources */,
-				ED81A107298321A800556661 /* Preview Assets.xcassets in Resources */,
 				ED42579129A456CB0064F8AA /* AnimatedLogo.svg in Resources */,
 				ED81A104298321A800556661 /* Assets.xcassets in Resources */,
 			);

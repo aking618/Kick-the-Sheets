@@ -16,10 +16,9 @@ public struct Day: Hashable {
 extension Day {
     static func isDayComplete(_ todos: [Todo]) -> Bool {
         guard !todos.isEmpty else { return false }
-        
-        return todos.reduce(true) { (result, todo) in
+
+        return todos.reduce(true) { result, todo in
             result && todo.status
         }
     }
 }
-

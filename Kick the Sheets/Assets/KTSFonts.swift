@@ -7,8 +7,7 @@
 
 import SwiftUI
 
-struct KTCFont: ViewModifier {
-    
+struct KTSFont: ViewModifier {
     @Environment(\.sizeCategory) var sizeCategory
     
     public enum TextStyle {
@@ -24,8 +23,8 @@ struct KTCFont: ViewModifier {
     var textStyle: TextStyle
 
     func body(content: Content) -> some View {
-       let scaledSize = UIFontMetrics.default.scaledValue(for: size)
-       return content.font(.custom(fontName, size: scaledSize))
+        let scaledSize = UIFontMetrics.default.scaledValue(for: size)
+        return content.font(.custom(fontName, size: scaledSize))
     }
     
     private var fontName: String {
@@ -58,8 +57,7 @@ struct KTCFont: ViewModifier {
 }
 
 extension View {
-    
-    func ktcFont(_ textStyle: KTCFont.TextStyle) -> some View {
-        self.modifier(KTCFont(textStyle: textStyle))
+    func ktsFont(_ textStyle: KTSFont.TextStyle) -> some View {
+        modifier(KTSFont(textStyle: textStyle))
     }
 }

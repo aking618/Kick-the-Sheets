@@ -18,7 +18,7 @@ struct DayView: View {
     @ViewBuilder
     private var header: some View {
         Text("Day \(Date().calendarDay)")
-            .ktcFont(.title)
+            .ktsFont(.title)
             .foregroundColor(KTSColors.textColor.color)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -26,7 +26,7 @@ struct DayView: View {
     @ViewBuilder
     private var subHeader: some View {
         Text("🔥 \(Todo.completedCount(from: viewModel.todos)) / \(viewModel.todos.count) completed!")
-            .ktcFont(.button)
+            .ktsFont(.button)
             .foregroundColor(KTSColors.textColor.color)
             .padding(.bottom)
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -39,7 +39,7 @@ struct DayView: View {
                 .foregroundColor(KTSColors.textColor.color)
                 .padding([.leading, .top, .bottom], 8)
             TextField("", text: $viewModel.searchText)
-                .ktcFont(.body)
+                .ktsFont(.body)
                 .foregroundColor(KTSColors.textColor.color)
                 .placeholder("Search...", when: viewModel.searchText.isEmpty)
                 .padding([.trailing, .top, .bottom], 8)
@@ -67,7 +67,7 @@ struct DayView: View {
                 placeholder: Text("No todos found")
                     .padding()
                     .foregroundColor(KTSColors.textColor.color)
-                    .ktcFont(.title3)
+                    .ktsFont(.title3)
             )
         )
     }
@@ -76,7 +76,7 @@ struct DayView: View {
     private var popup: some View {
         AddTodoSheetView(
             // TODO: pass in view model instead
-            dayId: viewModel.dayId ?? 0,
+            dayId: viewModel.dayId,
             todos: $viewModel.todos,
             showPopup: $viewModel.showAddTodoPopup,
             errorPopup: $viewModel.showErrorPopup
@@ -86,7 +86,7 @@ struct DayView: View {
     @ViewBuilder
     private var errorPopup: some View {
         Text("New todos cannot be blank")
-            .ktcFont(.body)
+            .ktsFont(.body)
             .foregroundColor(.white)
             .padding(EdgeInsets(top: 60, leading: 32, bottom: 16, trailing: 32))
             .frame(maxWidth: .infinity)
@@ -95,7 +95,7 @@ struct DayView: View {
     
     var body: some View {
         BaseView {
-            VStack(alignment: .center, spacing: 15){
+            VStack(alignment: .center, spacing: 15) {
                 header
                 subHeader
                 searchBar
@@ -116,10 +116,6 @@ struct DayView: View {
                 .animation(.spring())
                 .backgroundColor(.black.opacity(0.4))
                 .isOpaque(true)
-            
-            // TODO: try using a tost in the middle of the screen instead of a bottom sheet
-            // TODO: test with a keyboard and look at layout changes
-            
         }
         .popup(isPresented: $viewModel.showErrorPopup) {
             errorPopup

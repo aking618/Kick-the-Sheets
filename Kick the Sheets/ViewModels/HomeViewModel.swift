@@ -11,7 +11,7 @@ class HomeViewModel: ObservableObject {
     @Published var viewDidLoad: Bool = false
     
     @Binding var days: [Day]
-    @Published var dateSelected: Date = Date()
+    @Published var dateSelected: Date = .init()
     
     // broken
     init(days: Binding<[Day]>) {
@@ -28,8 +28,8 @@ class HomeViewModel: ObservableObject {
             return 0
         }
         
-        var streak = day.status ? 1 : 0;
-        while (sortedDays.last != nil) {
+        var streak = day.status ? 1 : 0
+        while sortedDays.last != nil {
             if sortedDays.last!.status {
                 streak += 1
             } else {
@@ -38,7 +38,7 @@ class HomeViewModel: ObservableObject {
             _ = sortedDays.popLast()
         }
         
-        return streak;
+        return streak
     }
     
     func refreshDays() {
@@ -70,4 +70,3 @@ extension HomeViewModel {
         return Todo.completedCount(from: todos)
     }
 }
-

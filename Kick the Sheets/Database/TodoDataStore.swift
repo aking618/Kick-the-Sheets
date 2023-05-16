@@ -22,7 +22,7 @@ public class TodoDataStore: TodoService {
     static let DIR_TASK_DB = "TaskDB"
     static let STORE_NAME = "task.sqlite3"
     
-    static public let shared = TodoDataStore()
+    public static let shared = TodoDataStore()
     
     private var db: Connection? = nil
     
@@ -30,6 +30,7 @@ public class TodoDataStore: TodoService {
     private let dbTodo = DbTodo()
     
     // MARK: - Initializer
+
     init() {
         if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let dirPath = docDir.appendingPathComponent(Self.DIR_TASK_DB)
@@ -73,9 +74,8 @@ public class TodoDataStore: TodoService {
         }
     }
     
-    
-    
     // MARK: - Create
+
     internal func insertDay() -> Int64? {
         guard let database = db else { return nil }
         
@@ -112,6 +112,7 @@ public class TodoDataStore: TodoService {
     }
     
     // MARK: - Retrieve
+
     internal func getTodosForDayById(dayId: Int64) -> [Todo] {
         var todos = [Todo]()
         guard let database = db else { return todos }
@@ -123,7 +124,8 @@ public class TodoDataStore: TodoService {
                     id: todo[dbTodo.id],
                     dayId: todo[dbTodo.dayId],
                     description: todo[dbTodo.description],
-                    status: todo[dbTodo.status])
+                    status: todo[dbTodo.status]
+                )
                 )
             }
         } catch {
@@ -137,12 +139,12 @@ public class TodoDataStore: TodoService {
         guard let database = db else { return [] }
         
         do {
-            for day in try database.prepare(self.dbDay.table) {
+            for day in try database.prepare(dbDay.table) {
                 days.append(
                     Day(
-                        id: day[self.dbDay.id],
-                        date: day[self.dbDay.day],
-                        status: day[self.dbDay.status]
+                        id: day[dbDay.id],
+                        date: day[dbDay.day],
+                        status: day[dbDay.status]
                     )
                 )
             }
@@ -154,6 +156,7 @@ public class TodoDataStore: TodoService {
     }
     
     // MARK: - Update
+
     internal func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool {
         guard let database = db else { return false }
         
@@ -170,7 +173,6 @@ public class TodoDataStore: TodoService {
         }
         return false
     }
-    
     
     internal func updateTodo(entry: Todo) -> Bool {
         guard let database = db else { return false }
@@ -191,6 +193,7 @@ public class TodoDataStore: TodoService {
     }
     
     // MARK: - Delete
+
     internal func deleteTodo(entry: Todo) -> Bool {
         guard let database = db else { return false }
         

@@ -8,9 +8,8 @@
 import SwiftUI
 
 struct AnimatedIndicator: View {
-    
     @Binding var selectedTab: Tab
-    
+
     var body: some View {
         GeometryReader { proxy in
             let width = proxy.size.width / CGFloat(Tab.allCases.count)

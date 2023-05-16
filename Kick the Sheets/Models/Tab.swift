@@ -9,7 +9,7 @@ enum Tab: Int, CaseIterable {
     case home
     case calendar
     case settings
-    
+
     var title: String {
         switch self {
         case .home:
@@ -20,7 +20,7 @@ enum Tab: Int, CaseIterable {
             return "Settings"
         }
     }
-    
+
     var iconName: String {
         switch self {
         case .home:
