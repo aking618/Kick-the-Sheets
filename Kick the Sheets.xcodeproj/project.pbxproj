@@ -57,6 +57,7 @@
 		ED84D49829D70CAE0094CF09 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49729D70CAE0094CF09 /* Tab.swift */; };
 		ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */; };
 		ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */; };
+		EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510452A1711AD003F8353 /* View+Popup.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		ED84D49729D70CAE0094CF09 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
 		ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIndicator.swift; sourceTree = "<group>"; };
+		EDE510452A1711AD003F8353 /* View+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popup.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -309,6 +311,7 @@
 				ED81A1572983745700556661 /* Todo+Extension.swift */,
 				ED81A1592983793500556661 /* View+Extension.swift */,
 				ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */,
+				EDE510452A1711AD003F8353 /* View+Popup.swift */,
 			);
 			name = Extensions;
 			path = "Kick the Sheets/Extensions";
@@ -544,6 +547,7 @@
 				ED81A13A2983229800556661 /* TodoDataStore.swift in Sources */,
 				ED81A14C2983247900556661 /* Home.swift in Sources */,
 				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
+				EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */,
 				ED3166722A00B467003DB752 /* DeleteIconView.swift in Sources */,
 				ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */,
 				ED81A102298321A700556661 /* ContentView.swift in Sources */,

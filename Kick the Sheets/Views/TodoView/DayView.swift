@@ -10,11 +10,11 @@ import SwiftUI
 
 struct DayView: View {
     @ObservedObject private var viewModel: DayViewModel
-    
+
     init(dayId: Int64, todos: Binding<[Todo]>) {
-        self.viewModel = DayViewModel(id: dayId, todos: todos)
+        viewModel = DayViewModel(id: dayId, todos: todos)
     }
-    
+
     @ViewBuilder
     private var header: some View {
         Text("Day \(Date().calendarDay)")
@@ -22,7 +22,7 @@ struct DayView: View {
             .foregroundColor(KTSColors.textColor.color)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
-    
+
     @ViewBuilder
     private var subHeader: some View {
         Text("🔥 \(Todo.completedCount(from: viewModel.todos)) / \(viewModel.todos.count) completed!")
@@ -31,7 +31,7 @@ struct DayView: View {
             .padding(.bottom)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
-    
+
     @ViewBuilder
     private var searchBar: some View {
         HStack {
@@ -49,7 +49,7 @@ struct DayView: View {
         .cornerRadius(10)
         .shadow(radius: 1)
     }
-    
+
     @ViewBuilder
     private var todoList: some View {
         List(Array(viewModel.todos.indices), id: \.hashValue) { index in
@@ -71,28 +71,7 @@ struct DayView: View {
             )
         )
     }
-    
-    @ViewBuilder
-    private var popup: some View {
-        AddTodoSheetView(
-            // TODO: pass in view model instead
-            dayId: viewModel.dayId,
-            todos: $viewModel.todos,
-            showPopup: $viewModel.showAddTodoPopup,
-            errorPopup: $viewModel.showErrorPopup
-        )
-    }
-    
-    @ViewBuilder
-    private var errorPopup: some View {
-        Text("New todos cannot be blank")
-            .ktsFont(.body)
-            .foregroundColor(.white)
-            .padding(EdgeInsets(top: 60, leading: 32, bottom: 16, trailing: 32))
-            .frame(maxWidth: .infinity)
-            .background(Color(hex: "FE504E"))
-    }
-    
+
     var body: some View {
         BaseView {
             VStack(alignment: .center, spacing: 15) {
@@ -101,32 +80,13 @@ struct DayView: View {
                 searchBar
                 todoList
                 Spacer()
-                
+
                 RoundedButton("Add todo", action: handleButtonTap)
             }
             .padding(.top)
         }
-        .popup(isPresented: $viewModel.showAddTodoPopup) {
-            popup
-        } customize: {
-            $0
-                .type(.toast)
-                .position(.bottom)
-                .closeOnTap(false)
-                .animation(.spring())
-                .backgroundColor(.black.opacity(0.4))
-                .isOpaque(true)
-        }
-        .popup(isPresented: $viewModel.showErrorPopup) {
-            errorPopup
-        } customize: {
-            $0
-                .type(.toast)
-                .position(.top)
-                .animation(.easeInOut)
-                .closeOnTapOutside(true)
-                .autohideIn(3)
-        }
+        .addTodoPopup(viewModel: _viewModel)
+        .errorPopup($viewModel.showErrorPopup)
     }
 }
 
