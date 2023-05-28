@@ -47,6 +47,10 @@ struct DayView: View {
         .padding([.leading, .trailing])
         .background(KTSColors.rowBackground.color)
         .cornerRadius(10)
+        .overlay(
+            RoundedRectangle(cornerRadius: 10)
+                .stroke(KTSColors.border.color, lineWidth: 1)
+        )
         .shadow(radius: 1)
     }
 

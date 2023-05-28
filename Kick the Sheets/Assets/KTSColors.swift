@@ -10,6 +10,7 @@ import SwiftUI
 
 enum KTSColors: String {
     case text
+    case placeholderText
 
     case iconBorder
 
@@ -28,7 +29,8 @@ enum KTSColors: String {
         switch self {
         case .text:
             return Color.fromAsset(color: .text)
-
+        case .placeholderText:
+            return Color.fromAsset(color: .placeholderText)
         case .iconBorder:
             return Color.fromAsset(color: .iconBorder)
         case .charcoal:
@@ -44,11 +46,11 @@ enum KTSColors: String {
         case .background:
             return Color.fromAsset(color: .background)
         case .rowBackground:
-            return Color.white
+            return Color.fromAsset(color: .rowBackground)
         case .button:
             return .white
         case .border:
-            return Color.fromRGBA(red: 240, green: 240, blue: 240)
+            return Color.fromAsset(color: .border)
         }
     }
 }
