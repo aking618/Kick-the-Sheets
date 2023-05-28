@@ -9,19 +9,19 @@ import SwiftUI
 
 struct TodoRow: View {
     @Binding var todo: Todo
-    
+
     var doneAction: () -> Void
     var deleteAction: () -> Void
-    
+
     var body: some View {
         HStack {
             Button(action: doneAction) {
                 CircleCheckmarkView(isChecked: $todo.status)
             }
-            
+
             Text(todo.description)
                 .ktsFont(.title3)
-                .foregroundColor(KTSColors.textColor.color)
+                .foregroundColor(KTSColors.text.color)
                 .strikethrough(todo.status)
                 .frame(maxWidth: .infinity, alignment: .leading)
             DeleteIconView()

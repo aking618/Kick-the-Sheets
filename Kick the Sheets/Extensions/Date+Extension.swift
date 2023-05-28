@@ -10,41 +10,41 @@ import SwiftUI
 
 extension Date {
     func backgroundColor(_ days: [Day]) -> Color {
-        if self.isSameDay(comparingTo: Date()) {
+        if isSameDay(comparingTo: Date()) {
             return KTSColors.saffron.color
         }
-       
+
         if self > Date() {
-            return KTSColors.gray.color
+            return KTSColors.iconBorder.color
         }
 
         if let day = days.first(where: { $0.date.isSameDay(comparingTo: self) }) {
             return day.status ? KTSColors.persianGreen.color : KTSColors.burntSienna.color
         }
-        
-        return KTSColors.gray.color
+
+        return KTSColors.iconBorder.color
     }
-    
+
     func foregroundColor(_ days: [Day]) -> Color {
-        if self.isSameDay(comparingTo: Date()) {
-            return KTSColors.textColor.color
+        if isSameDay(comparingTo: Date()) {
+            return KTSColors.text.color
         }
-       
+
         if self > Date() {
-            return KTSColors.textColor.color
+            return KTSColors.text.color
         }
 
         if days.first(where: { $0.date.isSameDay(comparingTo: self) }) != nil {
             return .white
         }
-        
-        return KTSColors.textColor.color
+
+        return KTSColors.text.color
     }
-    
+
     var calendarDay: Int {
         Calendar.current.dateComponents([.day], from: self).day ?? 0
     }
-    
+
     func getDayString() -> String {
         let formatter = DateFormatter()
         formatter.dateFormat = "EEEE, MMMM d"

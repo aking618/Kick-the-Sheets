@@ -11,20 +11,20 @@ struct AddTodoSheetView: View {
     let topPadding: CGFloat = 100
     let fixedHeight: Bool = false
     let bgColor: Color = KTSColors.background.color
-    
+
     var dayId: Int64
     @Binding var todos: [Todo]
     @Binding var showPopup: Bool
     @Binding var errorPopup: Bool
-    
+
     @State var textFieldText: String = ""
     @FocusState var focusField: Bool
-    
+
     @ViewBuilder
     private var background: some View {
         bgColor.cornerRadius(40, corners: [.topLeft, .topRight])
     }
-    
+
     @ViewBuilder
     private var swipeIndicator: some View {
         Color.black
@@ -34,7 +34,7 @@ struct AddTodoSheetView: View {
             .padding(.top, 15)
             .padding(.bottom, 10)
     }
-    
+
     @ViewBuilder
     private var formWrapper: some View {
         VStack {
@@ -51,7 +51,7 @@ struct AddTodoSheetView: View {
             }
         }
     }
-    
+
     @ViewBuilder
     private var todoForm: some View {
         VStack {
@@ -62,16 +62,16 @@ struct AddTodoSheetView: View {
         }
         .padding([.leading, .trailing])
     }
-    
+
     @ViewBuilder
     private var todoTextField: some View {
         HStack {
             Image(systemName: "checklist")
-                .foregroundColor(KTSColors.textColor.color)
+                .foregroundColor(KTSColors.text.color)
                 .padding([.leading, .top, .bottom], 8)
             TextField("", text: $textFieldText)
                 .ktsFont(.body)
-                .foregroundColor(KTSColors.textColor.color)
+                .foregroundColor(KTSColors.text.color)
                 .placeholder("Todo description...", when: textFieldText.isEmpty)
                 .padding([.trailing, .top, .bottom], 8)
                 .focused($focusField, equals: true)
@@ -81,7 +81,7 @@ struct AddTodoSheetView: View {
         .cornerRadius(10)
         .shadow(radius: 1)
     }
-    
+
     @ViewBuilder
     private var addTodoButton: some View {
         RoundedButton("Submit", color: .persianGreen) {

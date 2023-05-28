@@ -17,7 +17,7 @@ struct Home: View {
     private var header: some View {
         Text("Kicking the Sheets")
             .ktsFont(.title2)
-            .foregroundColor(KTSColors.textColor.color)
+            .foregroundColor(KTSColors.text.color)
             .padding()
     }
 
@@ -32,7 +32,7 @@ struct Home: View {
     @ViewBuilder
     private var footer: some View {
         Text("🔥 \(viewModel.getStreakCount()) Day Streak")
-            .foregroundColor(KTSColors.textColor.color)
+            .foregroundColor(KTSColors.text.color)
             .padding(.bottom, 16)
 
         Spacer()

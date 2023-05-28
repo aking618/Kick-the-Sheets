@@ -14,7 +14,7 @@ struct SettingsView: View {
     private var header: some View {
         Text("Settings")
             .ktsFont(.title2)
-            .foregroundColor(KTSColors.textColor.color)
+            .foregroundColor(KTSColors.text.color)
             .padding()
     }
 
@@ -36,7 +36,7 @@ struct SettingsView: View {
                 options
             }
         }
-        .foregroundColor(KTSColors.textColor.color)
+        .foregroundColor(KTSColors.text.color)
         .onAppear {
             viewModel.setup()
         }

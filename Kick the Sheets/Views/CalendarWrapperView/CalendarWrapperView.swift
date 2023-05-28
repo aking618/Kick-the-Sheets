@@ -35,7 +35,7 @@ struct CalendarWrapperView: View {
                 )
             }
         ) { date in date.backgroundColor(days) }
-            .foregroundColor(KTSColors.textColor.color)
+            .foregroundColor(KTSColors.text.color)
             .padding(.bottom)
             .ktsFont(.body)
     }

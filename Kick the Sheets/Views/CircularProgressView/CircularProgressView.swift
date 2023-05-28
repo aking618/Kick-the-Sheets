@@ -11,26 +11,26 @@ struct CircularProgressView: View {
     let progress: Int
     let total: Int
     let lineWidth: CGFloat
-    
+
     var percentage: Double {
         guard total > 0 else { return 0 }
-        
+
         return Double(progress) / Double(total)
     }
-    
+
     var percentageString: String {
         guard total > 0 else { return "0%" }
-        
+
         let percentage = percentage * 100
         return "\(percentage.formatted(.number.precision(.fractionLength(0))))%"
     }
-    
+
     init(progress: Int, total: Int, _ lineWidth: CGFloat = 10) {
         self.progress = progress
         self.total = total
         self.lineWidth = lineWidth
     }
-    
+
     var body: some View {
         ZStack {
             Circle()
@@ -52,11 +52,11 @@ struct CircularProgressView: View {
 
             VStack {
                 Text(percentageString)
-                    .foregroundColor(KTSColors.textColor.color)
+                    .foregroundColor(KTSColors.text.color)
                     .ktsFont(.title)
-                
+
                 Text("\(progress)/\(total)")
-                    .foregroundColor(KTSColors.textColor.color)
+                    .foregroundColor(KTSColors.text.color)
                     .ktsFont(.title3)
             }
         }

@@ -17,7 +17,7 @@ struct SettingsOptionRow: View {
         HStack {
             Image(systemName: option.image)
             Text(option.title)
-                .foregroundColor(KTSColors.textColor.color)
+                .foregroundColor(KTSColors.text.color)
             Spacer()
             Image(systemName: "chevron.right")
         }

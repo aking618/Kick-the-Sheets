@@ -24,10 +24,10 @@ struct AboutView: View {
             ScrollView {
                 VStack {
                     Text(title)
-                        .foregroundColor(KTSColors.textColor.color)
+                        .foregroundColor(KTSColors.text.color)
                         .ktsFont(.title3)
                     Text(message)
-                        .foregroundColor(KTSColors.textColor.color)
+                        .foregroundColor(KTSColors.text.color)
                         .ktsFont(.body)
                 }
             }

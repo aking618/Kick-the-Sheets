@@ -19,7 +19,7 @@ struct DayView: View {
     private var header: some View {
         Text("Day \(Date().calendarDay)")
             .ktsFont(.title)
-            .foregroundColor(KTSColors.textColor.color)
+            .foregroundColor(KTSColors.text.color)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
@@ -27,7 +27,7 @@ struct DayView: View {
     private var subHeader: some View {
         Text("🔥 \(Todo.completedCount(from: viewModel.todos)) / \(viewModel.todos.count) completed!")
             .ktsFont(.button)
-            .foregroundColor(KTSColors.textColor.color)
+            .foregroundColor(KTSColors.text.color)
             .padding(.bottom)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
@@ -36,11 +36,11 @@ struct DayView: View {
     private var searchBar: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(KTSColors.textColor.color)
+                .foregroundColor(KTSColors.text.color)
                 .padding([.leading, .top, .bottom], 8)
             TextField("", text: $viewModel.searchText)
                 .ktsFont(.body)
-                .foregroundColor(KTSColors.textColor.color)
+                .foregroundColor(KTSColors.text.color)
                 .placeholder("Search...", when: viewModel.searchText.isEmpty)
                 .padding([.trailing, .top, .bottom], 8)
         }
@@ -66,7 +66,7 @@ struct DayView: View {
                 items: viewModel.filteredTodos,
                 placeholder: Text("No todos found")
                     .padding()
-                    .foregroundColor(KTSColors.textColor.color)
+                    .foregroundColor(KTSColors.text.color)
                     .ktsFont(.title3)
             )
         )
