@@ -14,21 +14,28 @@ protocol TodoRowActionHandler {
 
 class DayViewModel: ObservableObject {
     @Published var dayId: Int64
-    
+
     @Binding var todos: [Todo]
+
     @Published var searchText: String = ""
     @Published var showAddTodoPopup: Bool = false
     @Published var showErrorPopup: Bool = false
-    
+
+    var filteredTodos: [Int] {
+        return searchText.isEmpty ? todos.enumerated().map { i, _ in i } : todos.enumerated().compactMap { index, todo in
+            todo.description.caseInsensitiveContains(searchText) ? index : nil
+        }
+    }
+
     init(id: Int64, todos: Binding<[Todo]> = .constant([])) {
         dayId = id
         _todos = todos
     }
-    
+
     func toggleTodoPopup() {
         showAddTodoPopup.toggle()
     }
-    
+
     func toggleErrorPopup() {
         showErrorPopup.toggle()
     }
@@ -46,7 +53,7 @@ extension DayViewModel: TodoRowActionHandler {
             print("Unable to delete todo")
         }
     }
-    
+
     func updateAction(index: Int) {
         print("Completing todo")
         todos[index].status.toggle()
@@ -55,7 +62,7 @@ extension DayViewModel: TodoRowActionHandler {
         } else {
             print("Unable to update todo")
         }
-        
+
         _ = TodoDataStore.shared.updateDayCompletion(for: dayId, with: Day.isDayComplete(todos))
     }
 }

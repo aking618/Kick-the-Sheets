@@ -12,9 +12,9 @@ class ContentViewModel: ObservableObject {
     @Published var currentDayId: Int64 = 0
     @Published var todosForToday: [Todo] = []
     @Published var days: [Day] = []
-    
+
     @Published var calendarTransition: AnyTransition = .backslide
-    
+
     init() {
         days = TodoDataStore.shared.getAllDays()
         if let currenDay = days.first(where: {
@@ -27,7 +27,20 @@ class ContentViewModel: ObservableObject {
             createDayIfNeeded()
         }
     }
-    
+
+    func update() {
+        days = TodoDataStore.shared.getAllDays()
+        if let currenDay = days.first(where: {
+            $0.date.isSameDay(comparingTo: Date())
+        }) {
+            currentDayId = currenDay.id
+            todosForToday =
+                TodoDataStore.shared.getTodosForDayById(dayId: currenDay.id)
+        } else {
+            createDayIfNeeded()
+        }
+    }
+
     func createDayIfNeeded() {
         if let currentDayId = TodoDataStore.shared.insertDay() {
             self.currentDayId = currentDayId

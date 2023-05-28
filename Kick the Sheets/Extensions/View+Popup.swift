@@ -12,16 +12,26 @@ extension View {
     @ViewBuilder
     func aboutPagePopup(_ shouldShow: Binding<Bool>) -> some View {
         popup(isPresented: shouldShow) {
-            Text(String(repeating: "This is an about popup. Tap to dismiss. ", count: 10))
-                .padding(30)
-                .background(Color(red: 0.85, green: 0.8, blue: 0.95))
-                .cornerRadius(30.0)
-                .padding(30)
+            AboutView()
         } customize: {
             $0
                 .type(.floater(useSafeAreaInset: true))
                 .position(.top)
                 .closeOnTapOutside(true)
+        }
+    }
+
+    @ViewBuilder
+    func deleteAllDataAlert(_ shouldShow: Binding<Bool>) -> some View {
+        alert(isPresented: shouldShow) {
+            Alert(
+                title: Text("Delete All Data"),
+                message: Text("Are you sure you want to delete all of your data?"),
+                primaryButton: .cancel(Text("Cancel")),
+                secondaryButton: .destructive(Text("Delete"), action: {
+                    TodoDataStore.shared.deleteAllEntries()
+                })
+            )
         }
     }
 

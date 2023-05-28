@@ -10,17 +10,17 @@ import SwiftUI
 
 struct Home: View {
     @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
-     
+
     @StateObject var viewModel: HomeViewModel
-    
+
     @ViewBuilder
     private var header: some View {
-        Text("Kick the Sheets")
+        Text("Kicking the Sheets")
             .ktsFont(.title2)
             .foregroundColor(KTSColors.textColor.color)
             .padding()
     }
-    
+
     @ViewBuilder
     private var calendar: some View {
         CalendarWrapperView(
@@ -28,15 +28,15 @@ struct Home: View {
             selectedDate: $viewModel.dateSelected
         )
     }
-    
+
     @ViewBuilder
     private var footer: some View {
         Text("🔥 \(viewModel.getStreakCount()) Day Streak")
             .foregroundColor(KTSColors.textColor.color)
             .padding(.bottom, 16)
-        
+
         Spacer()
-        
+
         VStack(spacing: 0) {
             Text(viewModel.dateSelected.getDayString())
                 .frame(maxWidth: .infinity, alignment: .leading)
@@ -44,14 +44,14 @@ struct Home: View {
                 .frame(height: 1)
         }
         .padding(.bottom)
-        
+
         CircularProgressView(
             progress: viewModel.completedCountForSelectedDate,
             total: viewModel.totalCountForSelectedDate,
             15
         )
     }
-    
+
     var body: some View {
         BaseView {
             ScrollView {
@@ -64,7 +64,7 @@ struct Home: View {
         }
         .refreshable {
             viewModel.refreshDays()
-            
+
             print(viewModel.dateSelected)
         }
     }

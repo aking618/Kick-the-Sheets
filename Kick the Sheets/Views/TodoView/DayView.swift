@@ -52,7 +52,7 @@ struct DayView: View {
 
     @ViewBuilder
     private var todoList: some View {
-        List(Array(viewModel.todos.indices), id: \.hashValue) { index in
+        List(viewModel.filteredTodos, id: \.hashValue) { index in
             TodoRow(todo: $viewModel.todos[index],
                     doneAction: { viewModel.updateAction(index: index) },
                     deleteAction: { viewModel.deleteAction(index: index) })
@@ -63,7 +63,7 @@ struct DayView: View {
         .animation(.spring(), value: viewModel.todos)
         .modifier(
             EmptyDataModifier(
-                items: viewModel.todos,
+                items: viewModel.filteredTodos,
                 placeholder: Text("No todos found")
                     .padding()
                     .foregroundColor(KTSColors.textColor.color)

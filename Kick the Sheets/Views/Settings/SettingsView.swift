@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var viewModel: SettingsViewModel = .init()
+    @StateObject var viewModel = SettingsViewModel()
 
     @ViewBuilder
     private var header: some View {
@@ -41,6 +41,7 @@ struct SettingsView: View {
             viewModel.setup()
         }
         .aboutPagePopup($viewModel.showAboutPopup)
+        .deleteAllDataAlert($viewModel.showDeleteDataPopup)
     }
 }
 

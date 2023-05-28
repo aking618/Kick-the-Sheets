@@ -10,6 +10,7 @@ import SwiftUI
 class SettingsViewModel: ObservableObject {
     @Published var options: [SettingsOption] = []
     @Published var showAboutPopup: Bool = false
+    @Published var showDeleteDataPopup: Bool = false
 
     func setup() {
         let resetData = SettingsOption(title: "Reset All Data", image: "trash", style: .destructive, action: handleResetData)
@@ -19,7 +20,9 @@ class SettingsViewModel: ObservableObject {
         options = [resetData, about, darkMode]
     }
 
-    private func handleResetData() {}
+    private func handleResetData() {
+        showDeleteDataPopup = true
+    }
 
     private func handleAbout() {
         showAboutPopup = true

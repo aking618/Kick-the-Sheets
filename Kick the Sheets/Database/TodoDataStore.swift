@@ -21,14 +21,14 @@ protocol TodoService {
 public class TodoDataStore: TodoService {
     static let DIR_TASK_DB = "TaskDB"
     static let STORE_NAME = "task.sqlite3"
-    
+
     public static let shared = TodoDataStore()
-    
+
     private var db: Connection? = nil
-    
+
     private let dbDay = DbDay()
     private let dbTodo = DbTodo()
-    
+
     // MARK: - Initializer
 
     init() {
@@ -49,7 +49,7 @@ public class TodoDataStore: TodoService {
             db = nil
         }
     }
-    
+
     // Create db
     private func createTables() {
         guard let database = db else { return }
@@ -59,13 +59,13 @@ public class TodoDataStore: TodoService {
                 t.column(dbDay.day)
                 t.column(dbDay.status)
             })
-            
+
             try database.run(dbTodo.table.create { t in
                 t.column(dbTodo.id, primaryKey: .autoincrement)
                 t.column(dbTodo.dayId)
                 t.column(dbTodo.status)
                 t.column(dbTodo.description)
-                
+
                 t.foreignKey(dbTodo.dayId, references: dbDay.table, dbTodo.id, update: .cascade, delete: .cascade)
             })
             print("[+] Tables created...")
@@ -73,17 +73,17 @@ public class TodoDataStore: TodoService {
             print(error)
         }
     }
-    
+
     // MARK: - Create
 
     internal func insertDay() -> Int64? {
         guard let database = db else { return nil }
-        
+
         let insert = dbDay.table.insert(
             dbDay.day <- Date(),
             dbDay.status <- false
         )
-        
+
         do {
             let rowID = try database.run(insert)
             return rowID
@@ -92,16 +92,16 @@ public class TodoDataStore: TodoService {
             return nil
         }
     }
-    
+
     internal func insertTodoForDayById(description: String, for dayId: Int64) -> Int64? {
         guard let database = db else { return nil }
-        
+
         let insert = dbTodo.table.insert(
             dbTodo.dayId <- dayId,
             dbTodo.description <- description,
             dbTodo.status <- false
         )
-        
+
         do {
             let rowID = try database.run(insert)
             return rowID
@@ -110,13 +110,13 @@ public class TodoDataStore: TodoService {
             return nil
         }
     }
-    
+
     // MARK: - Retrieve
 
     internal func getTodosForDayById(dayId: Int64) -> [Todo] {
         var todos = [Todo]()
         guard let database = db else { return todos }
-        
+
         let filter = dbTodo.table.filter(dbTodo.dayId == dayId)
         do {
             for todo in try database.prepare(filter) {
@@ -133,11 +133,11 @@ public class TodoDataStore: TodoService {
         }
         return todos
     }
-    
+
     internal func getAllDays() -> [Day] {
         var days: [Day] = []
         guard let database = db else { return [] }
-        
+
         do {
             for day in try database.prepare(dbDay.table) {
                 days.append(
@@ -154,16 +154,16 @@ public class TodoDataStore: TodoService {
         print("[+] Days retrieved successfully")
         return days
     }
-    
+
     // MARK: - Update
 
     internal func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool {
         guard let database = db else { return false }
-        
+
         let day = dbDay.table.filter(dbDay.id == dayId)
         do {
             let update = day.update([
-                dbDay.status <- completion
+                dbDay.status <- completion,
             ])
             if try database.run(update) > 0 {
                 return true
@@ -173,15 +173,15 @@ public class TodoDataStore: TodoService {
         }
         return false
     }
-    
+
     internal func updateTodo(entry: Todo) -> Bool {
         guard let database = db else { return false }
-        
+
         let todo = dbTodo.table.filter(dbTodo.id == entry.id)
         do {
             let update = todo.update([
                 dbTodo.description <- entry.description,
-                dbTodo.status <- entry.status
+                dbTodo.status <- entry.status,
             ])
             if try database.run(update) > 0 {
                 return true
@@ -191,12 +191,12 @@ public class TodoDataStore: TodoService {
         }
         return false
     }
-    
+
     // MARK: - Delete
 
     internal func deleteTodo(entry: Todo) -> Bool {
         guard let database = db else { return false }
-        
+
         var result = false
         let todo = dbTodo.table.filter(dbTodo.id == entry.id)
         do {
@@ -208,10 +208,10 @@ public class TodoDataStore: TodoService {
         }
         return result
     }
-    
+
     internal func deleteDaysWithIds(ids: [Int64]) {
         guard let database = db else { return }
-        
+
         for id in ids {
             let todo = dbDay.table.filter(dbDay.id == id)
             do {
@@ -221,6 +221,18 @@ public class TodoDataStore: TodoService {
             } catch {
                 print(error)
             }
+        }
+    }
+
+    internal func deleteAllEntries() {
+        guard let database = db else { return }
+        do {
+            try database.run(dbDay.table.drop())
+            try database.run(dbTodo.table.drop())
+            createTables()
+            print("Tables reset successfully.")
+        } catch {
+            print("Error resetting tables: \(error)")
         }
     }
 }
