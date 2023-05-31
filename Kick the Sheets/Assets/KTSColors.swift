@@ -26,32 +26,7 @@ enum KTSColors: String {
     case border
 
     var color: Color {
-        switch self {
-        case .text:
-            return Color.fromAsset(color: .text)
-        case .placeholderText:
-            return Color.fromAsset(color: .placeholderText)
-        case .iconBorder:
-            return Color.fromAsset(color: .iconBorder)
-        case .charcoal:
-            return Color.fromRGBA(red: 38, green: 70, blue: 83)
-        case .persianGreen:
-            return Color.fromRGBA(red: 42, green: 157, blue: 143)
-        case .saffron:
-            return Color.fromRGBA(red: 233, green: 196, blue: 106)
-        case .sandyBrown:
-            return Color.fromRGBA(red: 244, green: 162, blue: 97)
-        case .burntSienna:
-            return Color.fromRGBA(red: 231, green: 111, blue: 81)
-        case .background:
-            return Color.fromAsset(color: .background)
-        case .rowBackground:
-            return Color.fromAsset(color: .rowBackground)
-        case .button:
-            return .white
-        case .border:
-            return Color.fromAsset(color: .border)
-        }
+        Color.fromAsset(color: self)
     }
 }
 
