@@ -15,9 +15,8 @@ class SettingsViewModel: ObservableObject {
     func setup() {
         let resetData = SettingsOption(title: "Reset All Data", image: "trash", style: .destructive, action: handleResetData)
         let about = SettingsOption(title: "About", image: "info.circle", style: .generic, action: handleAbout)
-        let darkMode = SettingsOption(title: "Dark Mode", image: "moon", style: .toggle, action: handleDarkMode)
 
-        options = [resetData, about, darkMode]
+        options = [resetData, about]
     }
 
     private func handleResetData() {
@@ -27,6 +26,4 @@ class SettingsViewModel: ObservableObject {
     private func handleAbout() {
         showAboutPopup = true
     }
-
-    private func handleDarkMode() {}
 }

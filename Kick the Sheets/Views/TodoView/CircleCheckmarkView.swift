@@ -13,16 +13,16 @@ struct CircleCheckmarkView: View {
     var body: some View {
         ZStack {
             Circle()
-                .stroke(Color.gray, lineWidth: 2)
+                .stroke(KTSColors.border.color, lineWidth: 2)
                 .background(Circle().foregroundColor(isChecked ? KTSColors.persianGreen.color : .clear))
 
             if isChecked {
                 Path { path in
                     let size: CGFloat = 10
-                    let x = CGFloat(15) - size/2
-                    let y = CGFloat(15) - size/2
-                    path.move(to: CGPoint(x: x, y: y + size/2))
-                    path.addLine(to: CGPoint(x: x + size/2, y: y + size))
+                    let x = CGFloat(15) - size / 2
+                    let y = CGFloat(15) - size / 2
+                    path.move(to: CGPoint(x: x, y: y + size / 2))
+                    path.addLine(to: CGPoint(x: x + size / 2, y: y + size))
                     path.addLine(to: CGPoint(x: x + size, y: y))
                 }
                 .stroke(style: StrokeStyle(lineWidth: 2, lineCap: .round, lineJoin: .round))
