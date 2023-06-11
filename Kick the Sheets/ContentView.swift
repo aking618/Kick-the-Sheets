@@ -42,6 +42,7 @@ struct ContentView: View {
             Divider()
             bottomNavBar
         }
+        .ignoresSafeArea(.keyboard)
         .environmentObject(viewModel)
     }
 }

@@ -11,13 +11,12 @@ import SwiftUI
 extension View {
     @ViewBuilder
     func aboutPagePopup(_ shouldShow: Binding<Bool>) -> some View {
-        popup(isPresented: shouldShow) {
-            AboutView()
-        } customize: {
-            $0
-                .type(.floater(useSafeAreaInset: true))
-                .position(.top)
-                .closeOnTapOutside(true)
+        alert(isPresented: shouldShow) {
+            Alert(
+                title: Text(AboutStrings.title.rawValue),
+                message: Text(AboutStrings.message.rawValue),
+                dismissButton: .cancel()
+            )
         }
     }
 
@@ -37,22 +36,14 @@ extension View {
 
     @ViewBuilder
     func addTodoPopup(viewModel: ObservedObject<DayViewModel>) -> some View {
-        popup(isPresented: viewModel.projectedValue.showAddTodoPopup) {
+        alert("Add Todo", isPresented: viewModel.projectedValue.showAddTodoPopup, actions: {
             AddTodoSheetView(
                 dayId: viewModel.projectedValue.dayId.wrappedValue,
                 todos: viewModel.projectedValue.todos,
                 showPopup: viewModel.projectedValue.showAddTodoPopup,
                 errorPopup: viewModel.projectedValue.showErrorPopup
             )
-        } customize: {
-            $0
-                .type(.toast)
-                .position(.bottom)
-                .closeOnTap(false)
-                .animation(.spring())
-                .backgroundColor(.black.opacity(0.4))
-                .isOpaque(true)
-        }
+        })
     }
 
     @ViewBuilder

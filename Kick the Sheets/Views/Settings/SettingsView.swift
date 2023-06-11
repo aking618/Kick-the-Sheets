@@ -33,15 +33,15 @@ struct SettingsView: View {
         BaseView {
             VStack {
                 header
+                    .deleteAllDataAlert($viewModel.showDeleteDataPopup)
                 options
+                    .aboutPagePopup($viewModel.showAboutPopup)
             }
         }
         .foregroundColor(KTSColors.text.color)
         .onAppear {
             viewModel.setup()
         }
-        .aboutPagePopup($viewModel.showAboutPopup)
-        .deleteAllDataAlert($viewModel.showDeleteDataPopup)
     }
 }
 

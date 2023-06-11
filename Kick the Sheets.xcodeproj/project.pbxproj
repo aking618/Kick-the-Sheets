@@ -58,7 +58,7 @@
 		ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */; };
 		ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */; };
 		EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510452A1711AD003F8353 /* View+Popup.swift */; };
-		EDE510482A1861C9003F8353 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510472A1861C9003F8353 /* AboutView.swift */; };
+		EDE510482A1861C9003F8353 /* AboutStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510472A1861C9003F8353 /* AboutStrings.swift */; };
 		EDE5104A2A23134C003F8353 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE510492A23134C003F8353 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -132,7 +132,7 @@
 		ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
 		ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIndicator.swift; sourceTree = "<group>"; };
 		EDE510452A1711AD003F8353 /* View+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popup.swift"; sourceTree = "<group>"; };
-		EDE510472A1861C9003F8353 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		EDE510472A1861C9003F8353 /* AboutStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStrings.swift; sourceTree = "<group>"; };
 		EDE510492A23134C003F8353 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -168,7 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */,
-				EDE510472A1861C9003F8353 /* AboutView.swift */,
+				EDE510472A1861C9003F8353 /* AboutStrings.swift */,
 				ED2A08502A11A5FF002AC216 /* SettingsOptionRow.swift */,
 				ED2B03FE2A0B2A8600AA8ABB /* SettingsOption.swift */,
 				ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */,
@@ -571,7 +571,7 @@
 				ED81A151298324F300556661 /* KTSColors.swift in Sources */,
 				ED6B13352995D0C100634B47 /* CircularProgressView.swift in Sources */,
 				ED81A14A2983247900556661 /* Date+Extension.swift in Sources */,
-				EDE510482A1861C9003F8353 /* AboutView.swift in Sources */,
+				EDE510482A1861C9003F8353 /* AboutStrings.swift in Sources */,
 				ED81A13E2983229800556661 /* DbTodo.swift in Sources */,
 				ED4CE53E2991A998005A4737 /* AddTodoSheetView.swift in Sources */,
 				ED81A14D2983247900556661 /* DayView.swift in Sources */,
