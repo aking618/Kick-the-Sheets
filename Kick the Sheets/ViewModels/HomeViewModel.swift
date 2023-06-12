@@ -21,33 +21,26 @@ class HomeViewModel: ObservableObject {
     func getStreakCount() -> Int {
         guard !days.isEmpty else { return 0 }
 
-        let sortedDays = days.sorted(by: { $0.date < $1.date })
-        let currentDate = Date()
-        var streak = 0
+        let sortedDays = days.sorted(by: { $0.date > $1.date }).dropFirst()
+        let calendar = Calendar.current
+        let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
+        var consecutiveDays = 0
+        var currentDate = yesterday
 
-        var previousDay: Day?
         for day in sortedDays {
-            guard let prevDay = previousDay else {
-                streak = day.status ? 1 : 0
-                previousDay = day
-                continue
-            }
+            if calendar.isDate(day.date, inSameDayAs: currentDate) {
+                if day.status == false {
+                    break
+                }
 
-            let calendar = Calendar.current
-            guard calendar.isDate(prevDay.date, inSameDayAs: calendar.date(byAdding: .day, value: -1, to: day.date)!) else {
-                break
-            }
-
-            if day.status {
-                streak += 1
+                consecutiveDays += 1
+                currentDate = calendar.date(byAdding: .day, value: -1, to: currentDate)!
             } else {
                 break
             }
-
-            previousDay = day
         }
 
-        return streak
+        return consecutiveDays
     }
 
     func refreshDays() {

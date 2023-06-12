@@ -21,6 +21,7 @@ protocol TodoService {
 public class TodoDataStore: TodoService {
     static let DIR_TASK_DB = "TaskDB"
     static let STORE_NAME = "task.sqlite3"
+    static let DEMO_STORE_NAME = "taskDemo.sqlite3"
 
     public static let shared = TodoDataStore()
 
@@ -37,7 +38,7 @@ public class TodoDataStore: TodoService {
 
             do {
                 try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
-                let dbPath = dirPath.appendingPathComponent(Self.STORE_NAME).path
+                let dbPath = dirPath.appendingPathComponent(Self.DEMO_STORE_NAME).path
                 db = try Connection(dbPath)
                 createTables()
                 print("SQLiteDataStore init successfully at: \(dbPath) ")
@@ -234,5 +235,60 @@ public class TodoDataStore: TodoService {
         } catch {
             print("Error resetting tables: \(error)")
         }
+    }
+}
+
+// MARK: - DEMO DATA
+
+extension TodoDataStore {
+    func createDemoDayRecords() {
+        let days = generateDays(numDays: 20)
+
+        guard let database = db else { return }
+
+        for day in days {
+            let insert = dbDay.table.insert(
+                dbDay.day <- day.date,
+                dbDay.status <- day.status
+            )
+
+            do {
+                let rowID = try database.run(insert)
+            } catch {
+                print(error)
+                return
+            }
+        }
+    }
+
+    func createDemoTodoRecords(for dayId: Int64) {
+        let tasks = [
+            "Complete Project Proposal",
+            "Prepare Presentation Slides",
+            "Review Feedback",
+            "Submit Final Report",
+            "Send Thank You Email",
+        ]
+
+        for task in tasks {
+            _ = insertTodoForDayById(description: task, for: dayId)
+        }
+    }
+
+    func generateDays(numDays: Int) -> [Day] {
+        var days: [Day] = []
+
+        let calendar = Calendar.current
+        let startDate = calendar.date(byAdding: .day, value: -1, to: Date())!
+
+        for i in 0 ..< numDays {
+            let currentDate = calendar.date(byAdding: .day, value: -i, to: startDate)!
+            let randomStatus = Double.random(in: 0 ..< 1) < 0.8
+
+            let day = Day(id: Int64(i + 1), date: currentDate, status: randomStatus)
+            days.append(day)
+        }
+
+        return days
     }
 }

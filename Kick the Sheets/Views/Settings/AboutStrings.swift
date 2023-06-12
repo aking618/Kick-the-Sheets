@@ -14,6 +14,6 @@ enum AboutStrings: String {
 
     By incorporating gamification into task management, I aim to make productivity fun and rewarding. You'll find yourself motivated and driven to conquer your to-do list day after day.
 
-    Join us on this journey and transform the way you approach tasks. Let's turn productivity into a game and unlock your full potential!
+    Join me on this journey and transform the way you approach tasks. Let's turn productivity into a game and unlock your full potential!
     """
 }
