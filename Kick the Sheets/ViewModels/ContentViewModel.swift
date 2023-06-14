@@ -44,6 +44,7 @@ class ContentViewModel: ObservableObject {
     func createDayIfNeeded() {
         if let currentDayId = TodoDataStore.shared.insertDay() {
             self.currentDayId = currentDayId
+            todosForToday = []
         }
     }
 }

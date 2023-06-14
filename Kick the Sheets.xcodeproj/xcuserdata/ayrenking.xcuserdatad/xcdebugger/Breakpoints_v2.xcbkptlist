@@ -7,54 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "70E17860-9B6C-4FB0-9CC4-5EA7F9F68EFF"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Kick the Sheets/ViewModels/DayViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "deleteAction(index:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "70E17860-9B6C-4FB0-9CC4-5EA7F9F68EFF - 8e079f5619f8cf1d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Kick_the_Sheets.DayViewModel.deleteAction(index: Swift.Int) -&gt; ()"
-                  moduleName = "Kick the Sheets"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/ViewModels/DayViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "636">
-               </Location>
-               <Location
-                  uuid = "70E17860-9B6C-4FB0-9CC4-5EA7F9F68EFF - 8e079f5619f8cf1d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Kick_the_Sheets.DayViewModel.deleteAction(index: Swift.Int) -&gt; ()"
-                  moduleName = "Kick the Sheets"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/ViewModels/DayViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "44"
-                  endingLineNumber = "44"
-                  offsetFromSymbolStart = "236">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "248DBC15-5D21-4BE7-8DBD-5478AFBAC217"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -62,8 +14,8 @@
             filePath = "Kick the Sheets/Views/TodoView/DayView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
             landmarkName = "todoList"
             landmarkType = "24">
          </BreakpointContent>

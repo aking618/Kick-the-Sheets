@@ -21,7 +21,7 @@ extension View {
     }
 
     @ViewBuilder
-    func deleteAllDataAlert(_ shouldShow: Binding<Bool>) -> some View {
+    func deleteAllDataAlert(_ shouldShow: Binding<Bool>, viewModel: ContentViewModel) -> some View {
         alert(isPresented: shouldShow) {
             Alert(
                 title: Text("Delete All Data"),
@@ -29,19 +29,25 @@ extension View {
                 primaryButton: .cancel(Text("Cancel")),
                 secondaryButton: .destructive(Text("Delete"), action: {
                     TodoDataStore.shared.deleteAllEntries()
+                    viewModel.update()
                 })
             )
         }
     }
 
     @ViewBuilder
-    func addTodoPopup(viewModel: ObservedObject<DayViewModel>) -> some View {
-        popover(isPresented: viewModel.projectedValue.showAddTodoPopup) {
+    func addTodoPopup(
+        _ isPresented: Binding<Bool>,
+        dayId: Int64,
+        todos: Binding<[Todo]>,
+        errorPopup: Binding<Bool>
+    ) -> some View {
+        popover(isPresented: isPresented) {
             AddTodoSheetView(
-                dayId: viewModel.projectedValue.dayId.wrappedValue,
-                todos: viewModel.projectedValue.todos,
-                showPopup: viewModel.projectedValue.showAddTodoPopup,
-                errorPopup: viewModel.projectedValue.showErrorPopup
+                dayId: dayId,
+                todos: todos,
+                showPopup: isPresented,
+                errorPopup: errorPopup
             )
         }
     }

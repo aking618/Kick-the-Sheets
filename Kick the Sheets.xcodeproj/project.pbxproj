@@ -19,7 +19,6 @@
 		ED4CE53E2991A998005A4737 /* AddTodoSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */; };
 		ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */; };
 		ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE5422992F04B005A4737 /* HomeViewModel.swift */; };
-		ED4CE5452992F483005A4737 /* DayViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE5442992F483005A4737 /* DayViewModel.swift */; };
 		ED4CE54A29946595005A4737 /* Andika-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54629946595005A4737 /* Andika-Regular.ttf */; };
 		ED4CE54B29946595005A4737 /* Andika-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54729946595005A4737 /* Andika-Bold.ttf */; };
 		ED4CE54C29946595005A4737 /* Andika-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ED4CE54829946595005A4737 /* Andika-Italic.ttf */; };
@@ -92,7 +91,6 @@
 		ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTodoSheetView.swift; sourceTree = "<group>"; };
 		ED4CE53F2991B3B9005A4737 /* EmptyListViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyListViewModifier.swift; sourceTree = "<group>"; };
 		ED4CE5422992F04B005A4737 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		ED4CE5442992F483005A4737 /* DayViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewModel.swift; sourceTree = "<group>"; };
 		ED4CE54629946595005A4737 /* Andika-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andika-Regular.ttf"; sourceTree = "<group>"; };
 		ED4CE54729946595005A4737 /* Andika-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andika-Bold.ttf"; sourceTree = "<group>"; };
 		ED4CE54829946595005A4737 /* Andika-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Andika-Italic.ttf"; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 		ED4CE5412992EF85005A4737 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				ED4CE5442992F483005A4737 /* DayViewModel.swift */,
 				ED4CE5422992F04B005A4737 /* HomeViewModel.swift */,
 				ED101EF429DA5D330034F62D /* ContentViewModel.swift */,
 			);
@@ -581,7 +578,6 @@
 				ED101EF529DA5D330034F62D /* ContentViewModel.swift in Sources */,
 				ED4CE553299469D6005A4737 /* KTSFonts.swift in Sources */,
 				ED81A1562983699600556661 /* RoundedButton.swift in Sources */,
-				ED4CE5452992F483005A4737 /* DayViewModel.swift in Sources */,
 				ED6B133F299F20AD00634B47 /* LaunchScreenView.swift in Sources */,
 				ED2A08512A11A5FF002AC216 /* SettingsOptionRow.swift in Sources */,
 				ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */,

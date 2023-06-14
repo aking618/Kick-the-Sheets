@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @StateObject var viewModel = SettingsViewModel()
+    @EnvironmentObject var viewModel: ContentViewModel
+    @StateObject var settingViewModel = SettingsViewModel()
 
     @ViewBuilder
     private var header: some View {
@@ -21,7 +22,7 @@ struct SettingsView: View {
     @ViewBuilder
     private var options: some View {
         VStack(spacing: 5) {
-            List($viewModel.options) { $option in
+            List($settingViewModel.options) { $option in
                 SettingsOptionRow(option: $option)
             }
             .listStyle(.plain)
@@ -33,14 +34,14 @@ struct SettingsView: View {
         BaseView {
             VStack {
                 header
-                    .deleteAllDataAlert($viewModel.showDeleteDataPopup)
+                    .deleteAllDataAlert($settingViewModel.showDeleteDataPopup, viewModel: viewModel)
                 options
-                    .aboutPagePopup($viewModel.showAboutPopup)
+                    .aboutPagePopup($settingViewModel.showAboutPopup)
             }
         }
         .foregroundColor(KTSColors.text.color)
         .onAppear {
-            viewModel.setup()
+            settingViewModel.setup()
         }
     }
 }

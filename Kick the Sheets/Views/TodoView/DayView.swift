@@ -9,10 +9,16 @@ import PopupView
 import SwiftUI
 
 struct DayView: View {
-    @ObservedObject private var viewModel: DayViewModel
+    @EnvironmentObject var contentVM: ContentViewModel
 
-    init(dayId: Int64, todos: Binding<[Todo]>) {
-        viewModel = DayViewModel(id: dayId, todos: todos)
+    @State var searchText: String = ""
+    @State var showAddTodoPopup: Bool = false
+    @State var showErrorPopup: Bool = false
+
+    var filteredTodos: [Int] {
+        return searchText.isEmpty ? contentVM.todosForToday.enumerated().map { i, _ in i } : contentVM.todosForToday.enumerated().compactMap { index, todo in
+            todo.description.caseInsensitiveContains(searchText) ? index : nil
+        }
     }
 
     @ViewBuilder
@@ -25,7 +31,7 @@ struct DayView: View {
 
     @ViewBuilder
     private var subHeader: some View {
-        Text("🔥 \(Todo.completedCount(from: viewModel.todos)) / \(viewModel.todos.count) completed!")
+        Text("🔥 \(Todo.completedCount(from: contentVM.todosForToday)) / \(contentVM.todosForToday.count) completed!")
             .ktsFont(.button)
             .foregroundColor(KTSColors.text.color)
             .padding(.bottom)
@@ -38,10 +44,10 @@ struct DayView: View {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(KTSColors.text.color)
                 .padding([.leading, .top, .bottom], 8)
-            TextField("", text: $viewModel.searchText)
+            TextField("", text: $searchText)
                 .ktsFont(.body)
                 .foregroundColor(KTSColors.text.color)
-                .placeholder("Search...", when: viewModel.searchText.isEmpty)
+                .placeholder("Search...", when: searchText.isEmpty)
                 .padding([.trailing, .top, .bottom], 8)
         }
         .padding([.leading, .trailing])
@@ -56,18 +62,18 @@ struct DayView: View {
 
     @ViewBuilder
     private var todoList: some View {
-        List(viewModel.filteredTodos, id: \.hashValue) { index in
-            TodoRow(todo: $viewModel.todos[index],
-                    doneAction: { viewModel.updateAction(index: index) },
-                    deleteAction: { viewModel.deleteAction(index: index) })
+        List(filteredTodos, id: \.hashValue) { index in
+            TodoRow(todo: $contentVM.todosForToday[index],
+                    doneAction: { updateAction(index: index) },
+                    deleteAction: { deleteAction(index: index) })
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
-        .animation(.spring(), value: viewModel.todos)
+        .animation(.spring(), value: contentVM.todosForToday)
         .modifier(
             EmptyDataModifier(
-                items: viewModel.filteredTodos,
+                items: filteredTodos,
                 placeholder: Text("No todos found")
                     .padding()
                     .foregroundColor(KTSColors.text.color)
@@ -85,23 +91,49 @@ struct DayView: View {
                 todoList
                 Spacer()
 
-                RoundedButton("Add todo", action: handleButtonTap)
+                RoundedButton("Add todo", action: toggleTodoPopup)
             }
             .padding(.top)
         }
-        .addTodoPopup(viewModel: _viewModel)
-        .errorPopup($viewModel.showErrorPopup)
+        .addTodoPopup($showAddTodoPopup, dayId: contentVM.currentDayId, todos: $contentVM.todosForToday, errorPopup: $showErrorPopup)
+        .errorPopup($showErrorPopup)
     }
 }
 
 extension DayView {
-    private func handleButtonTap() {
-        viewModel.toggleTodoPopup()
+    func toggleTodoPopup() {
+        showAddTodoPopup.toggle()
+    }
+
+    func toggleErrorPopup() {
+        showErrorPopup.toggle()
+    }
+
+    func deleteAction(index: Int) {
+        print("Deleting todo")
+        if TodoDataStore.shared.deleteTodo(entry: contentVM.todosForToday[index]) {
+            print("Deleted todo")
+            contentVM.todosForToday.remove(at: index)
+        } else {
+            print("Unable to delete todo")
+        }
+    }
+
+    func updateAction(index: Int) {
+        print("Completing todo")
+        contentVM.todosForToday[index].status.toggle()
+        if TodoDataStore.shared.updateTodo(entry: contentVM.todosForToday[index]) {
+            print("Updated todo")
+        } else {
+            print("Unable to update todo")
+        }
+
+        _ = TodoDataStore.shared.updateDayCompletion(for: contentVM.currentDayId, with: Day.isDayComplete(contentVM.todosForToday))
     }
 }
 
 struct TaskView_Previews: PreviewProvider {
     static var previews: some View {
-        DayView(dayId: 1, todos: .constant(.init()))
+        DayView()
     }
 }

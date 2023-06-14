@@ -64,8 +64,6 @@ struct Home: View {
         }
         .refreshable {
             viewModel.refreshDays()
-
-            print(viewModel.dateSelected)
         }
     }
 }

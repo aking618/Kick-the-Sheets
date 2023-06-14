@@ -14,7 +14,7 @@ struct ContentView: View {
     private var tabView: some View {
         switch viewModel.selectedTab {
         case .home:
-            DayView(dayId: viewModel.currentDayId, todos: $viewModel.todosForToday)
+            DayView()
                 .tag(Tab.home)
                 .transition(.leadingSlide)
         case .calendar:
