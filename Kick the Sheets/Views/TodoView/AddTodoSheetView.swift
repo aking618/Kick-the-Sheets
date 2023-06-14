@@ -9,7 +9,6 @@ import SwiftUI
 
 struct AddTodoSheetView: View {
     let topPadding: CGFloat = 100
-    let fixedHeight: Bool = false
     let bgColor: Color = KTSColors.background.color
 
     var dayId: Int64
@@ -22,7 +21,7 @@ struct AddTodoSheetView: View {
 
     @ViewBuilder
     private var background: some View {
-        bgColor.cornerRadius(40, corners: [.topLeft, .topRight])
+        bgColor.cornerRadius(40)
     }
 
     @ViewBuilder
@@ -39,16 +38,10 @@ struct AddTodoSheetView: View {
     private var formWrapper: some View {
         VStack {
             swipeIndicator
-            ScrollView {
-                todoForm
-            }
-            .padding(.bottom, 40)
-            .applyIf(fixedHeight) {
-                $0.frame(height: UIScreen.main.bounds.height - topPadding)
-            }
-            .applyIf(!fixedHeight) {
-                $0.frame(maxHeight: UIScreen.main.bounds.height - topPadding)
-            }
+            Spacer()
+            todoForm
+                .padding(.bottom, 40)
+            Spacer()
         }
     }
 
@@ -59,6 +52,7 @@ struct AddTodoSheetView: View {
                 .ktsFont(.button)
             todoTextField
             addTodoButton
+            cancelButton
         }
         .padding([.leading, .trailing])
     }
@@ -84,7 +78,7 @@ struct AddTodoSheetView: View {
 
     @ViewBuilder
     private var addTodoButton: some View {
-        RoundedButton("Submit", color: .persianGreen) {
+        RoundedButton("Submit", backgroundColor: .persianGreen) {
             // TODO: move action to view model
             guard !textFieldText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
                 errorPopup.toggle()
@@ -98,12 +92,16 @@ struct AddTodoSheetView: View {
         }
     }
 
+    @ViewBuilder
+    private var cancelButton: some View {
+        RoundedButton("Cancel", backgroundColor: .burntSienna) { showPopup.toggle() }
+    }
+
     var body: some View {
         ZStack {
             background
             formWrapper
         }
-        .fixedSize(horizontal: false, vertical: true)
         .onAppear {
             focusField = true
         }

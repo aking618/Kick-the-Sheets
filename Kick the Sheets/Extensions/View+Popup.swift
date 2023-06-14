@@ -36,14 +36,14 @@ extension View {
 
     @ViewBuilder
     func addTodoPopup(viewModel: ObservedObject<DayViewModel>) -> some View {
-        alert("Add Todo", isPresented: viewModel.projectedValue.showAddTodoPopup, actions: {
+        popover(isPresented: viewModel.projectedValue.showAddTodoPopup) {
             AddTodoSheetView(
                 dayId: viewModel.projectedValue.dayId.wrappedValue,
                 todos: viewModel.projectedValue.todos,
                 showPopup: viewModel.projectedValue.showAddTodoPopup,
                 errorPopup: viewModel.projectedValue.showErrorPopup
             )
-        })
+        }
     }
 
     @ViewBuilder
