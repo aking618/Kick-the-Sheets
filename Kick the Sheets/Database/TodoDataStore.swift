@@ -242,7 +242,7 @@ public class TodoDataStore: TodoService {
 
 extension TodoDataStore {
     func createDemoDayRecords() {
-        let days = generateDays(numDays: 20)
+        let days = generateDays(numDays: 25)
 
         guard let database = db else { return }
 

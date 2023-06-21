@@ -223,7 +223,6 @@
 		ED81A0F3298321A700556661 = {
 			isa = PBXGroup;
 			children = (
-				ED3166712A00B467003DB752 /* DeleteIconView.swift */,
 				ED81A0FE298321A700556661 /* Kick the Sheets */,
 				ED81A10F298321A800556661 /* Kick the SheetsTests */,
 				ED81A119298321A800556661 /* Kick the SheetsUITests */,
@@ -359,6 +358,7 @@
 		ED81A1532983256300556661 /* TodoView */ = {
 			isa = PBXGroup;
 			children = (
+				ED3166712A00B467003DB752 /* DeleteIconView.swift */,
 				ED4CE53D2991A998005A4737 /* AddTodoSheetView.swift */,
 				ED81A1482983247800556661 /* DayView.swift */,
 				ED81A15B298862EC00556661 /* TodoRow.swift */,
@@ -739,12 +739,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Kick the Sheets/Preview Content\"";
 				DEVELOPMENT_TEAM = P649CF844Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Kick-the-Sheets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Kicking the Sheets";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -755,7 +757,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ayrenking.Kicking-the-Sheets";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -769,12 +771,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Kick the Sheets/Preview Content\"";
 				DEVELOPMENT_TEAM = P649CF844Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Kick-the-Sheets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Kicking the Sheets";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
@@ -785,7 +789,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ayrenking.Kicking-the-Sheets";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
