@@ -8,19 +8,19 @@
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel()
+    @EnvironmentObject var appState: AppState
 
     @ViewBuilder
     private var tabView: some View {
-        switch viewModel.selectedTab {
+        switch appState.selectedTab {
         case .home:
             DayView()
                 .tag(Tab.home)
                 .transition(.leadingSlide)
         case .calendar:
-            Home(viewModel: HomeViewModel(days: $viewModel.days))
+            Home(viewModel: HomeViewModel(days: $appState.days))
                 .tag(Tab.calendar)
-                .transition(viewModel.calendarTransition)
+                .transition(appState.calendarTransition)
         case .settings:
             SettingsView()
                 .tag(Tab.settings)
@@ -29,8 +29,8 @@ struct ContentView: View {
     }
 
     @ViewBuilder private var bottomNavBar: some View {
-        BottomNavigationBar(selectedTab: $viewModel.selectedTab, transition: $viewModel.calendarTransition)
-            .background(AnimatedIndicator(selectedTab: $viewModel.selectedTab))
+        BottomNavigationBar()
+            .background(AnimatedIndicator(selectedTab: $appState.selectedTab))
             .padding(.horizontal)
     }
 
@@ -43,7 +43,6 @@ struct ContentView: View {
             bottomNavBar
         }
         .ignoresSafeArea(.keyboard)
-        .environmentObject(viewModel)
     }
 }
 

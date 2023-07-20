@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var viewModel: ContentViewModel
+    @EnvironmentObject var appState: AppState
+
     @StateObject var settingViewModel = SettingsViewModel()
 
     @ViewBuilder
@@ -34,7 +35,7 @@ struct SettingsView: View {
         BaseView {
             VStack {
                 header
-                    .deleteAllDataAlert($settingViewModel.showDeleteDataPopup, viewModel: viewModel)
+                    .deleteAllDataAlert($settingViewModel.showDeleteDataPopup, viewModel: appState)
                 options
                     .aboutPagePopup($settingViewModel.showAboutPopup)
             }

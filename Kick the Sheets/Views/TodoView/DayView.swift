@@ -9,14 +9,14 @@ import PopupView
 import SwiftUI
 
 struct DayView: View {
-    @EnvironmentObject var contentVM: ContentViewModel
+    @EnvironmentObject var appState: AppState
 
     @State var searchText: String = ""
     @State var showAddTodoPopup: Bool = false
     @State var showErrorPopup: Bool = false
 
     var filteredTodos: [Int] {
-        return searchText.isEmpty ? contentVM.todosForToday.enumerated().map { i, _ in i } : contentVM.todosForToday.enumerated().compactMap { index, todo in
+        return searchText.isEmpty ? appState.todosForToday.enumerated().map { i, _ in i } : appState.todosForToday.enumerated().compactMap { index, todo in
             todo.description.caseInsensitiveContains(searchText) ? index : nil
         }
     }
@@ -31,7 +31,7 @@ struct DayView: View {
 
     @ViewBuilder
     private var subHeader: some View {
-        Text("🔥 \(Todo.completedCount(from: contentVM.todosForToday)) / \(contentVM.todosForToday.count) completed!")
+        Text("🔥 \(Todo.completedCount(from: appState.todosForToday)) / \(appState.todosForToday.count) completed!")
             .ktsFont(.button)
             .foregroundColor(KTSColors.text.color)
             .padding(.bottom)
@@ -63,14 +63,14 @@ struct DayView: View {
     @ViewBuilder
     private var todoList: some View {
         List(filteredTodos, id: \.hashValue) { index in
-            TodoRow(todo: $contentVM.todosForToday[index],
+            TodoRow(todo: $appState.todosForToday[index],
                     doneAction: { updateAction(index: index) },
                     deleteAction: { deleteAction(index: index) })
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
-        .animation(.spring(), value: contentVM.todosForToday)
+        .animation(.spring(), value: appState.todosForToday)
         .modifier(
             EmptyDataModifier(
                 items: filteredTodos,
@@ -95,7 +95,7 @@ struct DayView: View {
             }
             .padding(.top)
         }
-        .addTodoPopup($showAddTodoPopup, dayId: contentVM.currentDayId, todos: $contentVM.todosForToday, errorPopup: $showErrorPopup)
+        .addTodoPopup($showAddTodoPopup, dayId: appState.currentDayId, todos: $appState.todosForToday, errorPopup: $showErrorPopup)
         .errorPopup($showErrorPopup)
     }
 }
@@ -111,9 +111,9 @@ extension DayView {
 
     func deleteAction(index: Int) {
         print("Deleting todo")
-        if TodoDataStore.shared.deleteTodo(entry: contentVM.todosForToday[index]) {
+        if TodoDataStore.shared.deleteTodo(entry: appState.todosForToday[index]) {
             print("Deleted todo")
-            contentVM.todosForToday.remove(at: index)
+            appState.todosForToday.remove(at: index)
         } else {
             print("Unable to delete todo")
         }
@@ -121,14 +121,14 @@ extension DayView {
 
     func updateAction(index: Int) {
         print("Completing todo")
-        contentVM.todosForToday[index].status.toggle()
-        if TodoDataStore.shared.updateTodo(entry: contentVM.todosForToday[index]) {
+        appState.todosForToday[index].status.toggle()
+        if TodoDataStore.shared.updateTodo(entry: appState.todosForToday[index]) {
             print("Updated todo")
         } else {
             print("Unable to update todo")
         }
 
-        _ = TodoDataStore.shared.updateDayCompletion(for: contentVM.currentDayId, with: Day.isDayComplete(contentVM.todosForToday))
+        _ = TodoDataStore.shared.updateDayCompletion(for: appState.currentDayId, with: Day.isDayComplete(appState.todosForToday))
     }
 }
 

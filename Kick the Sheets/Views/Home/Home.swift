@@ -9,8 +9,6 @@ import SelectableCalendarView
 import SwiftUI
 
 struct Home: View {
-    @EnvironmentObject private var launchScreenState: LaunchScreenStateManager
-
     @StateObject var viewModel: HomeViewModel
 
     @ViewBuilder
