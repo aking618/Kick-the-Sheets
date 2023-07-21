@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct AddTodoSheetView: View {
+    @EnvironmentObject var appState: AppState
+
     let topPadding: CGFloat = 100
     let bgColor: Color = KTSColors.background.color
 
@@ -84,8 +86,8 @@ struct AddTodoSheetView: View {
                 errorPopup.toggle()
                 return
             }
-            if let todoId = TodoDataStore.shared.insertTodoForDayById(description: textFieldText, for: dayId) {
-                let todo = Todo(id: todoId, dayId: dayId, description: textFieldText, status: false)
+            if let todoId = appState.todoService.insertTodo(description: textFieldText, for: appState.currentDayId) {
+                let todo = Todo(id: todoId, dayId: appState.currentDayId, description: textFieldText, status: false)
                 todos.append(todo)
                 showPopup.toggle()
             }

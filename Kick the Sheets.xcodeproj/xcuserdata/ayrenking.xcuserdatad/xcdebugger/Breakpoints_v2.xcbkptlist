@@ -23,54 +23,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8D2B1D72-85B0-496C-AB3A-B13CE292BFA2"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Kick the Sheets/Extensions/View+Popup.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "aboutPagePopup(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "8D2B1D72-85B0-496C-AB3A-B13CE292BFA2 - f6fe751598bb66c6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "SwiftUI.View.aboutPagePopup(SwiftUI.Binding&lt;Swift.Bool&gt;) -&gt; some"
-                  moduleName = "Kick the Sheets"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Extensions/View+Popup.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "232">
-               </Location>
-               <Location
-                  uuid = "8D2B1D72-85B0-496C-AB3A-B13CE292BFA2 - 623c5fe7050962b0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.Alert in SwiftUI.View.aboutPagePopup(SwiftUI.Binding&lt;Swift.Bool&gt;) -&gt; some"
-                  moduleName = "Kick the Sheets"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Extensions/View+Popup.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "76">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F8AEAB06-88EA-4B9A-B7DA-1A218F42E5C6"
             shouldBeEnabled = "No"
             ignoreCount = "0"

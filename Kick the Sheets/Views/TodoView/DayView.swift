@@ -95,7 +95,14 @@ struct DayView: View {
             }
             .padding(.top)
         }
-        .addTodoPopup($showAddTodoPopup, dayId: appState.currentDayId, todos: $appState.todosForToday, errorPopup: $showErrorPopup)
+        .sheet(isPresented: $showAddTodoPopup) {
+            AddTodoSheetView(
+                dayId: appState.currentDayId,
+                todos: $appState.todosForToday,
+                showPopup: $showAddTodoPopup,
+                errorPopup: $showErrorPopup
+            )
+        }
         .errorPopup($showErrorPopup)
     }
 }
@@ -111,7 +118,7 @@ extension DayView {
 
     func deleteAction(index: Int) {
         print("Deleting todo")
-        if TodoDataStore.shared.deleteTodo(entry: appState.todosForToday[index]) {
+        if appState.todoService.deleteTodo(entry: appState.todosForToday[index]) {
             print("Deleted todo")
             appState.todosForToday.remove(at: index)
         } else {
@@ -122,13 +129,13 @@ extension DayView {
     func updateAction(index: Int) {
         print("Completing todo")
         appState.todosForToday[index].status.toggle()
-        if TodoDataStore.shared.updateTodo(entry: appState.todosForToday[index]) {
+        if appState.todoService.updateTodo(entry: appState.todosForToday[index]) {
             print("Updated todo")
         } else {
             print("Unable to update todo")
         }
 
-        _ = TodoDataStore.shared.updateDayCompletion(for: appState.currentDayId, with: Day.isDayComplete(appState.todosForToday))
+        _ = appState.todoService.updateDayCompletion(for: appState.currentDayId, with: Day.isDayComplete(appState.todosForToday))
     }
 }
 

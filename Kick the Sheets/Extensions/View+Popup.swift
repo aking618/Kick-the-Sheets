@@ -10,32 +10,6 @@ import SwiftUI
 
 extension View {
     @ViewBuilder
-    func aboutPagePopup(_ shouldShow: Binding<Bool>) -> some View {
-        alert(isPresented: shouldShow) {
-            Alert(
-                title: Text(AboutStrings.title.rawValue),
-                message: Text(AboutStrings.message.rawValue),
-                dismissButton: .cancel()
-            )
-        }
-    }
-
-    @ViewBuilder
-    func deleteAllDataAlert(_ shouldShow: Binding<Bool>, viewModel: ContentViewModel) -> some View {
-        alert(isPresented: shouldShow) {
-            Alert(
-                title: Text("Delete All Data"),
-                message: Text("Are you sure you want to delete all of your data?"),
-                primaryButton: .cancel(Text("Cancel")),
-                secondaryButton: .destructive(Text("Delete"), action: {
-                    TodoDataStore.shared.deleteAllEntries()
-                    viewModel.update()
-                })
-            )
-        }
-    }
-
-    @ViewBuilder
     func addTodoPopup(
         _ isPresented: Binding<Bool>,
         dayId: Int64,

@@ -18,7 +18,7 @@ struct ContentView: View {
                 .tag(Tab.home)
                 .transition(.leadingSlide)
         case .calendar:
-            Home(viewModel: HomeViewModel(days: $appState.days))
+            Home(viewModel: HomeViewModel(todoService: appState.todoService, days: $appState.days))
                 .tag(Tab.calendar)
                 .transition(appState.calendarTransition)
         case .settings:

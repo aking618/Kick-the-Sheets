@@ -10,20 +10,19 @@ import SQLite
 
 protocol TodoService {
     func insertDay() -> Int64?
-    func insertTodoForDayById(description: String, for dayId: Int64) -> Int64?
+    func insertTodo(description: String, for dayId: Int64) -> Int64?
     func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool
     func updateTodo(entry: Todo) -> Bool
-    func getTodosForDayById(dayId: Int64) -> [Todo]
-    func getAllDays() -> [Day]
+    func retrieveTodos(for dayId: Int64) -> [Todo]
+    func retrieveDays() -> [Day]
     func deleteTodo(entry: Todo) -> Bool
+    func deleteAllEntries()
 }
 
-public class TodoDataStore: TodoService {
+class GeneralTodoService: TodoService {
     static let DIR_TASK_DB = "TaskDB"
     static let STORE_NAME = "task.sqlite3"
     static let DEMO_STORE_NAME = "taskDemo.sqlite3"
-
-    public static let shared = TodoDataStore()
 
     private var db: Connection? = nil
 
@@ -94,7 +93,7 @@ public class TodoDataStore: TodoService {
         }
     }
 
-    internal func insertTodoForDayById(description: String, for dayId: Int64) -> Int64? {
+    internal func insertTodo(description: String, for dayId: Int64) -> Int64? {
         guard let database = db else { return nil }
 
         let insert = dbTodo.table.insert(
@@ -114,7 +113,7 @@ public class TodoDataStore: TodoService {
 
     // MARK: - Retrieve
 
-    internal func getTodosForDayById(dayId: Int64) -> [Todo] {
+    internal func retrieveTodos(for dayId: Int64) -> [Todo] {
         var todos = [Todo]()
         guard let database = db else { return todos }
 
@@ -135,7 +134,7 @@ public class TodoDataStore: TodoService {
         return todos
     }
 
-    internal func getAllDays() -> [Day] {
+    internal func retrieveDays() -> [Day] {
         var days: [Day] = []
         guard let database = db else { return [] }
 
@@ -240,7 +239,7 @@ public class TodoDataStore: TodoService {
 
 // MARK: - DEMO DATA
 
-extension TodoDataStore {
+extension GeneralTodoService {
     func createDemoDayRecords() {
         let days = generateDays(numDays: 25)
 
@@ -271,7 +270,7 @@ extension TodoDataStore {
         ]
 
         for task in tasks {
-            _ = insertTodoForDayById(description: task, for: dayId)
+            _ = insertTodo(description: task, for: dayId)
         }
     }
 
