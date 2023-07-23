@@ -10,6 +10,21 @@ import SwiftUI
 struct ContentView: View {
     @EnvironmentObject var appState: AppState
 
+    var body: some View {
+        VStack(spacing: 0) {
+            tabView
+                .padding(.bottom)
+                .background(KTSColors.background.color)
+            Divider()
+            bottomNavBar
+        }
+        .ignoresSafeArea(.keyboard)
+    }
+}
+
+// MARK: - Views
+
+extension ContentView {
     @ViewBuilder
     private var tabView: some View {
         switch appState.selectedTab {
@@ -32,17 +47,6 @@ struct ContentView: View {
         BottomNavigationBar()
             .background(AnimatedIndicator(selectedTab: $appState.selectedTab))
             .padding(.horizontal)
-    }
-
-    var body: some View {
-        VStack(spacing: 0) {
-            tabView
-                .padding(.bottom)
-                .background(KTSColors.background.color)
-            Divider()
-            bottomNavBar
-        }
-        .ignoresSafeArea(.keyboard)
     }
 }
 
