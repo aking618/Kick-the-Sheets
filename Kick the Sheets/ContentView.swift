@@ -1,9 +1,9 @@
-////
-////  ContentView.swift
-////  Kick the Sheets
-////
-////  Created by Ayren King on 1/26/23.
-////
+//
+//  ContentView.swift
+//  Kick the Sheets
+//
+//  Created by Ayren King on 1/26/23.
+//
 
 import SwiftUI
 
@@ -49,8 +49,5 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-
-        ContentView()
-            .environment(\.colorScheme, .dark)
     }
 }
