@@ -9,7 +9,7 @@ import SwiftUI
 
 struct KTSFont: ViewModifier {
     @Environment(\.sizeCategory) var sizeCategory
-    
+
     public enum TextStyle {
         case title
         case title2
@@ -19,14 +19,14 @@ struct KTSFont: ViewModifier {
         case caption
         case button
     }
-    
+
     var textStyle: TextStyle
 
     func body(content: Content) -> some View {
         let scaledSize = UIFontMetrics.default.scaledValue(for: size)
         return content.font(.custom(fontName, size: scaledSize))
     }
-    
+
     private var fontName: String {
         switch textStyle {
         case .title, .title2, .title3:
@@ -39,7 +39,7 @@ struct KTSFont: ViewModifier {
             return "Andika-Italic"
         }
     }
-    
+
     private var size: CGFloat {
         switch textStyle {
         case .title:

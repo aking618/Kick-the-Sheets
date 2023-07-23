@@ -12,6 +12,6 @@ extension String {
         let trimmedString = otherString.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmedString.isEmpty { return true }
 
-        return self.lowercased().contains(trimmedString.lowercased())
+        return lowercased().contains(trimmedString.lowercased())
     }
 }
