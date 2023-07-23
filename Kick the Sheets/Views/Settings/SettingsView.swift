@@ -8,9 +8,40 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @EnvironmentObject var viewModel: ContentViewModel
+    @EnvironmentObject var appState: AppState
     @StateObject var settingViewModel = SettingsViewModel()
 
+    var body: some View {
+        BaseView {
+            VStack {
+                header
+                options
+            }
+        }
+        .foregroundColor(KTSColors.text.color)
+        .alert(AboutStrings.title.rawValue, isPresented: $settingViewModel.showAboutPopup) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(AboutStrings.message.rawValue)
+        }
+
+        .alert("Delete All Data", isPresented: $settingViewModel.showDeleteDataPopup) {
+            Button("Cancel", role: .cancel) {}
+            Button("Delete", role: .destructive) {
+                appState.todoService.deleteAllEntries()
+                appState.updateAppState()
+            }
+        }
+
+        .onAppear {
+            settingViewModel.setup()
+        }
+    }
+}
+
+// MARK: - Views
+
+extension SettingsView {
     @ViewBuilder
     private var header: some View {
         Text("Settings")
@@ -27,21 +58,6 @@ struct SettingsView: View {
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
-        }
-    }
-
-    var body: some View {
-        BaseView {
-            VStack {
-                header
-                    .deleteAllDataAlert($settingViewModel.showDeleteDataPopup, viewModel: viewModel)
-                options
-                    .aboutPagePopup($settingViewModel.showAboutPopup)
-            }
-        }
-        .foregroundColor(KTSColors.text.color)
-        .onAppear {
-            settingViewModel.setup()
         }
     }
 }

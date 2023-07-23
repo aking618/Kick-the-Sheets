@@ -9,17 +9,12 @@ import SwiftUI
 
 @main
 struct Kick_the_SheetsApp: App {
-    @StateObject var launchScreenState = LaunchScreenStateManager()
+    @StateObject var appState: AppState = .init()
 
     var body: some Scene {
         WindowGroup {
-            ZStack {
-                ContentView()
-
-                if launchScreenState.state != .finished {
-                    LaunchScreenView()
-                }
-            }.environmentObject(launchScreenState)
+            ContentView()
+                .environmentObject(appState)
         }
     }
 }

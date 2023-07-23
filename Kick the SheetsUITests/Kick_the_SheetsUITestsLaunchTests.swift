@@ -8,7 +8,6 @@
 import XCTest
 
 final class Kick_the_SheetsUITestsLaunchTests: XCTestCase {
-
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
     }

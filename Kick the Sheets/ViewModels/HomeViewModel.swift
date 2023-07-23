@@ -8,13 +8,15 @@
 import SwiftUI
 
 class HomeViewModel: ObservableObject {
-    @Published var viewDidLoad: Bool = false
+    let todoService: TodoService
 
+    @Published var viewDidLoad: Bool = false
     @Binding var days: [Day]
     @Published var dateSelected: Date = .init()
 
     // broken
-    init(days: Binding<[Day]>) {
+    init(todoService: TodoService, days: Binding<[Day]>) {
+        self.todoService = todoService
         _days = days
     }
 
@@ -44,7 +46,7 @@ class HomeViewModel: ObservableObject {
     }
 
     func refreshDays() {
-        days = TodoDataStore.shared.getAllDays()
+        days = todoService.retrieveDays()
     }
 
     func viewDidLoad(completion: @escaping () -> Void) {
@@ -62,13 +64,13 @@ extension HomeViewModel {
 
     var totalCountForSelectedDate: Int {
         guard let dayForSelectedDate else { return 0 }
-        let todos = TodoDataStore.shared.getTodosForDayById(dayId: dayForSelectedDate.id)
+        let todos = todoService.retrieveTodos(for: dayForSelectedDate.id)
         return todos.count
     }
 
     var completedCountForSelectedDate: Int {
         guard let dayForSelectedDate else { return 0 }
-        let todos = TodoDataStore.shared.getTodosForDayById(dayId: dayForSelectedDate.id)
+        let todos = todoService.retrieveTodos(for: dayForSelectedDate.id)
         return Todo.completedCount(from: todos)
     }
 }

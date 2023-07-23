@@ -23,47 +23,62 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8D2B1D72-85B0-496C-AB3A-B13CE292BFA2"
+            uuid = "F8AEAB06-88EA-4B9A-B7DA-1A218F42E5C6"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Kick the Sheets/Extensions/View+Popup.swift"
+            filePath = "Kick the Sheets/LaunchScreen/LaunchScreenStateManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
-            landmarkName = "aboutPagePopup(_:)"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "dismiss()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8D2B1D72-85B0-496C-AB3A-B13CE292BFA2 - f6fe751598bb66c6"
+                  uuid = "F8AEAB06-88EA-4B9A-B7DA-1A218F42E5C6 - d63d53ce96bf640f"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "SwiftUI.View.aboutPagePopup(SwiftUI.Binding&lt;Swift.Bool&gt;) -&gt; some"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Kick_the_Sheets.LaunchScreenStateManager.dismiss() -&gt; ()"
                   moduleName = "Kick the Sheets"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Extensions/View+Popup.swift"
+                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/LaunchScreen/LaunchScreenStateManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "14"
-                  endingLineNumber = "14"
-                  offsetFromSymbolStart = "232">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "60">
                </Location>
                <Location
-                  uuid = "8D2B1D72-85B0-496C-AB3A-B13CE292BFA2 - 623c5fe7050962b0"
+                  uuid = "F8AEAB06-88EA-4B9A-B7DA-1A218F42E5C6 - 9c6b44c0dfb0a055"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.Alert in SwiftUI.View.aboutPagePopup(SwiftUI.Binding&lt;Swift.Bool&gt;) -&gt; some"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in Kick_the_Sheets.LaunchScreenStateManager.dismiss() -&gt; ()"
                   moduleName = "Kick the Sheets"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Extensions/View+Popup.swift"
+                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/LaunchScreen/LaunchScreenStateManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "16"
-                  endingLineNumber = "16"
-                  offsetFromSymbolStart = "76">
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "F8AEAB06-88EA-4B9A-B7DA-1A218F42E5C6 - 962ff459a0734f8a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Kick_the_Sheets.LaunchScreenStateManager.dismiss() -&gt; ()"
+                  moduleName = "Kick the Sheets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/LaunchScreen/LaunchScreenStateManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "52">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -1,26 +1,26 @@
-////
-////  ContentView.swift
-////  Kick the Sheets
-////
-////  Created by Ayren King on 1/26/23.
-////
+//
+//  ContentView.swift
+//  Kick the Sheets
+//
+//  Created by Ayren King on 1/26/23.
+//
 
 import SwiftUI
 
 struct ContentView: View {
-    @StateObject private var viewModel = ContentViewModel()
+    @EnvironmentObject var appState: AppState
 
     @ViewBuilder
     private var tabView: some View {
-        switch viewModel.selectedTab {
+        switch appState.selectedTab {
         case .home:
             DayView()
                 .tag(Tab.home)
                 .transition(.leadingSlide)
         case .calendar:
-            Home(viewModel: HomeViewModel(days: $viewModel.days))
+            Home(viewModel: HomeViewModel(todoService: appState.todoService, days: $appState.days))
                 .tag(Tab.calendar)
-                .transition(viewModel.calendarTransition)
+                .transition(appState.calendarTransition)
         case .settings:
             SettingsView()
                 .tag(Tab.settings)
@@ -29,8 +29,8 @@ struct ContentView: View {
     }
 
     @ViewBuilder private var bottomNavBar: some View {
-        BottomNavigationBar(selectedTab: $viewModel.selectedTab, transition: $viewModel.calendarTransition)
-            .background(AnimatedIndicator(selectedTab: $viewModel.selectedTab))
+        BottomNavigationBar()
+            .background(AnimatedIndicator(selectedTab: $appState.selectedTab))
             .padding(.horizontal)
     }
 
@@ -43,15 +43,11 @@ struct ContentView: View {
             bottomNavBar
         }
         .ignoresSafeArea(.keyboard)
-        .environmentObject(viewModel)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-
-        ContentView()
-            .environment(\.colorScheme, .dark)
     }
 }
