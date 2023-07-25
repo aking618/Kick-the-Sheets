@@ -12,6 +12,66 @@ struct CircularProgressView: View {
     let total: Int
     let lineWidth: CGFloat
 
+    init(progress: Int, total: Int, _ lineWidth: CGFloat = 10) {
+        self.progress = progress
+        self.total = total
+        self.lineWidth = lineWidth
+    }
+
+    var body: some View {
+        ZStack {
+            incompleteCircle
+            completedCircle
+            percentageIndicator
+        }
+        .frame(height: 125)
+    }
+}
+
+// MARK: - Views
+
+extension CircularProgressView {
+    @ViewBuilder
+    private var incompleteCircle: some View {
+        Circle()
+            .stroke(
+                KTSColors.burntSienna.color.opacity(0.5),
+                lineWidth: lineWidth
+            )
+    }
+
+    @ViewBuilder
+    private var completedCircle: some View {
+        Circle()
+            .trim(from: 0, to: percentage)
+            .stroke(
+                KTSColors.persianGreen.color,
+                style: StrokeStyle(
+                    lineWidth: lineWidth,
+                    lineCap: .round
+                )
+            )
+            .rotationEffect(.degrees(-90))
+            .animation(.easeOut, value: progress)
+    }
+
+    @ViewBuilder
+    private var percentageIndicator: some View {
+        VStack {
+            Text(percentageString)
+                .foregroundColor(KTSColors.text.color)
+                .ktsFont(.title)
+
+            Text("\(progress)/\(total)")
+                .foregroundColor(KTSColors.text.color)
+                .ktsFont(.title3)
+        }
+    }
+}
+
+// MARK: - Computed Properties
+
+extension CircularProgressView {
     var percentage: Double {
         guard total > 0 else { return 0 }
 
@@ -23,44 +83,6 @@ struct CircularProgressView: View {
 
         let percentage = percentage * 100
         return "\(percentage.formatted(.number.precision(.fractionLength(0))))%"
-    }
-
-    init(progress: Int, total: Int, _ lineWidth: CGFloat = 10) {
-        self.progress = progress
-        self.total = total
-        self.lineWidth = lineWidth
-    }
-
-    var body: some View {
-        ZStack {
-            Circle()
-                .stroke(
-                    KTSColors.burntSienna.color.opacity(0.5),
-                    lineWidth: lineWidth
-                )
-            Circle()
-                .trim(from: 0, to: percentage)
-                .stroke(
-                    KTSColors.persianGreen.color,
-                    style: StrokeStyle(
-                        lineWidth: lineWidth,
-                        lineCap: .round
-                    )
-                )
-                .rotationEffect(.degrees(-90))
-                .animation(.easeOut, value: progress)
-
-            VStack {
-                Text(percentageString)
-                    .foregroundColor(KTSColors.text.color)
-                    .ktsFont(.title)
-
-                Text("\(progress)/\(total)")
-                    .foregroundColor(KTSColors.text.color)
-                    .ktsFont(.title3)
-            }
-        }
-        .frame(height: 125)
     }
 }
 

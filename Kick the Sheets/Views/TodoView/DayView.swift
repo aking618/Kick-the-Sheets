@@ -15,12 +15,34 @@ struct DayView: View {
     @State var showAddTodoPopup: Bool = false
     @State var showErrorPopup: Bool = false
 
-    var filteredTodos: [Int] {
-        return searchText.isEmpty ? appState.todosForToday.enumerated().map { i, _ in i } : appState.todosForToday.enumerated().compactMap { index, todo in
-            todo.description.caseInsensitiveContains(searchText) ? index : nil
-        }
-    }
+    var body: some View {
+        BaseView {
+            VStack(alignment: .center, spacing: 15) {
+                header
+                subHeader
+                searchBar
+                todoList
+                Spacer()
 
+                RoundedButton("Add todo", action: toggleTodoPopup)
+            }
+            .padding(.top)
+        }
+        .sheet(isPresented: $showAddTodoPopup) {
+            AddTodoSheetView(
+                dayId: appState.currentDayId,
+                todos: $appState.todosForToday,
+                showPopup: $showAddTodoPopup,
+                errorPopup: $showErrorPopup
+            )
+        }
+        .errorPopup($showErrorPopup)
+    }
+}
+
+// MARK: - Views
+
+extension DayView {
     @ViewBuilder
     private var header: some View {
         Text("Day \(Date().calendarDay)")
@@ -81,31 +103,19 @@ struct DayView: View {
             )
         )
     }
+}
 
-    var body: some View {
-        BaseView {
-            VStack(alignment: .center, spacing: 15) {
-                header
-                subHeader
-                searchBar
-                todoList
-                Spacer()
+// MARK: - Computed Properties
 
-                RoundedButton("Add todo", action: toggleTodoPopup)
-            }
-            .padding(.top)
+extension DayView {
+    var filteredTodos: [Int] {
+        return searchText.isEmpty ? appState.todosForToday.enumerated().map { i, _ in i } : appState.todosForToday.enumerated().compactMap { index, todo in
+            todo.description.caseInsensitiveContains(searchText) ? index : nil
         }
-        .sheet(isPresented: $showAddTodoPopup) {
-            AddTodoSheetView(
-                dayId: appState.currentDayId,
-                todos: $appState.todosForToday,
-                showPopup: $showAddTodoPopup,
-                errorPopup: $showErrorPopup
-            )
-        }
-        .errorPopup($showErrorPopup)
     }
 }
+
+// MARK: - Actions
 
 extension DayView {
     func toggleTodoPopup() {
