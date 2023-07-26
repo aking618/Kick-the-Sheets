@@ -20,7 +20,7 @@ struct TodoRow: View {
             }
 
             Text(todo.description)
-                .ktsFont(.title3)
+                .ktsFont(.body)
                 .foregroundColor(KTSColors.text.color)
                 .strikethrough(todo.status)
                 .frame(maxWidth: .infinity, alignment: .leading)
