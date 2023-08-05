@@ -19,20 +19,8 @@ struct SettingsView: View {
             }
         }
         .foregroundColor(KTSColors.text.color)
-        .alert(AboutStrings.title.rawValue, isPresented: $settingViewModel.showAboutPopup) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text(AboutStrings.message.rawValue)
-        }
-
-        .alert("Delete All Data", isPresented: $settingViewModel.showDeleteDataPopup) {
-            Button("Cancel", role: .cancel) {}
-            Button("Delete", role: .destructive) {
-                appState.todoService.deleteAllEntries()
-                appState.updateAppState()
-            }
-        }
-
+        .aboutAlert(isPresented: $settingViewModel.showAboutPopup)
+        .deleteAllDataAlert(isPresented: $settingViewModel.showDeleteDataPopup, appState)
         .onAppear {
             settingViewModel.setup()
         }
@@ -58,6 +46,30 @@ extension SettingsView {
             }
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
+        }
+    }
+}
+
+// MARK: - Alerts
+
+private extension View {
+    @ViewBuilder
+    func aboutAlert(isPresented: Binding<Bool>) -> some View {
+        alert(AboutStrings.title.rawValue, isPresented: isPresented) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(AboutStrings.message.rawValue)
+        }
+    }
+
+    @ViewBuilder
+    func deleteAllDataAlert(isPresented: Binding<Bool>, _ appState: AppState) -> some View {
+        alert("Delete All Data", isPresented: isPresented) {
+            Button("Cancel", role: .cancel) {}
+            Button("Delete", role: .destructive) {
+                appState.todoService.deleteAllEntries()
+                appState.updateAppState()
+            }
         }
     }
 }

@@ -21,6 +21,20 @@ struct AddTodoSheetView: View {
     @State var textFieldText: String = ""
     @FocusState var focusField: Bool
 
+    var body: some View {
+        ZStack {
+            background
+            formWrapper
+        }
+        .onAppear {
+            focusField = true
+        }
+    }
+}
+
+// MARK: - Views
+
+extension AddTodoSheetView {
     @ViewBuilder
     private var background: some View {
         bgColor.cornerRadius(40)
@@ -80,32 +94,27 @@ struct AddTodoSheetView: View {
 
     @ViewBuilder
     private var addTodoButton: some View {
-        RoundedButton("Submit", backgroundColor: .persianGreen) {
-            // TODO: move action to view model
-            guard !textFieldText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-                errorPopup.toggle()
-                return
-            }
-            if let todoId = appState.todoService.insertTodo(description: textFieldText, for: appState.currentDayId) {
-                let todo = Todo(id: todoId, dayId: appState.currentDayId, description: textFieldText, status: false)
-                todos.append(todo)
-                showPopup.toggle()
-            }
-        }
+        RoundedButton("Submit", backgroundColor: .persianGreen, action: handleAddTodo)
     }
 
     @ViewBuilder
     private var cancelButton: some View {
         RoundedButton("Cancel", backgroundColor: .burntSienna) { showPopup.toggle() }
     }
+}
 
-    var body: some View {
-        ZStack {
-            background
-            formWrapper
+// MARK: - Actions
+
+extension AddTodoSheetView {
+    private func handleAddTodo() {
+        guard !textFieldText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
+            errorPopup.toggle()
+            return
         }
-        .onAppear {
-            focusField = true
+        if let todoId = appState.todoService.insertTodo(description: textFieldText, for: appState.currentDayId) {
+            let todo = Todo(id: todoId, dayId: appState.currentDayId, description: textFieldText, status: false)
+            todos.append(todo)
+            showPopup.toggle()
         }
     }
 }

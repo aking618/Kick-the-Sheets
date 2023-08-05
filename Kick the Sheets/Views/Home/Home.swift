@@ -11,6 +11,25 @@ import SwiftUI
 struct Home: View {
     @StateObject var viewModel: HomeViewModel
 
+    var body: some View {
+        BaseView {
+            ScrollView {
+                VStack(alignment: .center) {
+                    header
+                    calendar
+                    footer
+                }
+            }
+        }
+        .refreshable {
+            viewModel.refreshDays()
+        }
+    }
+}
+
+// MARK: - Views
+
+extension Home {
     @ViewBuilder
     private var header: some View {
         Text("Kicking the Sheets")
@@ -48,21 +67,6 @@ struct Home: View {
             total: viewModel.totalCountForSelectedDate,
             15
         )
-    }
-
-    var body: some View {
-        BaseView {
-            ScrollView {
-                VStack(alignment: .center) {
-                    header
-                    calendar
-                    footer
-                }
-            }
-        }
-        .refreshable {
-            viewModel.refreshDays()
-        }
     }
 }
 
