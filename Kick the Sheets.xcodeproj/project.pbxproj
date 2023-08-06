@@ -173,7 +173,6 @@
 				EDE510472A1861C9003F8353 /* AboutStrings.swift */,
 				ED2A08502A11A5FF002AC216 /* SettingsOptionRow.swift */,
 				ED2B03FE2A0B2A8600AA8ABB /* SettingsOption.swift */,
-				ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -181,6 +180,7 @@
 		ED4CE5412992EF85005A4737 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */,
 				ED4CE5422992F04B005A4737 /* HomeViewModel.swift */,
 				ED010CE72A68ACA5000FFFB6 /* AppState.swift */,
 			);
