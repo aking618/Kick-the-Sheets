@@ -13,15 +13,13 @@ extension View {
     func addTodoPopup(
         _ isPresented: Binding<Bool>,
         dayId: Int64,
-        todos: Binding<[Todo]>,
-        errorPopup: Binding<Bool>
+        todos: Binding<[Todo]>
     ) -> some View {
         popover(isPresented: isPresented) {
             AddTodoSheetView(
                 dayId: dayId,
                 todos: todos,
-                showPopup: isPresented,
-                errorPopup: errorPopup
+                showPopup: isPresented
             )
         }
     }

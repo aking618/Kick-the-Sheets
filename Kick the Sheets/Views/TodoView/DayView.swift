@@ -13,7 +13,6 @@ struct DayView: View {
 
     @State var searchText: String = ""
     @State var showAddTodoPopup: Bool = false
-    @State var showErrorPopup: Bool = false
 
     var body: some View {
         BaseView {
@@ -32,11 +31,9 @@ struct DayView: View {
             AddTodoSheetView(
                 dayId: appState.currentDayId,
                 todos: $appState.todosForToday,
-                showPopup: $showAddTodoPopup,
-                errorPopup: $showErrorPopup
+                showPopup: $showAddTodoPopup
             )
         }
-        .errorPopup($showErrorPopup)
     }
 }
 
@@ -120,10 +117,6 @@ extension DayView {
 extension DayView {
     func toggleTodoPopup() {
         showAddTodoPopup.toggle()
-    }
-
-    func toggleErrorPopup() {
-        showErrorPopup.toggle()
     }
 
     func deleteAction(index: Int) {

@@ -16,8 +16,8 @@ struct AddTodoSheetView: View {
     var dayId: Int64
     @Binding var todos: [Todo]
     @Binding var showPopup: Bool
-    @Binding var errorPopup: Bool
 
+    @State var showInlineError: Bool = false
     @State var textFieldText: String = ""
     @FocusState var focusField: Bool
 
@@ -66,11 +66,19 @@ extension AddTodoSheetView {
         VStack {
             Text("Add Todo")
                 .ktsFont(.button)
+
             todoTextField
+
+            if showInlineError {
+                errorText
+            }
+
             addTodoButton
+
             cancelButton
         }
         .padding([.leading, .trailing])
+        .animation(.linear, value: showInlineError)
     }
 
     @ViewBuilder
@@ -93,6 +101,13 @@ extension AddTodoSheetView {
     }
 
     @ViewBuilder
+    private var errorText: some View {
+        Text("Todos cannot be empty.")
+            .ktsFont(.caption)
+            .foregroundColor(KTSColors.burntSienna.color)
+    }
+
+    @ViewBuilder
     private var addTodoButton: some View {
         RoundedButton("Submit", backgroundColor: .persianGreen, action: handleAddTodo)
     }
@@ -108,7 +123,7 @@ extension AddTodoSheetView {
 extension AddTodoSheetView {
     private func handleAddTodo() {
         guard !textFieldText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            errorPopup.toggle()
+            showInlineError.toggle()
             return
         }
         if let todoId = appState.todoService.insertTodo(description: textFieldText, for: appState.currentDayId) {
@@ -121,6 +136,7 @@ extension AddTodoSheetView {
 
 struct AddTodoSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTodoSheetView(dayId: 0, todos: .constant([]), showPopup: .constant(false), errorPopup: .constant(false))
+        AddTodoSheetView(dayId: 0, todos: .constant([]), showPopup: .constant(false))
+            .environmentObject(AppState())
     }
 }
