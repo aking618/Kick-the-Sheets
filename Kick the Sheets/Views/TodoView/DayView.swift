@@ -12,7 +12,6 @@ struct DayView: View {
     @EnvironmentObject var appState: AppState
 
     @State var searchText: String = ""
-    @State var showAddTodoPopup: Bool = false
 
     var body: some View {
         BaseView {
@@ -23,16 +22,17 @@ struct DayView: View {
                 todoList
                 Spacer()
 
-                RoundedButton("Add todo", action: toggleTodoPopup)
+                NavigationLink(value: DayTabDestinations.addForm) {
+                    RoundedButton("Add todo", action: { appState.navigate(to: DayTabDestinations.addForm) })
+                }
             }
             .padding(.top)
         }
-        .sheet(isPresented: $showAddTodoPopup) {
-            AddTodoSheetView(
-                dayId: appState.currentDayId,
-                todos: $appState.todosForToday,
-                showPopup: $showAddTodoPopup
-            )
+        .navigationDestination(for: DayTabDestinations.self) { dest in
+            switch dest {
+            case .addForm:
+                AddTodoSheetView().environmentObject(appState)
+            }
         }
     }
 }
@@ -115,10 +115,6 @@ extension DayView {
 // MARK: - Actions
 
 extension DayView {
-    func toggleTodoPopup() {
-        showAddTodoPopup.toggle()
-    }
-
     func deleteAction(index: Int) {
         print("Deleting todo")
         if appState.todoService.deleteTodo(entry: appState.todosForToday[index]) {
