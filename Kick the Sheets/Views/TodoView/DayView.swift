@@ -22,13 +22,13 @@ struct DayView: View {
                 todoList
                 Spacer()
 
-                NavigationLink(value: DayTabDestinations.addForm) {
-                    RoundedButton("Add todo", action: { appState.navigate(to: DayTabDestinations.addForm) })
+                NavigationLink(value: DayTabDestination.addForm) {
+                    RoundedButton("Add todo", action: { appState.navigate(to: DayTabDestination.addForm) })
                 }
             }
             .padding(.top)
         }
-        .navigationDestination(for: DayTabDestinations.self) { dest in
+        .navigationDestination(for: DayTabDestination.self) { dest in
             switch dest {
             case .addForm:
                 AddTodoSheetView().environmentObject(appState)

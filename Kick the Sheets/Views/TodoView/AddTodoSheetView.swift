@@ -19,7 +19,8 @@ struct AddTodoSheetView: View {
 
     var body: some View {
         BaseView {
-            formWrapper
+            todoForm
+                .padding(.bottom, 40)
         }
         .onAppear {
             focusField = true
@@ -30,19 +31,8 @@ struct AddTodoSheetView: View {
 // MARK: - Views
 
 extension AddTodoSheetView {
-    @ViewBuilder
-    private var formWrapper: some View {
-        VStack {
-            Spacer()
-            todoForm
-                .padding(.bottom, 40)
-            Spacer()
-        }
-    }
-
-    @ViewBuilder
     private var todoForm: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text("Add Todo")
                 .ktsFont(.button)
 
@@ -52,14 +42,14 @@ extension AddTodoSheetView {
                 errorText
             }
 
-            addTodoButton
-
-            cancelButton
+            VStack(spacing: 5) {
+                addTodoButton
+                cancelButton
+            }
         }
         .animation(.linear, value: showInlineError)
     }
 
-    @ViewBuilder
     private var todoTextField: some View {
         HStack {
             Image(systemName: "checklist")
@@ -78,23 +68,18 @@ extension AddTodoSheetView {
         .shadow(radius: 1)
     }
 
-    @ViewBuilder
     private var errorText: some View {
         Text("Todos cannot be empty.")
             .ktsFont(.caption)
             .foregroundColor(KTSColors.burntSienna.color)
     }
 
-    @ViewBuilder
     private var addTodoButton: some View {
         RoundedButton("Submit", backgroundColor: .persianGreen, action: handleAddTodo)
     }
 
-    @ViewBuilder
     private var cancelButton: some View {
-        RoundedButton("Cancel", backgroundColor: .burntSienna) {
-            appState.pop()
-        }
+        RoundedButton("Cancel", backgroundColor: .burntSienna, action: { appState.pop() })
     }
 }
 
