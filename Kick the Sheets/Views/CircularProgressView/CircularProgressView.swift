@@ -31,7 +31,6 @@ struct CircularProgressView: View {
 // MARK: - Views
 
 extension CircularProgressView {
-    @ViewBuilder
     private var incompleteCircle: some View {
         Circle()
             .stroke(
@@ -40,7 +39,6 @@ extension CircularProgressView {
             )
     }
 
-    @ViewBuilder
     private var completedCircle: some View {
         Circle()
             .trim(from: 0, to: percentage)
@@ -55,7 +53,6 @@ extension CircularProgressView {
             .animation(.easeOut, value: progress)
     }
 
-    @ViewBuilder
     private var percentageIndicator: some View {
         VStack {
             Text(percentageString)

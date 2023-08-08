@@ -67,5 +67,53 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "03ECAF92-4F08-4F30-8027-3C2DA0D68E90"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kick the Sheets/Views/TodoView/DayView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "03ECAF92-4F08-4F30-8027-3C2DA0D68E90 - 5179a72f9c2b3bd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of Kick_the_Sheets.DayView.header : some&gt;&gt;.0, &lt;&lt;opaque return type of Kick_the_Sheets.DayView.subHeader : some&gt;&gt;.0, &lt;&lt;opaque return type of Kick_the_Sheets.DayView.searchBar : some&gt;&gt;.0, &lt;&lt;opaque return type of Kick_the_Sheets.DayView.todoList : some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI.NavigationLink&lt;Kick_the_Sheets.RoundedButton, Swift.Never&gt;, Kick_the_Sheets.RoundedButton&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in Kick_the_Sheets.DayView.body.getter : some"
+                  moduleName = "Kick the Sheets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Views/TodoView/DayView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "996">
+               </Location>
+               <Location
+                  uuid = "03ECAF92-4F08-4F30-8027-3C2DA0D68E90 - f1feb53f91b63e66"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; Kick_the_Sheets.RoundedButton in closure #1 () -&gt; SwiftUI.TupleView&lt;(&lt;&lt;opaque return type of Kick_the_Sheets.DayView.header : some&gt;&gt;.0, &lt;&lt;opaque return type of Kick_the_Sheets.DayView.subHeader : some&gt;&gt;.0, &lt;&lt;opaque return type of Kick_the_Sheets.DayView.searchBar : some&gt;&gt;.0, &lt;&lt;opaque return type of Kick_the_Sheets.DayView.todoList : some&gt;&gt;.0, SwiftUI.Spacer, SwiftUI._ConditionalContent&lt;SwiftUI.NavigationLink&lt;Kick_the_Sheets.RoundedButton, Swift.Never&gt;, Kick_the_Sheets.RoundedButton&gt;)&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.padding(SwiftUI.Edge.Set, Swift.Optional&lt;CoreGraphics.CGFloat&gt;) -&gt; some&gt;&gt;.0 in Kick_the_Sheets.DayView.body.getter : some"
+                  moduleName = "Kick the Sheets"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ayrenking/dev/ios/Kick%20the%20Sheets/Kick%20the%20Sheets/Views/TodoView/DayView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "92">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

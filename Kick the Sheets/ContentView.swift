@@ -43,7 +43,7 @@ extension ContentView {
         }
     }
 
-    @ViewBuilder private var bottomNavBar: some View {
+    private var bottomNavBar: some View {
         BottomNavigationBar()
             .background(AnimatedIndicator(selectedTab: $appState.selectedTab))
             .padding(.horizontal)
@@ -53,5 +53,6 @@ extension ContentView {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            .environmentObject(AppState())
     }
 }

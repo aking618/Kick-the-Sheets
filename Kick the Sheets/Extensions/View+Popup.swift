@@ -9,24 +9,6 @@ import PopupView
 import SwiftUI
 
 extension View {
-    @ViewBuilder
-    func addTodoPopup(
-        _ isPresented: Binding<Bool>,
-        dayId: Int64,
-        todos: Binding<[Todo]>,
-        errorPopup: Binding<Bool>
-    ) -> some View {
-        popover(isPresented: isPresented) {
-            AddTodoSheetView(
-                dayId: dayId,
-                todos: todos,
-                showPopup: isPresented,
-                errorPopup: errorPopup
-            )
-        }
-    }
-
-    @ViewBuilder
     func errorPopup(_ shouldShow: Binding<Bool>) -> some View {
         popup(isPresented: shouldShow) {
             Text("New todos cannot be blank")

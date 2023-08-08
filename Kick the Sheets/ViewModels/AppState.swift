@@ -10,6 +10,7 @@ import SwiftUI
 class AppState: ObservableObject {
     let todoService: TodoService = GeneralTodoService()
 
+    @Published var path = NavigationPath()
     @Published var selectedTab: Tab = .home
     @Published var currentDayId: Int64 = 0
     @Published var todosForToday: [Todo] = []
@@ -39,5 +40,15 @@ class AppState: ObservableObject {
             self.currentDayId = currentDayId
             todosForToday = []
         }
+    }
+}
+
+extension AppState {
+    func navigate(to destination: any Hashable) {
+        path.append(destination)
+    }
+
+    func pop() {
+        path.removeLast()
     }
 }

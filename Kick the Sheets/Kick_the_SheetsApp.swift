@@ -13,8 +13,10 @@ struct Kick_the_SheetsApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environmentObject(appState)
+            NavigationStack(path: $appState.path) {
+                ContentView()
+                    .environmentObject(appState)
+            }
         }
     }
 }

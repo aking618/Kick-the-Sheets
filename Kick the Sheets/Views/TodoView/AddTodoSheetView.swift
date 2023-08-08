@@ -13,18 +13,14 @@ struct AddTodoSheetView: View {
     let topPadding: CGFloat = 100
     let bgColor: Color = KTSColors.background.color
 
-    var dayId: Int64
-    @Binding var todos: [Todo]
-    @Binding var showPopup: Bool
-    @Binding var errorPopup: Bool
-
+    @State var showInlineError: Bool = false
     @State var textFieldText: String = ""
     @FocusState var focusField: Bool
 
     var body: some View {
-        ZStack {
-            background
-            formWrapper
+        BaseView {
+            todoForm
+                .padding(.bottom, 40)
         }
         .onAppear {
             focusField = true
@@ -35,45 +31,25 @@ struct AddTodoSheetView: View {
 // MARK: - Views
 
 extension AddTodoSheetView {
-    @ViewBuilder
-    private var background: some View {
-        bgColor.cornerRadius(40)
-    }
-
-    @ViewBuilder
-    private var swipeIndicator: some View {
-        Color.black
-            .opacity(0.2)
-            .frame(width: 30, height: 6)
-            .clipShape(Capsule())
-            .padding(.top, 15)
-            .padding(.bottom, 10)
-    }
-
-    @ViewBuilder
-    private var formWrapper: some View {
-        VStack {
-            swipeIndicator
-            Spacer()
-            todoForm
-                .padding(.bottom, 40)
-            Spacer()
-        }
-    }
-
-    @ViewBuilder
     private var todoForm: some View {
-        VStack {
+        VStack(spacing: 20) {
             Text("Add Todo")
                 .ktsFont(.button)
+
             todoTextField
-            addTodoButton
-            cancelButton
+
+            if showInlineError {
+                errorText
+            }
+
+            VStack(spacing: 5) {
+                addTodoButton
+                cancelButton
+            }
         }
-        .padding([.leading, .trailing])
+        .animation(.linear, value: showInlineError)
     }
 
-    @ViewBuilder
     private var todoTextField: some View {
         HStack {
             Image(systemName: "checklist")
@@ -92,14 +68,18 @@ extension AddTodoSheetView {
         .shadow(radius: 1)
     }
 
-    @ViewBuilder
+    private var errorText: some View {
+        Text("Todos cannot be empty.")
+            .ktsFont(.caption)
+            .foregroundColor(KTSColors.burntSienna.color)
+    }
+
     private var addTodoButton: some View {
         RoundedButton("Submit", backgroundColor: .persianGreen, action: handleAddTodo)
     }
 
-    @ViewBuilder
     private var cancelButton: some View {
-        RoundedButton("Cancel", backgroundColor: .burntSienna) { showPopup.toggle() }
+        RoundedButton("Cancel", backgroundColor: .burntSienna, action: { appState.pop() })
     }
 }
 
@@ -108,19 +88,20 @@ extension AddTodoSheetView {
 extension AddTodoSheetView {
     private func handleAddTodo() {
         guard !textFieldText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty else {
-            errorPopup.toggle()
+            showInlineError.toggle()
             return
         }
         if let todoId = appState.todoService.insertTodo(description: textFieldText, for: appState.currentDayId) {
             let todo = Todo(id: todoId, dayId: appState.currentDayId, description: textFieldText, status: false)
-            todos.append(todo)
-            showPopup.toggle()
+            appState.todosForToday.append(todo)
+            appState.pop()
         }
     }
 }
 
 struct AddTodoSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        AddTodoSheetView(dayId: 0, todos: .constant([]), showPopup: .constant(false), errorPopup: .constant(false))
+        AddTodoSheetView()
+            .environmentObject(AppState())
     }
 }
