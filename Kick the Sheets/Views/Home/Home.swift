@@ -30,7 +30,6 @@ struct Home: View {
 // MARK: - Views
 
 extension Home {
-    @ViewBuilder
     private var header: some View {
         Text("Kicking the Sheets")
             .ktsFont(.title2)
@@ -38,7 +37,6 @@ extension Home {
             .padding()
     }
 
-    @ViewBuilder
     private var calendar: some View {
         CalendarWrapperView(
             days: $viewModel.days,
@@ -46,33 +44,35 @@ extension Home {
         )
     }
 
-    @ViewBuilder
     private var footer: some View {
-        Text("🔥 \(viewModel.getStreakCount()) Day Streak")
-            .foregroundColor(KTSColors.text.color)
-            .padding(.bottom, 16)
-
-        Spacer()
-
         VStack(spacing: 0) {
-            Text(viewModel.dateSelected.getDayString())
-                .frame(maxWidth: .infinity, alignment: .leading)
-            Rectangle()
-                .frame(height: 1)
-        }
-        .padding(.bottom)
+            Text("🔥 \(viewModel.getStreakCount()) Day Streak")
+                .foregroundColor(KTSColors.text.color)
+                .padding(.bottom, 16)
 
-        CircularProgressView(
-            progress: viewModel.completedCountForSelectedDate,
-            total: viewModel.totalCountForSelectedDate,
-            15
-        )
+            Spacer()
+
+            VStack(spacing: 0) {
+                Text(viewModel.dateSelected.getDayString())
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                Rectangle()
+                    .frame(height: 1)
+            }
+            .padding(.bottom)
+
+            CircularProgressView(
+                progress: viewModel.completedCountForSelectedDate,
+                total: viewModel.totalCountForSelectedDate,
+                15
+            )
+        }
     }
 }
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Home(viewModel: HomeViewModel(todoService: GeneralTodoService(), days: .constant([])))
+            .environmentObject(AppState())
             .previewDevice("iPhone 13 Mini")
     }
 }

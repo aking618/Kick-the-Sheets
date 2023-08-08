@@ -40,7 +40,6 @@ struct DayView: View {
 // MARK: - Views
 
 extension DayView {
-    @ViewBuilder
     private var header: some View {
         Text("Day \(Date().calendarDay)")
             .ktsFont(.title)
@@ -48,7 +47,6 @@ extension DayView {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    @ViewBuilder
     private var subHeader: some View {
         Text("🔥 \(Todo.completedCount(from: appState.todosForToday)) / \(appState.todosForToday.count) completed!")
             .ktsFont(.button)
@@ -57,7 +55,6 @@ extension DayView {
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
-    @ViewBuilder
     private var searchBar: some View {
         HStack {
             Image(systemName: "magnifyingglass")
@@ -79,7 +76,6 @@ extension DayView {
         .shadow(radius: 1)
     }
 
-    @ViewBuilder
     private var todoList: some View {
         List(filteredTodos, id: \.hashValue) { index in
             TodoRow(todo: $appState.todosForToday[index],

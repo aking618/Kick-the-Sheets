@@ -9,7 +9,6 @@ import PopupView
 import SwiftUI
 
 extension View {
-    @ViewBuilder
     func errorPopup(_ shouldShow: Binding<Bool>) -> some View {
         popup(isPresented: shouldShow) {
             Text("New todos cannot be blank")

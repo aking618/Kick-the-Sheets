@@ -30,7 +30,6 @@ struct SettingsView: View {
 // MARK: - Views
 
 extension SettingsView {
-    @ViewBuilder
     private var header: some View {
         Text("Settings")
             .ktsFont(.title2)
@@ -38,7 +37,6 @@ extension SettingsView {
             .padding()
     }
 
-    @ViewBuilder
     private var options: some View {
         VStack(spacing: 5) {
             List($settingViewModel.options) { $option in
@@ -53,7 +51,6 @@ extension SettingsView {
 // MARK: - Alerts
 
 private extension View {
-    @ViewBuilder
     func aboutAlert(isPresented: Binding<Bool>) -> some View {
         alert(AboutStrings.title.rawValue, isPresented: isPresented) {
             Button("OK", role: .cancel) {}
@@ -62,7 +59,6 @@ private extension View {
         }
     }
 
-    @ViewBuilder
     func deleteAllDataAlert(isPresented: Binding<Bool>, _ appState: AppState) -> some View {
         alert("Delete All Data", isPresented: isPresented) {
             Button("Cancel", role: .cancel) {}
