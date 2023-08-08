@@ -15,8 +15,9 @@ class SettingsViewModel: ObservableObject {
     func setup() {
         let resetData = SettingsOption(title: "Reset All Data", image: "trash", style: .destructive, action: handleResetData)
         let about = SettingsOption(title: "About", image: "info.circle", style: .generic, action: handleAbout)
+        let migrateTodos = SettingsOption(title: "Migrate Unfinished Todos", image: "link", style: .toggle, action: handleMigrateTodos)
 
-        options = [resetData, about]
+        options = [about, migrateTodos, resetData]
     }
 
     private func handleResetData() {
@@ -26,4 +27,6 @@ class SettingsViewModel: ObservableObject {
     private func handleAbout() {
         showAboutPopup = true
     }
+
+    private func handleMigrateTodos() {}
 }
