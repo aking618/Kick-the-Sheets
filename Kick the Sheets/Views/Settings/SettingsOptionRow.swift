@@ -11,7 +11,7 @@ import SwiftUI
 struct SettingsOptionRow: View {
     @Binding var option: SettingsOption
 
-    @AppStorage("migrateTodos") var migrateTodos = false
+    @AppStorage("migrateTodos") var migrateTodos = true
     @State var tapped: Bool = false
 
     var body: some View {
