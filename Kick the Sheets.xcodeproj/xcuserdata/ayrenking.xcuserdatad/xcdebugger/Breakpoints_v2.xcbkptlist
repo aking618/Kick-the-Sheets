@@ -125,8 +125,8 @@
             filePath = "Kick the Sheets/ViewModels/AppState.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "27"
-            endingLineNumber = "27"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "shouldShowMigrationPopup()"
             landmarkType = "7">
          </BreakpointContent>

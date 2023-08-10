@@ -8,7 +8,7 @@
 import SwiftUI
 
 class AppState: ObservableObject {
-    let todoService: TodoService = GeneralTodoService()
+    let todoService: TodoService
 
     @Published var path = NavigationPath()
     @Published var selectedTab: Tab = .home
@@ -19,7 +19,9 @@ class AppState: ObservableObject {
 
     @Published var calendarTransition: AnyTransition = .backslide
 
-    init() {
+    init(todoService: TodoService = GeneralTodoService()) {
+        self.todoService = todoService
+
         updateAppState()
     }
 
