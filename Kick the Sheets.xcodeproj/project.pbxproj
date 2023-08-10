@@ -32,7 +32,6 @@
 		ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */; };
 		ED81A102298321A700556661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A101298321A700556661 /* ContentView.swift */; };
 		ED81A104298321A800556661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A103298321A800556661 /* Assets.xcassets */; };
-		ED81A111298321A800556661 /* Kick_the_SheetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A110298321A800556661 /* Kick_the_SheetsTests.swift */; };
 		ED81A11B298321A800556661 /* Kick_the_SheetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */; };
 		ED81A11D298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */; };
 		ED81A12C2983222F00556661 /* SelectableCalendarView in Frameworks */ = {isa = PBXBuildFile; productRef = ED81A12B2983222F00556661 /* SelectableCalendarView */; };
@@ -56,6 +55,7 @@
 		ED84D49829D70CAE0094CF09 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49729D70CAE0094CF09 /* Tab.swift */; };
 		ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */; };
 		ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */; };
+		EDBE54A22A83AFC60012754A /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54A12A83AFC60012754A /* AppStateTests.swift */; };
 		EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510452A1711AD003F8353 /* View+Popup.swift */; };
 		EDE510482A1861C9003F8353 /* AboutStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510472A1861C9003F8353 /* AboutStrings.swift */; };
 		EDE5104A2A23134C003F8353 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE510492A23134C003F8353 /* Colors.xcassets */; };
@@ -107,7 +107,6 @@
 		ED81A101298321A700556661 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED81A103298321A800556661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED81A10C298321A800556661 /* Kick the SheetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kick the SheetsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED81A110298321A800556661 /* Kick_the_SheetsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsTests.swift; sourceTree = "<group>"; };
 		ED81A116298321A800556661 /* Kick the SheetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kick the SheetsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsUITests.swift; sourceTree = "<group>"; };
 		ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
@@ -129,6 +128,7 @@
 		ED84D49729D70CAE0094CF09 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
 		ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIndicator.swift; sourceTree = "<group>"; };
+		EDBE54A12A83AFC60012754A /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 		EDE510452A1711AD003F8353 /* View+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popup.swift"; sourceTree = "<group>"; };
 		EDE510472A1861C9003F8353 /* AboutStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStrings.swift; sourceTree = "<group>"; };
 		EDE510492A23134C003F8353 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -259,7 +259,7 @@
 		ED81A10F298321A800556661 /* Kick the SheetsTests */ = {
 			isa = PBXGroup;
 			children = (
-				ED81A110298321A800556661 /* Kick_the_SheetsTests.swift */,
+				EDBE54A12A83AFC60012754A /* AppStateTests.swift */,
 			);
 			path = "Kick the SheetsTests";
 			sourceTree = "<group>";
@@ -590,7 +590,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED81A111298321A800556661 /* Kick_the_SheetsTests.swift in Sources */,
+				EDBE54A22A83AFC60012754A /* AppStateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -758,7 +758,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -792,7 +792,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

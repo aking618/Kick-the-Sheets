@@ -20,9 +20,8 @@ protocol TodoService {
 }
 
 class GeneralTodoService: TodoService {
-    static let DIR_TASK_DB = "TaskDB"
-    static let STORE_NAME = "task.sqlite3"
-    static let DEMO_STORE_NAME = "taskDemo.sqlite3"
+    var DIR_TASK_DB = "TaskDB"
+    var STORE_NAME = "task.sqlite3"
 
     private var db: Connection? = nil
 
@@ -33,11 +32,11 @@ class GeneralTodoService: TodoService {
 
     init() {
         if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let dirPath = docDir.appendingPathComponent(Self.DIR_TASK_DB)
+            let dirPath = docDir.appendingPathComponent(DIR_TASK_DB)
 
             do {
                 try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
-                let dbPath = dirPath.appendingPathComponent(Self.DEMO_STORE_NAME).path
+                let dbPath = dirPath.appendingPathComponent(STORE_NAME).path
                 db = try Connection(dbPath)
                 createTables()
                 print("SQLiteDataStore init successfully at: \(dbPath) ")
