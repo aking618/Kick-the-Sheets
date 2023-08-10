@@ -19,6 +19,16 @@ struct ContentView: View {
             bottomNavBar
         }
         .ignoresSafeArea(.keyboard)
+        .onAppear {
+            appState.showMigrationPopup = appState.shouldShowMigrationPopup()
+            appState.updateLastPopupDate()
+        }
+        .alert("Migrate Unfinished Todos", isPresented: $appState.showMigrationPopup) {
+            Button("Migrate") {
+                appState.handleTodoMigration()
+            }
+            Button("Cancel", role: .cancel) {}
+        }
     }
 }
 
