@@ -252,7 +252,7 @@
 				ED81A129298321DF00556661 /* Database */,
 				ED81A1432983247800556661 /* Extensions */,
 				ED84D49629D70C900094CF09 /* Models */,
-				EDE7C21B2A1302B800CB43A6 /* Preview Content */,
+				EDBE54A72A8579F00012754A /* Preview Content */,
 				ED4CE5412992EF85005A4737 /* ViewModels */,
 				ED81A1452983247800556661 /* Views */,
 			);
@@ -403,7 +403,7 @@
 			path = "Kick the Sheets/Preview Content";
 			sourceTree = "<group>";
 		};
-		EDE7C21B2A1302B800CB43A6 /* Preview Content */ = {
+		EDBE54A72A8579F00012754A /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
 				EDBE54A52A85765C0012754A /* Preview Content.xcassets */,
@@ -752,7 +752,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Kick the Sheets/Preview Content\"";
 				DEVELOPMENT_TEAM = P649CF844Y;
 				ENABLE_PREVIEWS = YES;
@@ -786,7 +786,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"Kick the Sheets/Preview Content\"";
 				DEVELOPMENT_TEAM = P649CF844Y;
 				ENABLE_PREVIEWS = YES;
