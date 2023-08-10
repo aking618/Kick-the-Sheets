@@ -56,6 +56,7 @@
 		ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */; };
 		ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */; };
 		EDBE54A22A83AFC60012754A /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54A12A83AFC60012754A /* AppStateTests.swift */; };
+		EDBE54A62A85765C0012754A /* Preview Content.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDBE54A52A85765C0012754A /* Preview Content.xcassets */; };
 		EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510452A1711AD003F8353 /* View+Popup.swift */; };
 		EDE510482A1861C9003F8353 /* AboutStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510472A1861C9003F8353 /* AboutStrings.swift */; };
 		EDE5104A2A23134C003F8353 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE510492A23134C003F8353 /* Colors.xcassets */; };
@@ -129,6 +130,7 @@
 		ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
 		ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIndicator.swift; sourceTree = "<group>"; };
 		EDBE54A12A83AFC60012754A /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
+		EDBE54A52A85765C0012754A /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Content.xcassets"; sourceTree = "<group>"; };
 		EDE510452A1711AD003F8353 /* View+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popup.swift"; sourceTree = "<group>"; };
 		EDE510472A1861C9003F8353 /* AboutStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStrings.swift; sourceTree = "<group>"; };
 		EDE510492A23134C003F8353 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 		ED81A0F3298321A700556661 = {
 			isa = PBXGroup;
 			children = (
+				EDBE54A42A85764C0012754A /* Preview Content */,
 				ED81A0FE298321A700556661 /* Kick the Sheets */,
 				ED81A10F298321A800556661 /* Kick the SheetsTests */,
 				ED81A119298321A800556661 /* Kick the SheetsUITests */,
@@ -392,9 +395,18 @@
 			path = BottomNavigationBar;
 			sourceTree = "<group>";
 		};
+		EDBE54A42A85764C0012754A /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Preview Content";
+			path = "Kick the Sheets/Preview Content";
+			sourceTree = "<group>";
+		};
 		EDE7C21B2A1302B800CB43A6 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				EDBE54A52A85765C0012754A /* Preview Content.xcassets */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -517,6 +529,7 @@
 				ED010CEB2A6A0E69000FFFB6 /* LaunchScreen.storyboard in Resources */,
 				ED4CE54B29946595005A4737 /* Andika-Bold.ttf in Resources */,
 				ED4CE54C29946595005A4737 /* Andika-Italic.ttf in Resources */,
+				EDBE54A62A85765C0012754A /* Preview Content.xcassets in Resources */,
 				ED4CE54D29946595005A4737 /* Andika-BoldItalic.ttf in Resources */,
 				ED42579129A456CB0064F8AA /* AnimatedLogo.svg in Resources */,
 				ED81A104298321A800556661 /* Assets.xcassets in Resources */,
