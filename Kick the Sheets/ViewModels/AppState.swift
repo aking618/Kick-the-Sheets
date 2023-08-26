@@ -9,6 +9,7 @@ import SwiftUI
 
 class AppState: ObservableObject {
     let todoService: TodoService
+    let todoMigrationService: TodoMigrationService
 
     @Published var path = NavigationPath()
     @Published var selectedTab: Tab = .home
@@ -21,57 +22,9 @@ class AppState: ObservableObject {
 
     init(todoService: TodoService = GeneralTodoService()) {
         self.todoService = todoService
+        todoMigrationService = TodoMigrationService(todoService: todoService)
 
         updateAppState()
-    }
-
-    func shouldShowMigrationPopup() -> Bool {
-        let currentDate = Date()
-        let userDefaults = UserDefaults.standard
-
-        guard UserDefaults.standard.object(forKey: "migrateTodos") as? Bool ?? false else { return false }
-
-        guard days.count > 1 else { return false }
-
-        let days = todoService.retrieveDays()
-        guard let previousDay = days.last(where: {
-            !Calendar.current.isDate($0.date, inSameDayAs: Date())
-        }),
-            !previousDay.status
-        else {
-            return false
-        }
-
-        if let lastPopupDate = userDefaults.object(forKey: "lastPopupDate") as? Date {
-            return !lastPopupDate.isSameDay(comparingTo: currentDate)
-        } else {
-            return true
-        }
-    }
-
-    func updateLastPopupDate() {
-        let currentDate = Date()
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(currentDate, forKey: "lastPopupDate")
-    }
-
-    func handleTodoMigration() {
-        guard todosForToday.isEmpty else { return }
-
-        let days = todoService.retrieveDays()
-        guard let previousDay = days.last(where: {
-            !Calendar.current.isDate($0.date, inSameDayAs: Date())
-        }) else {
-            return
-        }
-
-        let todos = todoService.retrieveTodos(for: previousDay.id)
-
-        for todo in todos {
-            guard !todo.status else { return }
-            _ = todoService.insertTodo(description: todo.description, for: currentDayId)
-        }
-        todosForToday = todoService.retrieveTodos(for: currentDayId)
     }
 
     func updateAppState() {

@@ -9,20 +9,24 @@ import Foundation
 import SQLite
 
 protocol TodoService {
-    func insertDay() -> Int64?
+    func insertDay(date: Date) -> Int64?
     func insertTodo(description: String, for dayId: Int64) -> Int64?
     func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool
     func updateTodo(entry: Todo) -> Bool
     func retrieveTodos(for dayId: Int64) -> [Todo]
+    func retrieveSecondMostRecentDay() -> Day?
     func retrieveDays() -> [Day]
     func deleteTodo(entry: Todo) -> Bool
     func deleteAllEntries()
 }
 
-class GeneralTodoService: TodoService {
-    var DIR_TASK_DB = "TaskDB"
-    var STORE_NAME = "task.sqlite3"
+extension TodoService {
+    func insertDay(date: Date = Date()) -> Int64? {
+        insertDay(date: date)
+    }
+}
 
+class GeneralTodoService: TodoService {
     private var db: Connection? = nil
 
     private let dbDay = DbDay()
@@ -30,13 +34,13 @@ class GeneralTodoService: TodoService {
 
     // MARK: - Initializer
 
-    init() {
+    init(directory: String = "TaskDB", store: String = "task.sqlite3") {
         if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
-            let dirPath = docDir.appendingPathComponent(DIR_TASK_DB)
+            let dirPath = docDir.appendingPathComponent(directory)
 
             do {
                 try FileManager.default.createDirectory(atPath: dirPath.path, withIntermediateDirectories: true, attributes: nil)
-                let dbPath = dirPath.appendingPathComponent(STORE_NAME).path
+                let dbPath = dirPath.appendingPathComponent(store).path
                 db = try Connection(dbPath)
                 createTables()
                 print("SQLiteDataStore init successfully at: \(dbPath) ")
@@ -75,11 +79,11 @@ class GeneralTodoService: TodoService {
 
     // MARK: - Create
 
-    internal func insertDay() -> Int64? {
+    internal func insertDay(date: Date = Date()) -> Int64? {
         guard let database = db else { return nil }
 
         let insert = dbDay.table.insert(
-            dbDay.day <- Date(),
+            dbDay.day <- date,
             dbDay.status <- false
         )
 
@@ -152,6 +156,28 @@ class GeneralTodoService: TodoService {
         }
         print("[+] Days retrieved successfully")
         return days
+    }
+
+    internal func retrieveSecondMostRecentDay() -> Day? {
+        guard let database = db else { return nil }
+
+        do {
+            let sortedDays = try database.prepare(dbDay.table.order(dbDay.day.desc).limit(1, offset: 1))
+
+            let iterator = sortedDays.makeIterator()
+
+            if let secondMostRecentDay = iterator.next() {
+                return Day(
+                    id: secondMostRecentDay[dbDay.id],
+                    date: secondMostRecentDay[dbDay.day],
+                    status: secondMostRecentDay[dbDay.status]
+                )
+            }
+        } catch {
+            print(error)
+        }
+
+        return nil
     }
 
     // MARK: - Update
