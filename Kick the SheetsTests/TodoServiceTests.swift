@@ -68,6 +68,14 @@ final class TodoServiceTests: XCTestCase {
         XCTAssertEqual(todoService.retrieveTodos(for: dayId).count, 1)
     }
 
+    func testRetrieveTodoById_Exist() throws {
+        throw XCTSkip("Not implemented yet...")
+    }
+
+    func testRetrieveTodoById_DoesNotExist() throws {
+        throw XCTSkip("Not implemented yet...")
+    }
+
     func testUpdateDayCompletion() throws {
         let dayId = try XCTUnwrap(todoService.insertDay())
         var day = try XCTUnwrap(todoService.retrieveDays().first)

@@ -24,7 +24,7 @@ struct ContentView: View {
         }
         .alert("Migrate Unfinished Todos", isPresented: $appState.showMigrationPopup) {
             Button("Migrate") {
-                appState.todoMigrationService.migrateTodos()
+                appState.todoMigrationService.migrateTodos(currentDayId: appState.currentDayId)
                 appState.updateAppState()
             }
             Button("Cancel", role: .cancel) {}

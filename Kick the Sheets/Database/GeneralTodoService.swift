@@ -14,6 +14,7 @@ protocol TodoService {
     func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool
     func updateTodo(entry: Todo) -> Bool
     func retrieveTodos(for dayId: Int64) -> [Todo]
+    func retrieveTodo(for todoId: Int64) -> Todo?
     func retrieveSecondMostRecentDay() -> Day?
     func retrieveDays() -> [Day]
     func deleteTodo(entry: Todo) -> Bool
@@ -135,6 +136,30 @@ class GeneralTodoService: TodoService {
             print(error)
         }
         return todos
+    }
+
+    internal func retrieveTodo(for todoId: Int64) -> Todo? {
+        guard let database = db else { return nil }
+
+        let filter = dbTodo.table.filter(dbTodo.id == todoId).limit(1)
+        do {
+            let todos = try database.prepare(filter)
+
+            let iterator = todos.makeIterator()
+
+            if let todo = iterator.next() {
+                return Todo(
+                    id: todo[dbTodo.id],
+                    dayId: todo[dbTodo.dayId],
+                    description: todo[dbTodo.description],
+                    status: todo[dbTodo.status]
+                )
+            }
+        } catch {
+            print(error)
+        }
+
+        return nil
     }
 
     internal func retrieveDays() -> [Day] {
