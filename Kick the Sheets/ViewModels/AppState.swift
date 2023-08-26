@@ -40,7 +40,7 @@ class AppState: ObservableObject {
         }
     }
 
-    func createDayIfNeeded() {
+    private func createDayIfNeeded() {
         if let currentDayId = todoService.insertDay() {
             self.currentDayId = currentDayId
             todosForToday = []

@@ -69,11 +69,16 @@ final class TodoServiceTests: XCTestCase {
     }
 
     func testRetrieveTodoById_Exist() throws {
-        throw XCTSkip("Not implemented yet...")
+        let dayId = try XCTUnwrap(todoService.insertDay())
+        let todoId = try XCTUnwrap(todoService.insertTodo(description: "Test", for: dayId))
+
+        let todo = todoService.retrieveTodo(for: todoId)
+
+        XCTAssertEqual(todoId, todo?.id)
     }
 
     func testRetrieveTodoById_DoesNotExist() throws {
-        throw XCTSkip("Not implemented yet...")
+        XCTAssertNil(todoService.retrieveTodo(for: 0))
     }
 
     func testUpdateDayCompletion() throws {
@@ -137,14 +142,20 @@ final class TodoServiceTests: XCTestCase {
     }
 
     func testDeleteTodo() throws {
-        throw XCTSkip("Not implemented yet...")
-    }
+        let dayId = try XCTUnwrap(todoService.insertDay())
+        let todoId = try XCTUnwrap(todoService.insertTodo(description: "test", for: dayId))
 
-    func testDeleteDaysWithIds() throws {
-        throw XCTSkip("Not implemented yet...")
+        let todo = try XCTUnwrap(todoService.retrieveTodo(for: todoId), "Unable to create todo")
+
+        XCTAssertTrue(todoService.deleteTodo(entry: todo))
+        XCTAssertNil(todoService.retrieveTodo(for: todoId))
     }
 
     func testDeleteAllEntries() throws {
-        throw XCTSkip("Not implemented yet...")
+        _ = todoService.insertDay()
+
+        todoService.deleteAllEntries()
+
+        XCTAssertTrue(todoService.retrieveDays().isEmpty)
     }
 }
