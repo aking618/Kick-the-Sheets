@@ -33,10 +33,7 @@ final class TodoMigrationService {
     }
 
     private func hasPreviousData() -> Bool {
-        var days = todoService.retrieveDays()
-        guard let _ = days.popLast(),
-              let previousDay = days.popLast()
-        else {
+        guard let previousDay = todoService.retrieveSecondMostRecentDay() else {
             return false
         }
 
@@ -48,10 +45,7 @@ final class TodoMigrationService {
     }
 
     private func retrieveTodosToMigrate() -> [Todo] {
-        var days = todoService.retrieveDays()
-        guard let _ = days.popLast(),
-              let previousDay = days.popLast()
-        else {
+        guard let previousDay = todoService.retrieveSecondMostRecentDay() else {
             return []
         }
 
