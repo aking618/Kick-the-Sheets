@@ -30,7 +30,7 @@ class AppState: ObservableObject {
     func updateAppState() {
         days = todoService.retrieveDays()
         if let currenDay = days.first(where: {
-            $0.date.isSameDay(comparingTo: Date())
+            $0.date.isSameDay(as: Date())
         }) {
             currentDayId = currenDay.id
             todosForToday =

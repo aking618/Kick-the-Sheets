@@ -10,7 +10,7 @@ import SwiftUI
 
 extension Date {
     func backgroundColor(_ days: [Day]) -> Color {
-        if isSameDay(comparingTo: Date()) {
+        if isSameDay(as: Date()) {
             return KTSColors.saffron.color
         }
 
@@ -18,7 +18,7 @@ extension Date {
             return KTSColors.iconBorder.color
         }
 
-        if let day = days.first(where: { $0.date.isSameDay(comparingTo: self) }) {
+        if let day = days.first(where: { $0.date.isSameDay(as: self) }) {
             return day.status ? KTSColors.persianGreen.color : KTSColors.burntSienna.color
         }
 
@@ -26,7 +26,7 @@ extension Date {
     }
 
     func foregroundColor(_ days: [Day]) -> Color {
-        if isSameDay(comparingTo: Date()) {
+        if isSameDay(as: Date()) {
             return KTSColors.text.color
         }
 
@@ -34,7 +34,7 @@ extension Date {
             return KTSColors.text.color
         }
 
-        if days.first(where: { $0.date.isSameDay(comparingTo: self) }) != nil {
+        if days.first(where: { $0.date.isSameDay(as: self) }) != nil {
             return .white
         }
 

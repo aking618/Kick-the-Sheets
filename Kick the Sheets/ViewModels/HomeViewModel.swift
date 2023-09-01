@@ -59,7 +59,7 @@ class HomeViewModel: ObservableObject {
 
 extension HomeViewModel {
     var dayForSelectedDate: Day? {
-        days.first { $0.date.isSameDay(comparingTo: dateSelected) }
+        days.first { $0.date.isSameDay(as: dateSelected) }
     }
 
     var totalCountForSelectedDate: Int {
