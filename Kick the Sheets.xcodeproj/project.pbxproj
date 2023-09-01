@@ -61,6 +61,11 @@
 		EDBE54AC2A959AAE0012754A /* TodoMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54AB2A959AAE0012754A /* TodoMigrationService.swift */; };
 		EDBE54AE2A959B6E0012754A /* TodoMigrationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54AD2A959B6E0012754A /* TodoMigrationServiceTests.swift */; };
 		EDC343852A9D7BC60072896F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343842A9D7BC60072896F /* CalendarView.swift */; };
+		EDC343872AA1FDDD0072896F /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343862AA1FDDD0072896F /* CalendarHelper.swift */; };
+		EDC343892AA1FE440072896F /* CalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343882AA1FE440072896F /* CalendarGridView.swift */; };
+		EDC3438B2AA1FE6D0072896F /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438A2AA1FE6D0072896F /* CalendarCell.swift */; };
+		EDC3438E2AA1FEF50072896F /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438D2AA1FEF50072896F /* Months.swift */; };
+		EDC343902AA1FEFC0072896F /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438F2AA1FEFC0072896F /* WeekDays.swift */; };
 		EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510452A1711AD003F8353 /* View+Popup.swift */; };
 		EDE510482A1861C9003F8353 /* AboutStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510472A1861C9003F8353 /* AboutStrings.swift */; };
 		EDE5104A2A23134C003F8353 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE510492A23134C003F8353 /* Colors.xcassets */; };
@@ -139,6 +144,11 @@
 		EDBE54AB2A959AAE0012754A /* TodoMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMigrationService.swift; sourceTree = "<group>"; };
 		EDBE54AD2A959B6E0012754A /* TodoMigrationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMigrationServiceTests.swift; sourceTree = "<group>"; };
 		EDC343842A9D7BC60072896F /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		EDC343862AA1FDDD0072896F /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CalendarHelper.swift; path = ../../../../../../../../Applications/CalendarHelper.swift; sourceTree = "<group>"; };
+		EDC343882AA1FE440072896F /* CalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridView.swift; sourceTree = "<group>"; };
+		EDC3438A2AA1FE6D0072896F /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
+		EDC3438D2AA1FEF50072896F /* Months.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
+		EDC3438F2AA1FEFC0072896F /* WeekDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
 		EDE510452A1711AD003F8353 /* View+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popup.swift"; sourceTree = "<group>"; };
 		EDE510472A1861C9003F8353 /* AboutStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStrings.swift; sourceTree = "<group>"; };
 		EDE510492A23134C003F8353 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
@@ -434,9 +444,22 @@
 		EDC343832A9D7BA90072896F /* CalendarView */ = {
 			isa = PBXGroup;
 			children = (
+				EDC3438C2AA1FEEB0072896F /* Enums */,
 				EDC343842A9D7BC60072896F /* CalendarView.swift */,
+				EDC3438A2AA1FE6D0072896F /* CalendarCell.swift */,
+				EDC343882AA1FE440072896F /* CalendarGridView.swift */,
+				EDC343862AA1FDDD0072896F /* CalendarHelper.swift */,
 			);
 			path = CalendarView;
+			sourceTree = "<group>";
+		};
+		EDC3438C2AA1FEEB0072896F /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				EDC3438D2AA1FEF50072896F /* Months.swift */,
+				EDC3438F2AA1FEFC0072896F /* WeekDays.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -589,13 +612,16 @@
 				ED2B03FB2A0B26BA00AA8ABB /* SettingsView.swift in Sources */,
 				ED2B03F82A08881F00AA8ABB /* Animation+Extension.swift in Sources */,
 				ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */,
+				EDC343872AA1FDDD0072896F /* CalendarHelper.swift in Sources */,
 				ED81A13A2983229800556661 /* GeneralTodoService.swift in Sources */,
 				ED81A14C2983247900556661 /* Home.swift in Sources */,
 				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
 				ED700B1A2A8035AC00388BC2 /* UIDevice+Extension.swift in Sources */,
+				EDC3438E2AA1FEF50072896F /* Months.swift in Sources */,
 				EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */,
 				ED3166722A00B467003DB752 /* DeleteIconView.swift in Sources */,
 				ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */,
+				EDC343902AA1FEFC0072896F /* WeekDays.swift in Sources */,
 				EDC343852A9D7BC60072896F /* CalendarView.swift in Sources */,
 				ED81A102298321A700556661 /* ContentView.swift in Sources */,
 				EDBE54AC2A959AAE0012754A /* TodoMigrationService.swift in Sources */,
@@ -611,6 +637,7 @@
 				ED81A15A2983793500556661 /* View+Extension.swift in Sources */,
 				ED81A13D2983229800556661 /* DbDay.swift in Sources */,
 				ED700B1C2A803B1000388BC2 /* DayTabDestination.swift in Sources */,
+				EDC343892AA1FE440072896F /* CalendarGridView.swift in Sources */,
 				ED81A151298324F300556661 /* KTSColors.swift in Sources */,
 				ED6B13352995D0C100634B47 /* CircularProgressView.swift in Sources */,
 				ED81A14A2983247900556661 /* Date+Extension.swift in Sources */,
@@ -619,6 +646,7 @@
 				ED4CE53E2991A998005A4737 /* AddTodoSheetView.swift in Sources */,
 				ED81A14D2983247900556661 /* DayView.swift in Sources */,
 				ED81A13C2983229800556661 /* Todo.swift in Sources */,
+				EDC3438B2AA1FE6D0072896F /* CalendarCell.swift in Sources */,
 				ED4CE5402991B3B9005A4737 /* EmptyListViewModifier.swift in Sources */,
 				ED4CE553299469D6005A4737 /* KTSFonts.swift in Sources */,
 				ED81A1562983699600556661 /* RoundedButton.swift in Sources */,
