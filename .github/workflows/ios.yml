@@ -7,25 +7,6 @@ on:
     branches: [ "*" ]
 
 jobs:
-  Build:
-    name: Build App
-    runs-on: macos-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          ruby-version: '3.2'
-      
-      - name: Install Fastlane
-        run: gem install fastlane -NV
-
-      - name: Build the app
-        run: fastlane scan --scheme "Kick the Sheets" --clean --build_for_testing true
-        env:
-          TERM: xterm-256color
 
   Test:
     name: Run Unit Tests
@@ -38,7 +19,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3.2'
       
