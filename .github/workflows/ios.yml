@@ -22,7 +22,7 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane -NV
 
-      - name Build the app
+      - name: Build the app
         run: fastlane scan --scheme "Kick the Sheets" --clean --build_for_testing true
         env:
           TERM: xterm-256color
