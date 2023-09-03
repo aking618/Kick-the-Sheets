@@ -11,11 +11,11 @@ class HomeViewModel: ObservableObject {
     let todoService: TodoService
 
     @Published var viewDidLoad: Bool = false
-    @Binding var days: [Day]
+    @Binding var days: [Int: Day]
     @Published var dateSelected: Date = .init()
 
     // broken
-    init(todoService: TodoService, days: Binding<[Day]>) {
+    init(todoService: TodoService, days: Binding<[Int: Day]>) {
         self.todoService = todoService
         _days = days
     }
@@ -23,7 +23,7 @@ class HomeViewModel: ObservableObject {
     func getStreakCount() -> Int {
         guard !days.isEmpty else { return 0 }
 
-        let sortedDays = days.sorted(by: { $0.date > $1.date }).dropFirst()
+        let sortedDays = days.sorted(by: { $0.value.date > $1.value.date }).dropFirst().map { $0.value }
         let calendar = Calendar.current
         let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
         var consecutiveDays = 0
@@ -59,7 +59,7 @@ class HomeViewModel: ObservableObject {
 
 extension HomeViewModel {
     var dayForSelectedDate: Day? {
-        days.first { $0.date.isSameDay(as: dateSelected) }
+        days[dateSelected.key]
     }
 
     var totalCountForSelectedDate: Int {

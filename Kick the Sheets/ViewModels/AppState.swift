@@ -15,7 +15,7 @@ class AppState: ObservableObject {
     @Published var selectedTab: Tab = .home
     @Published var currentDayId: Int64 = 0
     @Published var todosForToday: [Todo] = []
-    @Published var days: [Day] = []
+    @Published var days: [Int: Day] = [:]
     @Published var showMigrationPopup: Bool = false
 
     @Published var calendarTransition: AnyTransition = .backslide
@@ -29,9 +29,7 @@ class AppState: ObservableObject {
 
     func updateAppState() {
         days = todoService.retrieveDays()
-        if let currenDay = days.first(where: {
-            $0.date.isSameDay(as: Date())
-        }) {
+        if let currenDay = days[Date().key] {
             currentDayId = currenDay.id
             todosForToday =
                 todoService.retrieveTodos(for: currenDay.id)

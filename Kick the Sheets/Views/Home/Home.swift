@@ -67,7 +67,7 @@ extension Home {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(viewModel: HomeViewModel(todoService: GeneralTodoService(), days: .constant([])))
+        Home(viewModel: HomeViewModel(todoService: GeneralTodoService(), days: .constant([:])))
             .environmentObject(AppState())
             .previewDevice("iPhone 13 Mini")
     }

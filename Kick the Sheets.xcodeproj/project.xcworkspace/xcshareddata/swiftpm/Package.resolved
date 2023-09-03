@@ -5,8 +5,22 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/exyte/PopupView",
       "state" : {
+<<<<<<< HEAD
         "revision" : "87f3bf660ba23e8ee49ea2b503e86dfdf8e61ca7",
         "version" : "2.6.1"
+=======
+        "branch" : "master",
+        "revision" : "87f3bf660ba23e8ee49ea2b503e86dfdf8e61ca7"
+      }
+    },
+    {
+      "identity" : "selectable-calendar-view",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/aking618/Selectable-Calendar-View",
+      "state" : {
+        "branch" : "main",
+        "revision" : "5721fc40cbc08bc73f61bc4a5fdf5910f55abc4d"
+>>>>>>> origin/feature/Candidate-09-29-2023
       }
     },
     {
