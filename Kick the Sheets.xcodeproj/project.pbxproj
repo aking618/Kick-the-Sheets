@@ -63,9 +63,7 @@
 		EDC3438B2AA1FE6D0072896F /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438A2AA1FE6D0072896F /* CalendarCell.swift */; };
 		EDC3438E2AA1FEF50072896F /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438D2AA1FEF50072896F /* Months.swift */; };
 		EDC343902AA1FEFC0072896F /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438F2AA1FEFC0072896F /* WeekDays.swift */; };
-		EDC343932AA2ACAD0072896F /* PopupView in Frameworks */ = {isa = PBXBuildFile; productRef = EDC343922AA2ACAD0072896F /* PopupView */; };
 		EDC343952AA3BF290072896F /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343942AA3BF290072896F /* CalendarHelper.swift */; };
-		EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510452A1711AD003F8353 /* View+Popup.swift */; };
 		EDE510482A1861C9003F8353 /* AboutStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510472A1861C9003F8353 /* AboutStrings.swift */; };
 		EDE5104A2A23134C003F8353 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE510492A23134C003F8353 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
@@ -148,7 +146,6 @@
 		EDC3438D2AA1FEF50072896F /* Months.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
 		EDC3438F2AA1FEFC0072896F /* WeekDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
 		EDC343942AA3BF290072896F /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
-		EDE510452A1711AD003F8353 /* View+Popup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Popup.swift"; sourceTree = "<group>"; };
 		EDE510472A1861C9003F8353 /* AboutStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStrings.swift; sourceTree = "<group>"; };
 		EDE510492A23134C003F8353 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -158,7 +155,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EDC343932AA2ACAD0072896F /* PopupView in Frameworks */,
 				ED81A12F2983225000556661 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,7 +321,6 @@
 				ED81A1572983745700556661 /* Todo+Extension.swift */,
 				ED81A1592983793500556661 /* View+Extension.swift */,
 				ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */,
-				EDE510452A1711AD003F8353 /* View+Popup.swift */,
 				ED700B192A8035AC00388BC2 /* UIDevice+Extension.swift */,
 			);
 			name = Extensions;
@@ -470,7 +465,6 @@
 			name = "Kick the Sheets";
 			packageProductDependencies = (
 				ED81A12E2983225000556661 /* SQLite */,
-				EDC343922AA2ACAD0072896F /* PopupView */,
 			);
 			productName = "Kick the Sheets";
 			productReference = ED81A0FC298321A700556661 /* Kick the Sheets.app */;
@@ -546,7 +540,6 @@
 			mainGroup = ED81A0F3298321A700556661;
 			packageReferences = (
 				ED81A12D2983225000556661 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
-				EDC343912AA2ACAD0072896F /* XCRemoteSwiftPackageReference "PopupView" */,
 			);
 			productRefGroup = ED81A0FD298321A700556661 /* Products */;
 			projectDirPath = "";
@@ -605,7 +598,6 @@
 				ED81A14E2983247900556661 /* BaseView.swift in Sources */,
 				ED700B1A2A8035AC00388BC2 /* UIDevice+Extension.swift in Sources */,
 				EDC3438E2AA1FEF50072896F /* Months.swift in Sources */,
-				EDE510462A1711AD003F8353 /* View+Popup.swift in Sources */,
 				ED3166722A00B467003DB752 /* DeleteIconView.swift in Sources */,
 				ED4CE5432992F04B005A4737 /* HomeViewModel.swift in Sources */,
 				EDC343902AA1FEFC0072896F /* WeekDays.swift in Sources */,
@@ -992,14 +984,6 @@
 				kind = branch;
 			};
 		};
-		EDC343912AA2ACAD0072896F /* XCRemoteSwiftPackageReference "PopupView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/exyte/PopupView";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1007,11 +991,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ED81A12D2983225000556661 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;
-		};
-		EDC343922AA2ACAD0072896F /* PopupView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = EDC343912AA2ACAD0072896F /* XCRemoteSwiftPackageReference "PopupView" */;
-			productName = PopupView;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
