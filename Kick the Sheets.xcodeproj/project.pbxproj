@@ -339,7 +339,6 @@
 				ED2B03F92A0B26A800AA8ABB /* Settings */,
 				ED84D49929D9C66C0094CF09 /* BottomNavigationBar */,
 				ED6B13332995D0AE00634B47 /* CircularProgressView */,
-				ED81A1492983247900556661 /* BaseView.swift */,
 				ED81A1522983255C00556661 /* Home */,
 				ED81A1542983698700556661 /* Shared */,
 				ED81A1532983256300556661 /* TodoView */,
@@ -384,6 +383,7 @@
 		ED81A1542983698700556661 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				ED81A1492983247900556661 /* BaseView.swift */,
 				ED81A1552983699600556661 /* RoundedButton.swift */,
 			);
 			path = Shared;
