@@ -17,6 +17,7 @@ struct CalendarGridView: View {
         LazyVGrid(columns: Array(repeating: GridItem(), count: 7), content: {
             ForEach(WeekDays.allCases, id: \.id) {
                 Text($0.rawValue)
+                    .ktsFont(.body)
                     .padding(.top, 1)
                     .lineLimit(1)
             }

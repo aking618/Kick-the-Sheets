@@ -14,6 +14,23 @@ struct CalendarCell: View {
 
     @EnvironmentObject var appState: AppState
 
+    var body: some View {
+        Text("\(date.dateNumber)")
+            .ktsFont(.body)
+            .frame(width: 30, height: 30)
+            .background(backgroundColor)
+            .foregroundColor(foregroundColor)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(borderColor, lineWidth: borderWidth))
+            .onTapGesture {
+                selectedDate = date
+            }
+    }
+}
+
+// MARK: - Computed Properties
+
+extension CalendarCell {
     var foregroundColor: Color {
         guard monthPosition == .current else {
             return KTSColors.text.color.opacity(0.3)
@@ -32,19 +49,6 @@ struct CalendarCell: View {
 
     var borderWidth: CGFloat {
         date.isSameDay(as: selectedDate) ? 1.5 : 1
-    }
-
-    var body: some View {
-        Text("\(date.dateNumber)")
-            .ktsFont(.body)
-            .frame(width: 30, height: 30)
-            .background(backgroundColor)
-            .foregroundColor(foregroundColor)
-            .clipShape(Circle())
-            .overlay(Circle().stroke(borderColor, lineWidth: borderWidth))
-            .onTapGesture {
-                selectedDate = date
-            }
     }
 }
 

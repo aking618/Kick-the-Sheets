@@ -31,22 +31,6 @@ extension Date {
         return KTSColors.iconBorder.color
     }
 
-    func foregroundColor(_ days: [Int: Day]) -> Color {
-        if isSameDay(as: Date()) {
-            return KTSColors.text.color
-        }
-
-        if self > Date() {
-            return KTSColors.text.color
-        }
-
-        if days[key] != nil {
-            return .white
-        }
-
-        return KTSColors.text.color
-    }
-
     var calendarDay: Int {
         Calendar.current.dateComponents([.day], from: self).day ?? 0
     }
