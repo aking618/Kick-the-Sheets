@@ -83,12 +83,12 @@ final class TodoServiceTests: XCTestCase {
 
     func testUpdateDayCompletion() throws {
         let dayId = try XCTUnwrap(todoService.insertDay())
-        var day = try XCTUnwrap(todoService.retrieveDays().first)
+        var day = try XCTUnwrap(todoService.retrieveDays()[Date().key])
         XCTAssertFalse(day.status)
 
         XCTAssertTrue(todoService.updateDayCompletion(for: dayId, with: true))
 
-        day = try XCTUnwrap(todoService.retrieveDays().first)
+        day = try XCTUnwrap(todoService.retrieveDays()[Date().key])
         XCTAssertTrue(day.status)
     }
 

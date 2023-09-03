@@ -16,7 +16,7 @@ protocol TodoService {
     func retrieveTodos(for dayId: Int64) -> [Todo]
     func retrieveTodo(for todoId: Int64) -> Todo?
     func retrieveSecondMostRecentDay() -> Day?
-    func retrieveDays() -> [Day]
+    func retrieveDays() -> [Int: Day]
     func deleteTodo(entry: Todo) -> Bool
     func deleteAllEntries()
 }
@@ -162,18 +162,19 @@ class GeneralTodoService: TodoService {
         return nil
     }
 
-    internal func retrieveDays() -> [Day] {
-        var days: [Day] = []
-        guard let database = db else { return [] }
+    internal func retrieveDays() -> [Int: Day] {
+        var days: [Int: Day] = [:]
+        guard let database = db else { return [:] }
 
         do {
             for day in try database.prepare(dbDay.table) {
-                days.append(
-                    Day(
-                        id: day[dbDay.id],
-                        date: day[dbDay.day],
-                        status: day[dbDay.status]
-                    )
+                let date = day[dbDay.day]
+                let key = date.key
+
+                days[key] = Day(
+                    id: day[dbDay.id],
+                    date: date,
+                    status: day[dbDay.status]
                 )
             }
         } catch {
