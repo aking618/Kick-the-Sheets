@@ -5,9 +5,7 @@
 Kicking the Sheets is a self-hosted todo app that gamifies task completion.   
 
 <p align="left">
-	<a href="https://apps.apple.com/us/app/kicking-the-sheets/id6450491354">
-		<img src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg"/>
-	</a>
+	<a href="https://apps.apple.com/us/app/kicking-the-sheets/id6450491354?itscg=30200&amp;itsct=apps_box_appicon" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple116/v4/48/a4/ba/48a4ba34-95ba-3bd3-8338-60b52b33ffc7/AppIcon-0-1x_U007emarketing-0-10-0-85-220.png/540x540bb.jpg" alt="Kicking the Sheets" style="width: 170px; height: 170px; border-radius: 22%; overflow: hidden; display: inline-block; vertical-align: middle;"></a>
 </p>
 
 
