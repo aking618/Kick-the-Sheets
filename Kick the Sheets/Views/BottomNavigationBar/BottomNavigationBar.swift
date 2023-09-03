@@ -27,7 +27,7 @@ struct BottomNavigationBar: View {
                     Spacer()
                     Image(systemName: tab.iconName)
                         .font(.system(size: 20, weight: .semibold))
-                        .foregroundColor(appState.selectedTab == tab ? .blue : .gray)
+                        .foregroundColor(appState.selectedTab == tab ? KTSColors.tabColor.color : .gray)
                         .padding(.vertical, 10)
                     Spacer()
                 }

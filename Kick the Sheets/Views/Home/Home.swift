@@ -5,7 +5,6 @@
 //  Created by Ayren King on 12/16/22.
 //
 
-import SelectableCalendarView
 import SwiftUI
 
 struct Home: View {
@@ -38,10 +37,7 @@ extension Home {
     }
 
     private var calendar: some View {
-        CalendarWrapperView(
-            days: $viewModel.days,
-            selectedDate: $viewModel.dateSelected
-        )
+        CalendarView(selectedDate: $viewModel.dateSelected)
     }
 
     private var footer: some View {

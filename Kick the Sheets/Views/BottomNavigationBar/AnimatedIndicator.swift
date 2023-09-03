@@ -15,7 +15,7 @@ struct AnimatedIndicator: View {
             let width = proxy.size.width / CGFloat(Tab.allCases.count)
             let x = width * CGFloat(selectedTab.rawValue)
             RoundedRectangle(cornerRadius: 10)
-                .fill(Color.blue)
+                .fill(KTSColors.tabColor.color)
                 .frame(width: width - 20, height: 5)
                 .offset(x: x + 10, y: -2.5)
                 .animation(.spring(), value: selectedTab)
