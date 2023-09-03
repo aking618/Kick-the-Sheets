@@ -9,7 +9,7 @@ import SelectableCalendarView
 import SwiftUI
 
 struct CalendarWrapperView: View {
-    @Binding var days: [Day]
+    @Binding var days: [Int: Day]
     @Binding var selectedDate: Date
 
     var body: some View {

@@ -24,6 +24,7 @@ enum KTSColors: String {
     case background
     case rowBackground
     case border
+    case tabColor
 
     var color: Color {
         Color.fromAsset(color: self)

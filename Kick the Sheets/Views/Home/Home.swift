@@ -5,7 +5,6 @@
 //  Created by Ayren King on 12/16/22.
 //
 
-import SelectableCalendarView
 import SwiftUI
 
 struct Home: View {
@@ -38,10 +37,7 @@ extension Home {
     }
 
     private var calendar: some View {
-        CalendarWrapperView(
-            days: $viewModel.days,
-            selectedDate: $viewModel.dateSelected
-        )
+        CalendarView(selectedDate: $viewModel.dateSelected)
     }
 
     private var footer: some View {
@@ -71,7 +67,7 @@ extension Home {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(viewModel: HomeViewModel(todoService: GeneralTodoService(), days: .constant([])))
+        Home(viewModel: HomeViewModel(todoService: GeneralTodoService(), days: .constant([:])))
             .environmentObject(AppState())
             .previewDevice("iPhone 13 Mini")
     }
