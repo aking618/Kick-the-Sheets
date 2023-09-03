@@ -133,9 +133,3 @@ extension DayView {
         _ = appState.todoService.updateDayCompletion(for: appState.currentDayId, with: Day.isDayComplete(appState.todosForToday))
     }
 }
-
-struct TaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        DayView()
-    }
-}

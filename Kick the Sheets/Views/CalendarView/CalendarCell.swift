@@ -16,38 +16,43 @@ struct CalendarCell: View {
 
     var foregroundColor: Color {
         guard monthPosition == .current else {
-            return .gray
+            return KTSColors.text.color.opacity(0.3)
         }
 
-        return date.isSameDay(as: selectedDate) ? .white : .black
+        return KTSColors.text.color
     }
 
     var backgroundColor: Color {
-        return date.backgroundColor(appState.days)
+        date.backgroundColor(appState.days)
     }
 
     var borderColor: Color {
-        guard monthPosition == .current else {
-            return .gray
-        }
+        date.isSameDay(as: selectedDate) ? KTSColors.charcoal.color : KTSColors.border.color
+    }
 
-        return date.isSameDay(as: selectedDate) ? .blue : .gray
+    var borderWidth: CGFloat {
+        date.isSameDay(as: selectedDate) ? 1.5 : 1
     }
 
     var body: some View {
         Text("\(date.dateNumber)")
-            .foregroundColor(foregroundColor)
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .contentShape(Circle())
-            .padding(4)
+            .ktsFont(.body)
+            .frame(width: 30, height: 30)
             .background(backgroundColor)
-            .cornerRadius(8)
-            .overlay(
-                RoundedRectangle(cornerRadius: 8)
-                    .stroke(borderColor, lineWidth: 1)
-            )
+            .foregroundColor(foregroundColor)
+            .clipShape(Circle())
+            .overlay(Circle().stroke(borderColor, lineWidth: borderWidth))
             .onTapGesture {
                 selectedDate = date
             }
+    }
+}
+
+struct CalendarCellPreview_Previews: PreviewProvider {
+    static var previews: some View {
+        BaseView {
+            CalendarView(selectedDate: .constant(Date()))
+                .environmentObject(AppState())
+        }
     }
 }

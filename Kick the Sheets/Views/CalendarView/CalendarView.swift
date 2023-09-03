@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct CalendarView: View {
+    @StateObject var viewModel = CalendarViewModel()
+
     @Binding var selectedDate: Date
-    @State var currentMonth: Date = .init()
 
     init(selectedDate: Binding<Date>) {
         _selectedDate = selectedDate
@@ -18,32 +19,43 @@ struct CalendarView: View {
     var body: some View {
         VStack {
             HStack {
-                Button(action: {
-                    if let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: currentMonth) {
-                        currentMonth = previousMonth
-                    }
-                }, label: {
-                    Image(systemName: "chevron.left")
-                })
+                previousMonthButton
                 Spacer()
-                Text("\(currentMonth.month.description)")
-                    .ktsFont(.title)
+                currentMonthLabel
                 Spacer()
-                Button(action: {
-                    if let nextMonth = Calendar.current.date(byAdding: .month, value: 1, to: currentMonth) {
-                        currentMonth = nextMonth
-                    }
-                }, label: {
-                    Image(systemName: "chevron.right")
-                })
+                futureMonthButton
             }
-            CalendarGridView(selectedDate: $selectedDate, currentMonth: $currentMonth)
+            CalendarGridView(selectedDate: $selectedDate, currentMonth: $viewModel.currentMonth)
         }
+    }
+}
+
+// MARK: - Views
+
+extension CalendarView {
+    var previousMonthButton: some View {
+        Button(action: viewModel.updateToPrevMonth, label: {
+            Image(systemName: "chevron.left")
+        })
+    }
+
+    var futureMonthButton: some View {
+        Button(action: viewModel.updateToNextMonth, label: {
+            Image(systemName: "chevron.right")
+        })
+    }
+
+    var currentMonthLabel: some View {
+        Text("\(viewModel.currentMonth.month.description)")
+            .ktsFont(.title2)
     }
 }
 
 struct CalendarView_Previews: PreviewProvider {
     static var previews: some View {
-        CalendarView(selectedDate: .constant(Date()))
+        BaseView {
+            CalendarView(selectedDate: .constant(Date()))
+                .environmentObject(AppState())
+        }
     }
 }

@@ -57,6 +57,7 @@
 		EDBE54A92A85CFEC0012754A /* TodoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54A82A85CFEC0012754A /* TodoServiceTests.swift */; };
 		EDBE54AC2A959AAE0012754A /* TodoMigrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54AB2A959AAE0012754A /* TodoMigrationService.swift */; };
 		EDBE54AE2A959B6E0012754A /* TodoMigrationServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54AD2A959B6E0012754A /* TodoMigrationServiceTests.swift */; };
+		EDC17F812AA426150063166F /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC17F802AA426150063166F /* CalendarViewModel.swift */; };
 		EDC343852A9D7BC60072896F /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343842A9D7BC60072896F /* CalendarView.swift */; };
 		EDC343892AA1FE440072896F /* CalendarGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343882AA1FE440072896F /* CalendarGridView.swift */; };
 		EDC3438B2AA1FE6D0072896F /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438A2AA1FE6D0072896F /* CalendarCell.swift */; };
@@ -140,6 +141,7 @@
 		EDBE54A82A85CFEC0012754A /* TodoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoServiceTests.swift; sourceTree = "<group>"; };
 		EDBE54AB2A959AAE0012754A /* TodoMigrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMigrationService.swift; sourceTree = "<group>"; };
 		EDBE54AD2A959B6E0012754A /* TodoMigrationServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoMigrationServiceTests.swift; sourceTree = "<group>"; };
+		EDC17F802AA426150063166F /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
 		EDC343842A9D7BC60072896F /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		EDC343882AA1FE440072896F /* CalendarGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarGridView.swift; sourceTree = "<group>"; };
 		EDC3438A2AA1FE6D0072896F /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
@@ -203,6 +205,7 @@
 				ED2B03FC2A0B2A7300AA8ABB /* SettingsViewModel.swift */,
 				ED4CE5422992F04B005A4737 /* HomeViewModel.swift */,
 				ED010CE72A68ACA5000FFFB6 /* AppState.swift */,
+				EDC17F802AA426150063166F /* CalendarViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -618,6 +621,7 @@
 				ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */,
 				ED81A15F298F245400556661 /* String+Extension.swift in Sources */,
 				ED81A15A2983793500556661 /* View+Extension.swift in Sources */,
+				EDC17F812AA426150063166F /* CalendarViewModel.swift in Sources */,
 				ED81A13D2983229800556661 /* DbDay.swift in Sources */,
 				ED700B1C2A803B1000388BC2 /* DayTabDestination.swift in Sources */,
 				EDC343892AA1FE440072896F /* CalendarGridView.swift in Sources */,
