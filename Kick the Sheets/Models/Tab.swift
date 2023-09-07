@@ -31,4 +31,15 @@ enum Tab: Int, CaseIterable {
             return "gearshape"
         }
     }
+
+    var accessiblityID: String {
+        switch self {
+        case .home:
+            return "todoView"
+        case .calendar:
+            return "homeView"
+        case .settings:
+            return "settingsView"
+        }
+    }
 }
