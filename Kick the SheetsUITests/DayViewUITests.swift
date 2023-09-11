@@ -13,8 +13,11 @@ final class DayViewUITests: BaseUITest {
         XCTAssertTrue(isOn(.addTodoView))
 
         app.textFields["addTodoTextField"].fill(with: "Test")
+        XCTAssertEqual(app.textFields["addTodoTextField"].value as? String, "Test")
+
         app.buttons["Submit"].tap()
 
         XCTAssertTrue(isOn(.todoView))
+        XCTAssertTrue(app.staticTexts["Test"].exists)
     }
 }

@@ -22,6 +22,13 @@ class AppState: ObservableObject {
 
     init(todoService: TodoService = GeneralTodoService()) {
         self.todoService = todoService
+
+        #if UITESTING
+            if ProcessInfo.processInfo.arguments.contains("-ui_testing") {
+                self.todoService.deleteAllEntries()
+            }
+        #endif
+
         todoMigrationService = TodoMigrationService(todoService: todoService)
 
         updateAppState()
