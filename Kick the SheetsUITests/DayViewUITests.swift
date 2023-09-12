@@ -14,8 +14,9 @@ final class DayViewUITests: BaseUITest {
         app.buttons["addTodoButton"].tap()
         XCTAssertTrue(isOn(.addTodoView))
 
-        app.textFields["addTodoTextField"].fill(with: "Test")
-        XCTAssertEqual(app.textFields["addTodoTextField"].value as? String, "Test")
+        let addTodoTextField = app.textFields["addTodoTextField"]
+        addTodoTextField.fill(with: "Test")
+        XCTAssertEqual(addTodoTextField.value as? String, "Test")
 
         app.buttons["Submit"].tap()
 

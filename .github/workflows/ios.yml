@@ -23,13 +23,14 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane -NV
 
-      # if there are changes to any UI tests, run them, else run unit tests, ie UITests scheme or Kick the Sheets
       - name: Run Tests
         run: |
-          if [[ -n $(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep "UITests") ]]; then
-            fastlane scan --scheme UITests --clean
+          if [[ -n $(git diff --name-only ${{ github.event.before }} ${{ github.event.after }} | grep "UITests") ]]
+          then
+            fastlane scan --scheme "UITests" --clean
           else
             fastlane scan --scheme "Kick the Sheets" --clean
           fi
         env:
+          # xterm color
           TERM: xterm-256color
