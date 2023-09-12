@@ -26,7 +26,7 @@ jobs:
       - name: Run Tests
         run: |
           RUN_UI_TESTS=$(git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -c "UITests")
-          if [ -n echo $RUN_UI_TESTS ];
+          if [ -n $RUN_UI_TESTS ];
           then
             echo "Running UI Tests"
             echo "fastlane scan --scheme \"UITests\" --clean"
