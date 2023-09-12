@@ -74,6 +74,7 @@ extension AddTodoSheetView {
         Text("Todos cannot be empty.")
             .ktsFont(.caption)
             .foregroundColor(KTSColors.burntSienna.color)
+            .accessibilityIdentifier("addTodoError")
     }
 
     private var addTodoButton: some View {

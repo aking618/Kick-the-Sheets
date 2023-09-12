@@ -23,4 +23,18 @@ final class DayViewUITests: BaseUITest {
         XCTAssertTrue(isOn(.todoView))
         XCTAssertTrue(app.staticTexts["Test"].exists)
     }
+
+    func testAddTodoError() throws {
+        app.buttons["addTodoButton"].tap()
+        XCTAssertTrue(isOn(.addTodoView))
+
+        app.buttons["Submit"].tap()
+        XCTAssertTrue(app.staticTexts["addTodoError"].waitForExistence)
+
+        let addTodoTextField = app.textFields["addTodoTextField"]
+        addTodoTextField.fill(with: "Test")
+
+        app.buttons["Submit"].tap()
+        XCTAssertTrue(isOn(.todoView))
+    }
 }
