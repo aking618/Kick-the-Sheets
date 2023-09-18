@@ -2,8 +2,6 @@ name: iOS CI/CD
 
 on: [push, pull_request]
 
-
-
 jobs:
   Dump:
     name: Dump
@@ -14,7 +12,7 @@ jobs:
         uses: crazy-max/ghaction-dump-context@v2
 
   Test:
-    name: Run Unit Tests
+    name: Unit & UI Tests
     runs-on: macos-latest
 
     steps:
@@ -34,18 +32,14 @@ jobs:
       - name: Run Tests
         run: |
           RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.event.after}} | grep -c "UITests")
-          if [ -n $RUN_UI_TESTS ];
+          if [ $RUN_UI_TESTS -gt 0 ];
           then
             echo "Running UI Tests"
-            echo "fastlane scan --scheme \"UITests\" --clean"
             fastlane scan --scheme "UITests" --clean
           else
             echo "Running Unit Tests"
-            echo "fastlane scan --scheme \"Kick the Sheets\" --clean"
             fastlane scan --scheme "Kick the Sheets" --clean
           fi
           echo "Tests Complete"
-          echo $RUN_UI_TESTS
         env:
-          # xterm color
           TERM: xterm-256color
