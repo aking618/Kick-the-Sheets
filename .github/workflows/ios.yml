@@ -5,6 +5,14 @@ on: [push, pull_request]
 
 
 jobs:
+  Dump:
+    name: Dump
+    runs-on: macos-latest
+
+    steps:
+      - name: Dump context
+        uses: crazy-max/ghaction-dump-context@v2
+
   Test:
     name: Run Unit Tests
     runs-on: macos-latest
@@ -23,7 +31,7 @@ jobs:
 
       - name: Run Tests
         run: |
-          RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.sha}} | grep -c "UITests")
+          RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.event}} | grep -c "UITests")
           if [ -n $RUN_UI_TESTS ];
           then
             echo "Running UI Tests"
