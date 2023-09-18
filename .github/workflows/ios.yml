@@ -1,16 +1,8 @@
 name: iOS CI/CD
 
-on: [push, pull_request]
+on: [push]
 
 jobs:
-  Dump:
-    name: Dump
-    runs-on: macos-latest
-
-    steps:
-      - name: Dump context
-        uses: crazy-max/ghaction-dump-context@v2
-
   Test:
     name: Unit & UI Tests
     runs-on: macos-latest

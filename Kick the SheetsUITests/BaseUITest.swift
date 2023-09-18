@@ -32,6 +32,21 @@ class BaseUITest: XCTestCase {
             return app.descendants(matching: .any)[view.rawValue].firstMatch.exists
         }
     }
+
+    func dismissKeyboardIfPresent() {
+        guard app.keyboards.count > 0 else { return }
+
+        guard UIDevice.current.userInterfaceIdiom == .phone else {
+            app.keyboards.buttons["Hide keyboard"].tap()
+            return
+        }
+
+        if app.toolbars.buttons["Done"].exists {
+            app.toolbars.buttons["Done"].tap()
+        } else {
+            app.typeText("\n")
+        }
+    }
 }
 
 extension XCUIElement {

@@ -16,6 +16,7 @@ final class DayViewUITests: BaseUITest {
 
         let addTodoTextField = app.textFields["addTodoTextField"]
         addTodoTextField.fill(with: "Test")
+        dismissKeyboardIfPresent()
         XCTAssertEqual(addTodoTextField.value as? String, "Test")
 
         app.buttons["Submit"].tap()
@@ -33,6 +34,7 @@ final class DayViewUITests: BaseUITest {
 
         let addTodoTextField = app.textFields["addTodoTextField"]
         addTodoTextField.fill(with: "Test")
+        dismissKeyboardIfPresent()
 
         app.buttons["Submit"].tap()
         XCTAssertTrue(isOn(.todoView))
@@ -45,6 +47,7 @@ final class DayViewUITests: BaseUITest {
 
         let addTodoTextField = app.textFields["addTodoTextField"]
         addTodoTextField.fill(with: "Test")
+        dismissKeyboardIfPresent()
 
         app.buttons["Cancel"].tap()
         XCTAssertTrue(isOn(.todoView))
