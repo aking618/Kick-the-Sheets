@@ -8,7 +8,7 @@
 import XCTest
 
 final class DayViewUITests: BaseUITest {
-    func testShowAddTodoForm() throws {
+    func testAddTodoForm() throws {
         XCTAssertFalse(isOn(.addTodoView))
 
         app.buttons["addTodoButton"].tap()
