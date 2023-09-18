@@ -38,14 +38,6 @@ final class DayViewUITests: BaseUITest {
         XCTAssertTrue(isOn(.todoView))
     }
 
-    func testAddTodoCancel() throws {
-        app.buttons["addTodoButton"].tap()
-        XCTAssertTrue(isOn(.addTodoView))
-
-        app.buttons["Cancel"].tap()
-        XCTAssertTrue(isOn(.todoView))
-    }
-
     func testAddTodoCancelWithText() throws {
         app.buttons["addTodoButton"].tap()
         XCTAssertTrue(isOn(.addTodoView))

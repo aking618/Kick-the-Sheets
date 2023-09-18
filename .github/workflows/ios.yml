@@ -31,7 +31,7 @@ jobs:
 
       - name: Run Tests
         run: |
-          RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.event}} | grep -c "UITests")
+          RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.event.after}} | grep -c "UITests")
           if [ -n $RUN_UI_TESTS ];
           then
             echo "Running UI Tests"
