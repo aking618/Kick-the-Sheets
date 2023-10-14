@@ -35,6 +35,7 @@ extension AddTodoSheetView {
         VStack(spacing: 20) {
             Text("Add Todo")
                 .ktsFont(.button)
+                .accessibilityIdentifier("addTodoView")
 
             todoTextField
 
@@ -61,6 +62,7 @@ extension AddTodoSheetView {
                 .placeholder("Todo description...", when: textFieldText.isEmpty)
                 .padding([.trailing, .top, .bottom], 8)
                 .focused($focusField, equals: true)
+                .accessibilityIdentifier("addTodoTextField")
         }
         .padding([.leading, .trailing])
         .background(KTSColors.rowBackground.color)
@@ -72,6 +74,7 @@ extension AddTodoSheetView {
         Text("Todos cannot be empty.")
             .ktsFont(.caption)
             .foregroundColor(KTSColors.burntSienna.color)
+            .accessibilityIdentifier("addTodoError")
     }
 
     private var addTodoButton: some View {

@@ -1,19 +1,17 @@
 name: iOS CI/CD
 
-on:
-  push:
-    branches: [ "*" ]
-  pull_request:
-    branches: [ "*" ]
+on: [push]
 
 jobs:
   Test:
-    name: Run Unit Tests
+    name: Unit & UI Tests
     runs-on: macos-latest
 
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
@@ -23,7 +21,17 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane -NV
 
-      - name: Run Unit Tests
-        run: fastlane scan --scheme "Kick the Sheets" --clean
+      - name: Run Tests
+        run: |
+          RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.event.after}} | grep -c "UITests")
+          if [ $RUN_UI_TESTS -gt 0 ];
+          then
+            echo "Running UI Tests"
+            fastlane scan --scheme "UITests" --clean
+          else
+            echo "Running Unit Tests"
+            fastlane scan --scheme "Kick the Sheets" --clean
+          fi
+          echo "Tests Complete"
         env:
           TERM: xterm-256color

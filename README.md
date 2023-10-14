@@ -5,9 +5,7 @@
 Kicking the Sheets is a self-hosted todo app that gamifies task completion.   
 
 <p align="left">
-	<a href="https://apps.apple.com/us/app/kicking-the-sheets/id6450491354">
-		<img src="https://linkmaker.itunes.apple.com/assets/shared/badges/en-gb/appstore-lrg.svg"/>
-	</a>
+	<a href="https://apps.apple.com/us/app/kicking-the-sheets/id6450491354?itsct=apps_box_badge&amp;itscg=30200" style="display: inline-block; overflow: hidden; border-radius: 13px; width: 250px; height: 83px;"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83&amp;releaseDate=1687824000" alt="Download on the App Store" style="border-radius: 13px; width: 250px; height: 83px;"></a>
 </p>
 
 
@@ -43,7 +41,10 @@ You will find mistakes, many mistakes, do not blame me. I guess I didn't hide th
 
 I have learned a lot from this project. Here are some of the key takeaways:
 
-1. SwiftUI is awesome. It's easy to learn and use, and it's fun to build UIs with it. (My day job uses UIKitf, so this gives me a chance to explore SwiftUI)
+1. SwiftUI is awesome. It's easy to learn and use, and it's fun to build UIs with it. (My day job uses UIKitt, so this gives me a chance to explore SwiftUI)
 2. Don't be afraid to utilize third-party libraries. They can save you a lot of time and effort. The calendar view is a good example of this. I forked [iCalvin-Actual's calendar view](https://github.com/iCalvin-Actual/Selectable-Calendar-View) and modified it to fit my needs.
+
+*Update: I have since replaced the calendar view with a custom implementation. Sometimes it's better to roll your own.*
+
 3. Take opportunities to try out different design patterns. I used the MVVM pattern for this project, and I'm glad I did. It made the codebase much more manageable and easier to maintain. (I am debating whether to try out MV or TCA for my next project)
 4. Have fun! This is a personal project. Don't overthink it. Just have fun and enjoy the process.

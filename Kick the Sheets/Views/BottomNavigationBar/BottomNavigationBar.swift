@@ -31,6 +31,8 @@ struct BottomNavigationBar: View {
                         .padding(.vertical, 10)
                     Spacer()
                 }
+                .accessibilityIdentifier(tab.accessiblityID)
+                .accessibilityValue(appState.selectedTab == tab ? "Y" : "N")
             }
         }
     }

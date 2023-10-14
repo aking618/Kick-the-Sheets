@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		ED010CE82A68ACA5000FFFB6 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED010CE72A68ACA5000FFFB6 /* AppState.swift */; };
 		ED010CEB2A6A0E69000FFFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED010CEA2A6A0E69000FFFB6 /* LaunchScreen.storyboard */; };
+		ED058F812AA6B83F0004EF20 /* BaseUITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED058F802AA6B83F0004EF20 /* BaseUITest.swift */; };
 		ED2A08512A11A5FF002AC216 /* SettingsOptionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2A08502A11A5FF002AC216 /* SettingsOptionRow.swift */; };
 		ED2B03F82A08881F00AA8ABB /* Animation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */; };
 		ED2B03FB2A0B26BA00AA8ABB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */; };
@@ -31,8 +32,7 @@
 		ED81A100298321A700556661 /* Kick_the_SheetsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A0FF298321A700556661 /* Kick_the_SheetsApp.swift */; };
 		ED81A102298321A700556661 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A101298321A700556661 /* ContentView.swift */; };
 		ED81A104298321A800556661 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED81A103298321A800556661 /* Assets.xcassets */; };
-		ED81A11B298321A800556661 /* Kick_the_SheetsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */; };
-		ED81A11D298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */; };
+		ED81A11B298321A800556661 /* AppLaunchUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A11A298321A800556661 /* AppLaunchUITests.swift */; };
 		ED81A12F2983225000556661 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = ED81A12E2983225000556661 /* SQLite */; };
 		ED81A13A2983229800556661 /* GeneralTodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1332983229800556661 /* GeneralTodoService.swift */; };
 		ED81A13B2983229800556661 /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1352983229800556661 /* Day.swift */; };
@@ -52,6 +52,7 @@
 		ED84D49829D70CAE0094CF09 /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49729D70CAE0094CF09 /* Tab.swift */; };
 		ED84D49B29D9C67C0094CF09 /* BottomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */; };
 		ED84D49D29DA3A790094CF09 /* AnimatedIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */; };
+		EDAC5B6B2AA54838009A9BB2 /* DayViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDAC5B6A2AA54838009A9BB2 /* DayViewUITests.swift */; };
 		EDBE54A22A83AFC60012754A /* AppStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54A12A83AFC60012754A /* AppStateTests.swift */; };
 		EDBE54A62A85765C0012754A /* Preview Content.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDBE54A52A85765C0012754A /* Preview Content.xcassets */; };
 		EDBE54A92A85CFEC0012754A /* TodoServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDBE54A82A85CFEC0012754A /* TodoServiceTests.swift */; };
@@ -88,6 +89,7 @@
 /* Begin PBXFileReference section */
 		ED010CE72A68ACA5000FFFB6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		ED010CEA2A6A0E69000FFFB6 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ED058F802AA6B83F0004EF20 /* BaseUITest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseUITest.swift; sourceTree = "<group>"; };
 		ED2A08502A11A5FF002AC216 /* SettingsOptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsOptionRow.swift; sourceTree = "<group>"; };
 		ED2B03F72A08881F00AA8ABB /* Animation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animation+Extension.swift"; sourceTree = "<group>"; };
 		ED2B03FA2A0B26BA00AA8ABB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -114,8 +116,7 @@
 		ED81A103298321A800556661 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED81A10C298321A800556661 /* Kick the SheetsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kick the SheetsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED81A116298321A800556661 /* Kick the SheetsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Kick the SheetsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsUITests.swift; sourceTree = "<group>"; };
-		ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Kick_the_SheetsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ED81A11A298321A800556661 /* AppLaunchUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLaunchUITests.swift; sourceTree = "<group>"; };
 		ED81A1332983229800556661 /* GeneralTodoService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralTodoService.swift; sourceTree = "<group>"; };
 		ED81A1352983229800556661 /* Day.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
 		ED81A1362983229800556661 /* Todo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
@@ -134,6 +135,7 @@
 		ED84D49729D70CAE0094CF09 /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		ED84D49A29D9C67C0094CF09 /* BottomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBar.swift; sourceTree = "<group>"; };
 		ED84D49C29DA3A790094CF09 /* AnimatedIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimatedIndicator.swift; sourceTree = "<group>"; };
+		EDAC5B6A2AA54838009A9BB2 /* DayViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayViewUITests.swift; sourceTree = "<group>"; };
 		EDBE54A12A83AFC60012754A /* AppStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStateTests.swift; sourceTree = "<group>"; };
 		EDBE54A52A85765C0012754A /* Preview Content.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Content.xcassets"; sourceTree = "<group>"; };
 		EDBE54A82A85CFEC0012754A /* TodoServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoServiceTests.swift; sourceTree = "<group>"; };
@@ -278,8 +280,9 @@
 		ED81A119298321A800556661 /* Kick the SheetsUITests */ = {
 			isa = PBXGroup;
 			children = (
-				ED81A11A298321A800556661 /* Kick_the_SheetsUITests.swift */,
-				ED81A11C298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift */,
+				ED81A11A298321A800556661 /* AppLaunchUITests.swift */,
+				EDAC5B6A2AA54838009A9BB2 /* DayViewUITests.swift */,
+				ED058F802AA6B83F0004EF20 /* BaseUITest.swift */,
 			);
 			path = "Kick the SheetsUITests";
 			sourceTree = "<group>";
@@ -651,8 +654,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED81A11D298321A800556661 /* Kick_the_SheetsUITestsLaunchTests.swift in Sources */,
-				ED81A11B298321A800556661 /* Kick_the_SheetsUITests.swift in Sources */,
+				ED058F812AA6B83F0004EF20 /* BaseUITest.swift in Sources */,
+				ED81A11B298321A800556661 /* AppLaunchUITests.swift in Sources */,
+				EDAC5B6B2AA54838009A9BB2 /* DayViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -672,6 +676,140 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		ED058F822AAEA95C0004EF20 /* UITesting */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG UITESTING";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = UITesting;
+		};
+		ED058F832AAEA95C0004EF20 /* UITesting */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
+				DEVELOPMENT_ASSET_PATHS = "\"Kick the Sheets/Preview Content\"";
+				DEVELOPMENT_TEAM = P649CF844Y;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Kick-the-Sheets-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Kicking the Sheets";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.productivity";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.1;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = UITesting;
+		};
+		ED058F842AAEA95C0004EF20 /* UITesting */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P649CF844Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ayrenking.Kick-the-SheetsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Kick the Sheets.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Kick the Sheets";
+			};
+			name = UITesting;
+		};
+		ED058F852AAEA95C0004EF20 /* UITesting */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P649CF844Y;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ayrenking.Kick-the-SheetsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Kick the Sheets";
+			};
+			name = UITesting;
+		};
 		ED81A11E298321A800556661 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -941,6 +1079,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED81A11E298321A800556661 /* Debug */,
+				ED058F822AAEA95C0004EF20 /* UITesting */,
 				ED81A11F298321A800556661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -950,6 +1089,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED81A121298321A800556661 /* Debug */,
+				ED058F832AAEA95C0004EF20 /* UITesting */,
 				ED81A122298321A800556661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -959,6 +1099,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED81A124298321A800556661 /* Debug */,
+				ED058F842AAEA95C0004EF20 /* UITesting */,
 				ED81A125298321A800556661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
@@ -968,6 +1109,7 @@
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				ED81A127298321A800556661 /* Debug */,
+				ED058F852AAEA95C0004EF20 /* UITesting */,
 				ED81A128298321A800556661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
