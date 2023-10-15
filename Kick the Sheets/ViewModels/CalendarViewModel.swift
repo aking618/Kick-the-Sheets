@@ -9,12 +9,14 @@ import SwiftUI
 
 class CalendarViewModel: ObservableObject {
     @Published var currentMonth: Date = .init()
+    @Published var showNextMonthButton: Bool = false
 
     func updateToPrevMonth() {
         guard let previousMonth = Calendar.current.date(byAdding: .month, value: -1, to: currentMonth)
         else { return }
 
         currentMonth = previousMonth
+        updateShowNextMonthButton()
     }
 
     func updateToNextMonth() {
@@ -22,5 +24,10 @@ class CalendarViewModel: ObservableObject {
         else { return }
 
         currentMonth = nextMonth
+        updateShowNextMonthButton()
+    }
+
+    func updateShowNextMonthButton() {
+        showNextMonthButton = !Calendar.current.isDate(currentMonth, equalTo: Date(), toGranularity: .month)
     }
 }

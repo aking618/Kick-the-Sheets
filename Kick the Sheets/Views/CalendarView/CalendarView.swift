@@ -23,7 +23,10 @@ struct CalendarView: View {
                 Spacer()
                 currentMonthLabel
                 Spacer()
-                futureMonthButton
+
+                if viewModel.showNextMonthButton {
+                    futureMonthButton
+                }
             }
             CalendarGridView(selectedDate: $selectedDate, currentMonth: $viewModel.currentMonth)
         }
