@@ -20,12 +20,12 @@ struct ContentView: View {
         }
         .ignoresSafeArea(.keyboard)
         .onAppear {
-            appState.showMigrationPopup = appState.shouldShowMigrationPopup()
-            appState.updateLastPopupDate()
+            appState.showMigrationPopup = appState.todoMigrationService.shouldShowPopup()
         }
         .alert("Migrate Unfinished Todos", isPresented: $appState.showMigrationPopup) {
             Button("Migrate") {
-                appState.handleTodoMigration()
+                appState.todoMigrationService.migrateTodos(currentDayId: appState.currentDayId)
+                appState.updateAppState()
             }
             Button("Cancel", role: .cancel) {}
         }

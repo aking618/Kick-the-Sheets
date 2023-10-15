@@ -5,7 +5,6 @@
 //  Created by Ayren King on 12/22/22.
 //
 
-import PopupView
 import SwiftUI
 
 struct DayView: View {
@@ -25,6 +24,7 @@ struct DayView: View {
                 NavigationLink(value: DayTabDestination.addForm) {
                     RoundedButton("Add todo", action: { appState.navigate(to: DayTabDestination.addForm) })
                 }
+                .accessibilityIdentifier("addTodoButton")
             }
             .padding(.top)
         }
@@ -45,6 +45,7 @@ extension DayView {
             .ktsFont(.title)
             .foregroundColor(KTSColors.text.color)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityIdentifier("dayHeader")
     }
 
     private var subHeader: some View {
@@ -53,6 +54,7 @@ extension DayView {
             .foregroundColor(KTSColors.text.color)
             .padding(.bottom)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .accessibilityIdentifier("dayCompletedSubHeader")
     }
 
     private var searchBar: some View {
@@ -65,6 +67,7 @@ extension DayView {
                 .foregroundColor(KTSColors.text.color)
                 .placeholder("Search...", when: searchText.isEmpty)
                 .padding([.trailing, .top, .bottom], 8)
+                .accessibilityIdentifier("todoSearchField")
         }
         .padding([.leading, .trailing])
         .background(KTSColors.rowBackground.color)
@@ -82,10 +85,12 @@ extension DayView {
                     doneAction: { updateAction(index: index) },
                     deleteAction: { deleteAction(index: index) })
                 .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0))
+                .accessibilityIdentifier("todoItem")
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
         .animation(.spring(), value: appState.todosForToday)
+        .accessibilityIdentifier("todoList")
         .modifier(
             EmptyDataModifier(
                 items: filteredTodos,
@@ -131,11 +136,5 @@ extension DayView {
         }
 
         _ = appState.todoService.updateDayCompletion(for: appState.currentDayId, with: Day.isDayComplete(appState.todosForToday))
-    }
-}
-
-struct TaskView_Previews: PreviewProvider {
-    static var previews: some View {
-        DayView()
     }
 }

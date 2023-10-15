@@ -9,12 +9,13 @@ import SwiftUI
 
 class AppState: ObservableObject {
     let todoService: TodoService
+    let todoMigrationService: TodoMigrationService
 
     @Published var path = NavigationPath()
     @Published var selectedTab: Tab = .home
     @Published var currentDayId: Int64 = 0
     @Published var todosForToday: [Todo] = []
-    @Published var days: [Day] = []
+    @Published var days: [Int: Day] = [:]
     @Published var showMigrationPopup: Bool = false
 
     @Published var calendarTransition: AnyTransition = .backslide
@@ -22,63 +23,20 @@ class AppState: ObservableObject {
     init(todoService: TodoService = GeneralTodoService()) {
         self.todoService = todoService
 
+        #if UITESTING
+            if ProcessInfo.processInfo.arguments.contains("-ui_testing") {
+                self.todoService.deleteAllEntries()
+            }
+        #endif
+
+        todoMigrationService = TodoMigrationService(todoService: todoService)
+
         updateAppState()
-    }
-
-    func shouldShowMigrationPopup() -> Bool {
-        let currentDate = Date()
-        let userDefaults = UserDefaults.standard
-
-        guard UserDefaults.standard.object(forKey: "migrateTodos") as? Bool ?? false else { return false }
-
-        guard days.count > 1 else { return false }
-
-        let days = todoService.retrieveDays()
-        guard let previousDay = days.last(where: {
-            !Calendar.current.isDate($0.date, inSameDayAs: Date())
-        }),
-            !previousDay.status
-        else {
-            return false
-        }
-
-        if let lastPopupDate = userDefaults.object(forKey: "lastPopupDate") as? Date {
-            return !lastPopupDate.isSameDay(comparingTo: currentDate)
-        } else {
-            return true
-        }
-    }
-
-    func updateLastPopupDate() {
-        let currentDate = Date()
-        let userDefaults = UserDefaults.standard
-        userDefaults.set(currentDate, forKey: "lastPopupDate")
-    }
-
-    func handleTodoMigration() {
-        guard todosForToday.isEmpty else { return }
-
-        let days = todoService.retrieveDays()
-        guard let previousDay = days.last(where: {
-            !Calendar.current.isDate($0.date, inSameDayAs: Date())
-        }) else {
-            return
-        }
-
-        let todos = todoService.retrieveTodos(for: previousDay.id)
-
-        for todo in todos {
-            guard !todo.status else { return }
-            _ = todoService.insertTodo(description: todo.description, for: currentDayId)
-        }
-        todosForToday = todoService.retrieveTodos(for: currentDayId)
     }
 
     func updateAppState() {
         days = todoService.retrieveDays()
-        if let currenDay = days.first(where: {
-            $0.date.isSameDay(comparingTo: Date())
-        }) {
+        if let currenDay = days[Date().key] {
             currentDayId = currenDay.id
             todosForToday =
                 todoService.retrieveTodos(for: currenDay.id)
@@ -87,7 +45,7 @@ class AppState: ObservableObject {
         }
     }
 
-    func createDayIfNeeded() {
+    private func createDayIfNeeded() {
         if let currentDayId = todoService.insertDay() {
             self.currentDayId = currentDayId
             todosForToday = []

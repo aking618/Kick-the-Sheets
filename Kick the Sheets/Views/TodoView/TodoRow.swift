@@ -24,6 +24,7 @@ struct TodoRow: View {
                 .foregroundColor(KTSColors.text.color)
                 .strikethrough(todo.status)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .accessibilityIdentifier("todoDescription")
             DeleteIconView()
                 .onTapGesture {
                     deleteAction()
