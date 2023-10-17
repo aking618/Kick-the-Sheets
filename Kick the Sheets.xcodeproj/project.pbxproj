@@ -65,6 +65,25 @@
 		EDC3438E2AA1FEF50072896F /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438D2AA1FEF50072896F /* Months.swift */; };
 		EDC343902AA1FEFC0072896F /* WeekDays.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438F2AA1FEFC0072896F /* WeekDays.swift */; };
 		EDC343952AA3BF290072896F /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343942AA3BF290072896F /* CalendarHelper.swift */; };
+		EDC41AEE2ADCA5940002959D /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC41AED2ADCA5940002959D /* WidgetKit.framework */; };
+		EDC41AF02ADCA5940002959D /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EDC41AEF2ADCA5940002959D /* SwiftUI.framework */; };
+		EDC41AF32ADCA5940002959D /* DailyProgressWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC41AF22ADCA5940002959D /* DailyProgressWidgetBundle.swift */; };
+		EDC41AF52ADCA5940002959D /* DailyProgressWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC41AF42ADCA5940002959D /* DailyProgressWidget.swift */; };
+		EDC41AF72ADCA5950002959D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC41AF62ADCA5950002959D /* Assets.xcassets */; };
+		EDC41AFB2ADCA5950002959D /* DailyProgressWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = EDC41AEB2ADCA5940002959D /* DailyProgressWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		EDC41B012ADE07210002959D /* GeneralTodoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1332983229800556661 /* GeneralTodoService.swift */; };
+		EDC41B022ADE07370002959D /* Day.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1352983229800556661 /* Day.swift */; };
+		EDC41B032ADE073C0002959D /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1362983229800556661 /* Todo.swift */; };
+		EDC41B042ADE074E0002959D /* DbDay.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1382983229800556661 /* DbDay.swift */; };
+		EDC41B052ADE07510002959D /* DbTodo.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1392983229800556661 /* DbTodo.swift */; };
+		EDC41B062ADE084A0002959D /* CircularProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED6B13342995D0C100634B47 /* CircularProgressView.swift */; };
+		EDC41B072ADE087F0002959D /* KTSColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A150298324F300556661 /* KTSColors.swift */; };
+		EDC41B082ADE088E0002959D /* KTSFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4CE552299469D6005A4737 /* KTSFonts.swift */; };
+		EDC41B092ADE0B990002959D /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED81A1442983247800556661 /* Date+Extension.swift */; };
+		EDC41B0B2ADE0C180002959D /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = EDC41B0A2ADE0C180002959D /* SQLite */; };
+		EDC41B0C2ADE0C340002959D /* Months.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC3438D2AA1FEF50072896F /* Months.swift */; };
+		EDC41B0D2ADE0C510002959D /* CalendarHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC343942AA3BF290072896F /* CalendarHelper.swift */; };
+		EDC41B0E2ADE0CBE0002959D /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE510492A23134C003F8353 /* Colors.xcassets */; };
 		EDE510482A1861C9003F8353 /* AboutStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDE510472A1861C9003F8353 /* AboutStrings.swift */; };
 		EDE5104A2A23134C003F8353 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDE510492A23134C003F8353 /* Colors.xcassets */; };
 /* End PBXBuildFile section */
@@ -84,7 +103,28 @@
 			remoteGlobalIDString = ED81A0FB298321A700556661;
 			remoteInfo = "Kick the Sheets";
 		};
+		EDC41AF92ADCA5950002959D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ED81A0F4298321A700556661 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EDC41AEA2ADCA5940002959D;
+			remoteInfo = DailyProgressWidgetExtension;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		EDC41AFC2ADCA5950002959D /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				EDC41AFB2ADCA5950002959D /* DailyProgressWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		ED010CE72A68ACA5000FFFB6 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -148,6 +188,13 @@
 		EDC3438D2AA1FEF50072896F /* Months.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Months.swift; sourceTree = "<group>"; };
 		EDC3438F2AA1FEFC0072896F /* WeekDays.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDays.swift; sourceTree = "<group>"; };
 		EDC343942AA3BF290072896F /* CalendarHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarHelper.swift; sourceTree = "<group>"; };
+		EDC41AEB2ADCA5940002959D /* DailyProgressWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DailyProgressWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDC41AED2ADCA5940002959D /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
+		EDC41AEF2ADCA5940002959D /* SwiftUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SwiftUI.framework; path = System/Library/Frameworks/SwiftUI.framework; sourceTree = SDKROOT; };
+		EDC41AF22ADCA5940002959D /* DailyProgressWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyProgressWidgetBundle.swift; sourceTree = "<group>"; };
+		EDC41AF42ADCA5940002959D /* DailyProgressWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyProgressWidget.swift; sourceTree = "<group>"; };
+		EDC41AF62ADCA5950002959D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EDC41AF82ADCA5950002959D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EDE510472A1861C9003F8353 /* AboutStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutStrings.swift; sourceTree = "<group>"; };
 		EDE510492A23134C003F8353 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -172,6 +219,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC41AE82ADCA5940002959D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC41B0B2ADE0C180002959D /* SQLite in Frameworks */,
+				EDC41AF02ADCA5940002959D /* SwiftUI.framework in Frameworks */,
+				EDC41AEE2ADCA5940002959D /* WidgetKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -234,6 +291,8 @@
 				ED81A0FE298321A700556661 /* Kick the Sheets */,
 				ED81A10F298321A800556661 /* Kick the SheetsTests */,
 				ED81A119298321A800556661 /* Kick the SheetsUITests */,
+				EDC41AF12ADCA5940002959D /* DailyProgressWidget */,
+				EDC41AEC2ADCA5940002959D /* Frameworks */,
 				ED81A0FD298321A700556661 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -244,6 +303,7 @@
 				ED81A0FC298321A700556661 /* Kick the Sheets.app */,
 				ED81A10C298321A800556661 /* Kick the SheetsTests.xctest */,
 				ED81A116298321A800556661 /* Kick the SheetsUITests.xctest */,
+				EDC41AEB2ADCA5940002959D /* DailyProgressWidgetExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -450,6 +510,26 @@
 			path = Enums;
 			sourceTree = "<group>";
 		};
+		EDC41AEC2ADCA5940002959D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EDC41AED2ADCA5940002959D /* WidgetKit.framework */,
+				EDC41AEF2ADCA5940002959D /* SwiftUI.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EDC41AF12ADCA5940002959D /* DailyProgressWidget */ = {
+			isa = PBXGroup;
+			children = (
+				EDC41AF22ADCA5940002959D /* DailyProgressWidgetBundle.swift */,
+				EDC41AF42ADCA5940002959D /* DailyProgressWidget.swift */,
+				EDC41AF62ADCA5950002959D /* Assets.xcassets */,
+				EDC41AF82ADCA5950002959D /* Info.plist */,
+			);
+			path = DailyProgressWidget;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -460,10 +540,12 @@
 				ED81A0F8298321A700556661 /* Sources */,
 				ED81A0F9298321A700556661 /* Frameworks */,
 				ED81A0FA298321A700556661 /* Resources */,
+				EDC41AFC2ADCA5950002959D /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				EDC41AFA2ADCA5950002959D /* PBXTargetDependency */,
 			);
 			name = "Kick the Sheets";
 			packageProductDependencies = (
@@ -509,6 +591,26 @@
 			productReference = ED81A116298321A800556661 /* Kick the SheetsUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		EDC41AEA2ADCA5940002959D /* DailyProgressWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EDC41B002ADCA5950002959D /* Build configuration list for PBXNativeTarget "DailyProgressWidgetExtension" */;
+			buildPhases = (
+				EDC41AE72ADCA5940002959D /* Sources */,
+				EDC41AE82ADCA5940002959D /* Frameworks */,
+				EDC41AE92ADCA5940002959D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DailyProgressWidgetExtension;
+			packageProductDependencies = (
+				EDC41B0A2ADE0C180002959D /* SQLite */,
+			);
+			productName = DailyProgressWidgetExtension;
+			productReference = EDC41AEB2ADCA5940002959D /* DailyProgressWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -516,7 +618,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					ED81A0FB298321A700556661 = {
@@ -529,6 +631,9 @@
 					ED81A115298321A800556661 = {
 						CreatedOnToolsVersion = 14.2;
 						TestTargetID = ED81A0FB298321A700556661;
+					};
+					EDC41AEA2ADCA5940002959D = {
+						CreatedOnToolsVersion = 15.0;
 					};
 				};
 			};
@@ -551,6 +656,7 @@
 				ED81A0FB298321A700556661 /* Kick the Sheets */,
 				ED81A10B298321A800556661 /* Kick the SheetsTests */,
 				ED81A115298321A800556661 /* Kick the SheetsUITests */,
+				EDC41AEA2ADCA5940002959D /* DailyProgressWidgetExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -583,6 +689,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EDC41AE92ADCA5940002959D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC41AF72ADCA5950002959D /* Assets.xcassets in Resources */,
+				EDC41B0E2ADE0CBE0002959D /* Colors.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,6 +775,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EDC41AE72ADCA5940002959D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDC41B012ADE07210002959D /* GeneralTodoService.swift in Sources */,
+				EDC41B092ADE0B990002959D /* Date+Extension.swift in Sources */,
+				EDC41AF52ADCA5940002959D /* DailyProgressWidget.swift in Sources */,
+				EDC41B062ADE084A0002959D /* CircularProgressView.swift in Sources */,
+				EDC41B0C2ADE0C340002959D /* Months.swift in Sources */,
+				EDC41B022ADE07370002959D /* Day.swift in Sources */,
+				EDC41AF32ADCA5940002959D /* DailyProgressWidgetBundle.swift in Sources */,
+				EDC41B0D2ADE0C510002959D /* CalendarHelper.swift in Sources */,
+				EDC41B072ADE087F0002959D /* KTSColors.swift in Sources */,
+				EDC41B042ADE074E0002959D /* DbDay.swift in Sources */,
+				EDC41B082ADE088E0002959D /* KTSFonts.swift in Sources */,
+				EDC41B052ADE07510002959D /* DbTodo.swift in Sources */,
+				EDC41B032ADE073C0002959D /* Todo.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -672,6 +807,11 @@
 			isa = PBXTargetDependency;
 			target = ED81A0FB298321A700556661 /* Kick the Sheets */;
 			targetProxy = ED81A117298321A800556661 /* PBXContainerItemProxy */;
+		};
+		EDC41AFA2ADCA5950002959D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = EDC41AEA2ADCA5940002959D /* DailyProgressWidgetExtension */;
+			targetProxy = EDC41AF92ADCA5950002959D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -739,6 +879,7 @@
 		ED058F832AAEA95C0004EF20 /* UITesting */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -927,6 +1068,7 @@
 		ED81A121298321A800556661 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -962,6 +1104,7 @@
 		ED81A122298321A800556661 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
@@ -1072,6 +1215,103 @@
 			};
 			name = Release;
 		};
+		EDC41AFD2ADCA5950002959D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P649CF844Y;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyProgressWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DailyProgressWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets.DailyProgressWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EDC41AFE2ADCA5950002959D /* UITesting */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P649CF844Y;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyProgressWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DailyProgressWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets.DailyProgressWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = UITesting;
+		};
+		EDC41AFF2ADCA5950002959D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = P649CF844Y;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DailyProgressWidget/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DailyProgressWidget;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.ayrenking.Kicking-the-Sheets.DailyProgressWidget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1115,6 +1355,16 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		EDC41B002ADCA5950002959D /* Build configuration list for PBXNativeTarget "DailyProgressWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EDC41AFD2ADCA5950002959D /* Debug */,
+				EDC41AFE2ADCA5950002959D /* UITesting */,
+				EDC41AFF2ADCA5950002959D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1130,6 +1380,11 @@
 
 /* Begin XCSwiftPackageProductDependency section */
 		ED81A12E2983225000556661 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED81A12D2983225000556661 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+		EDC41B0A2ADE0C180002959D /* SQLite */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = ED81A12D2983225000556661 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
 			productName = SQLite;
