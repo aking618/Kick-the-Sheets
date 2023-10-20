@@ -1,0 +1,69 @@
+name: Kick the Sheets
+options:
+  bundleIdPrefix: com.ayrenking
+packages:
+  SQLite:
+    url: https://github.com/stephencelis/SQLite.swift.git
+    branch: master
+targets:
+  KTS:
+    type: application
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: ["Kick the Sheets"]
+    settings:
+      configs:
+    dependencies:
+      - target: Services
+      - target: DailyProgressWidget
+  
+  Services:
+    type: framework
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: [Services]
+    settings:
+      configs:
+    dependencies:
+      - package: SQLite
+  
+  KTSTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: ["Kick the SheetsTests"]
+    settings:
+      configs:
+    dependencies:
+      - target: KTS
+        type: regular
+        optional: true
+      - package: SQLite
+        type: regular
+        optional: true
+
+  KTSUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: ["Kick the SheetsUITests"]
+    settings:
+      configs:
+    dependencies:
+      - target: KTS
+        type: regular
+        optional: true
+      - package: SQLite
+        type: regular
+        optional: true
+
+  DailyProgressWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources: [DailyProgressWidget]
+    settings:
+      configs:
+    dependencies:
+      - framework: Services
+      
