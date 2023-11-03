@@ -7,18 +7,18 @@
 
 import SwiftUI
 
-struct CircularProgressView: View {
+public struct CircularProgressView: View {
     let progress: Int
     let total: Int
     let lineWidth: CGFloat
 
-    init(progress: Int, total: Int, _ lineWidth: CGFloat = 10) {
+    public init(progress: Int, total: Int, _ lineWidth: CGFloat = 10) {
         self.progress = progress
         self.total = total
         self.lineWidth = lineWidth
     }
 
-    var body: some View {
+    public var body: some View {
         ZStack {
             incompleteCircle
             completedCircle

@@ -5,6 +5,7 @@
 //  Created by Ayren King on 12/22/22.
 //
 
+import Shared
 import SwiftUI
 
 struct BaseView<Content>: View where Content: View {

@@ -13,7 +13,7 @@ public struct Day: Hashable {
     public let status: Bool
 }
 
-extension Day {
+public extension Day {
     static func isDayComplete(_ todos: [Todo]) -> Bool {
         guard !todos.isEmpty else { return false }
 

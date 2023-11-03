@@ -1,5 +1,8 @@
 name: Kick the Sheets
+include:
+  - signingConfig.yml
 options:
+  deploymentTarget: "16.0"
   bundleIdPrefix: com.ayrenking
 packages:
   SQLite:
@@ -9,28 +12,42 @@ targets:
   KTS:
     type: application
     platform: iOS
-    deploymentTarget: "16.0"
     sources: ["Kick the Sheets"]
     settings:
-      configs:
+      base:
+        INFOPLIST_FILE: Kick the Sheets/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kick-the-Sheets
+        PRODUCT_NAME: KTS
+        CURRENT_PROJECT_VERSION: 3
+        MARKETING_VERSION: 2
+        PRODUCT_MODULE_NAME: KTS
     dependencies:
-      - target: Services
+      - framework: Services.framework
+      - framework: Shared.framework
       - target: DailyProgressWidget
   
   Services:
     type: framework
     platform: iOS
-    deploymentTarget: "16.0"
     sources: [Services]
     settings:
       configs:
     dependencies:
       - package: SQLite
+
+  Shared:
+    type: framework
+    platform: iOS
+    sources: [Shared]
+    settings:
+      configs:
+    dependencies:
+      - framework: Services.framework
+
   
   KTSTests:
     type: bundle.unit-test
     platform: iOS
-    deploymentTarget: "16.0"
     sources: ["Kick the SheetsTests"]
     settings:
       configs:
@@ -65,5 +82,6 @@ targets:
     settings:
       configs:
     dependencies:
-      - framework: Services
+      - framework: Services.framework
+      - framework: Shared.framework
       

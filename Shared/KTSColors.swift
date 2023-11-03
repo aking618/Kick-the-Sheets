@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-enum KTSColors: String {
+public enum KTSColors: String {
     case text
     case placeholderText
 
@@ -26,12 +26,12 @@ enum KTSColors: String {
     case border
     case tabColor
 
-    var color: Color {
+    public var color: Color {
         Color.fromAsset(color: self)
     }
 }
 
-extension Color {
+public extension Color {
     static func fromRGBA(red r: Double, green g: Double, blue b: Double, opacity a: Double = 100) -> Color {
         Color(red: r / 255.0, green: g / 255.0, blue: b / 255.0, opacity: a / 100.0)
     }

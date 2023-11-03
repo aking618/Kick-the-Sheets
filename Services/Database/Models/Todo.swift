@@ -12,4 +12,11 @@ public struct Todo: Hashable {
     public let dayId: Int64
     public var description: String
     public var status: Bool
+
+    public init(id: Int64, dayId: Int64, description: String, status: Bool) {
+        self.id = id
+        self.dayId = dayId
+        self.description = description
+        self.status = status
+    }
 }

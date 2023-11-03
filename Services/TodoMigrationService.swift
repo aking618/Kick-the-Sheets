@@ -7,14 +7,14 @@
 
 import Foundation
 
-final class TodoMigrationService {
+public final class TodoMigrationService {
     let todoService: TodoService
 
-    init(todoService: TodoService) {
+    public init(todoService: TodoService) {
         self.todoService = todoService
     }
 
-    func shouldShowPopup() -> Bool {
+    public func shouldShowPopup() -> Bool {
         let userDefaults = UserDefaults.standard
 
         guard userDefaults.bool(forKey: "migrateTodos") else { return false }
@@ -54,7 +54,7 @@ final class TodoMigrationService {
         return todos.filter { !$0.status }
     }
 
-    func migrateTodos(currentDayId: Int64) {
+    public func migrateTodos(currentDayId: Int64) {
         let todos = retrieveTodosToMigrate()
 
         for todo in todos {

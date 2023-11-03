@@ -8,7 +8,7 @@
 import Foundation
 import SQLite
 
-protocol TodoService {
+public protocol TodoService {
     func insertDay(date: Date) -> Int64?
     func insertTodo(description: String, for dayId: Int64) -> Int64?
     func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool
@@ -27,7 +27,7 @@ extension TodoService {
     }
 }
 
-class GeneralTodoService: TodoService {
+public class GeneralTodoService: TodoService {
     private var db: Connection? = nil
 
     private let dbDay = DbDay()
@@ -35,7 +35,7 @@ class GeneralTodoService: TodoService {
 
     // MARK: - Initializer
 
-    init(directory: String = "TaskDB", store: String = "task.sqlite3") {
+    public init(directory: String = "TaskDB", store: String = "task.sqlite3") {
         if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
             let dirPath = docDir.appendingPathComponent(directory)
 
@@ -80,7 +80,7 @@ class GeneralTodoService: TodoService {
 
     // MARK: - Create
 
-    internal func insertDay(date: Date = Date()) -> Int64? {
+    public func insertDay(date: Date = Date()) -> Int64? {
         guard let database = db else { return nil }
 
         let insert = dbDay.table.insert(
@@ -97,7 +97,7 @@ class GeneralTodoService: TodoService {
         }
     }
 
-    internal func insertTodo(description: String, for dayId: Int64) -> Int64? {
+    public func insertTodo(description: String, for dayId: Int64) -> Int64? {
         guard let database = db else { return nil }
 
         let insert = dbTodo.table.insert(
@@ -117,7 +117,7 @@ class GeneralTodoService: TodoService {
 
     // MARK: - Retrieve
 
-    internal func retrieveTodos(for dayId: Int64) -> [Todo] {
+    public func retrieveTodos(for dayId: Int64) -> [Todo] {
         var todos = [Todo]()
         guard let database = db else { return todos }
 
@@ -138,7 +138,7 @@ class GeneralTodoService: TodoService {
         return todos
     }
 
-    internal func retrieveTodo(for todoId: Int64) -> Todo? {
+    public func retrieveTodo(for todoId: Int64) -> Todo? {
         guard let database = db else { return nil }
 
         let filter = dbTodo.table.filter(dbTodo.id == todoId).limit(1)
@@ -162,7 +162,7 @@ class GeneralTodoService: TodoService {
         return nil
     }
 
-    internal func retrieveDays() -> [Int: Day] {
+    public func retrieveDays() -> [Int: Day] {
         var days: [Int: Day] = [:]
         guard let database = db else { return [:] }
 
@@ -184,7 +184,7 @@ class GeneralTodoService: TodoService {
         return days
     }
 
-    internal func retrieveSecondMostRecentDay() -> Day? {
+    public func retrieveSecondMostRecentDay() -> Day? {
         guard let database = db else { return nil }
 
         do {
@@ -208,7 +208,7 @@ class GeneralTodoService: TodoService {
 
     // MARK: - Update
 
-    internal func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool {
+    public func updateDayCompletion(for dayId: Int64, with completion: Bool) -> Bool {
         guard let database = db else { return false }
 
         let day = dbDay.table.filter(dbDay.id == dayId)
@@ -225,7 +225,7 @@ class GeneralTodoService: TodoService {
         return false
     }
 
-    internal func updateTodo(entry: Todo) -> Bool {
+    public func updateTodo(entry: Todo) -> Bool {
         guard let database = db else { return false }
 
         let todo = dbTodo.table.filter(dbTodo.id == entry.id)
@@ -245,7 +245,7 @@ class GeneralTodoService: TodoService {
 
     // MARK: - Delete
 
-    internal func deleteTodo(entry: Todo) -> Bool {
+    public func deleteTodo(entry: Todo) -> Bool {
         guard let database = db else { return false }
 
         var result = false
@@ -260,7 +260,7 @@ class GeneralTodoService: TodoService {
         return result
     }
 
-    internal func deleteAllEntries() {
+    public func deleteAllEntries() {
         guard let database = db else { return }
         do {
             try database.run(dbDay.table.drop())

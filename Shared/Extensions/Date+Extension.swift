@@ -1,20 +1,14 @@
 //
 //  Date+Extension.swift
-//  Kick the Sheets
+//  Shared
 //
-//  Created by Ayren King on 12/22/22.
+//  Created by Ayren King on 10/19/23.
 //
 
-import Foundation
+import Services
 import SwiftUI
 
-extension Date {
-    var key: Int {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyyMMdd"
-        return Int(formatter.string(from: self)) ?? 0
-    }
-
+public extension Date {
     func backgroundColor(_ days: [Int: Day]) -> Color {
         if isSameDay(as: Date()) {
             return KTSColors.saffron.color

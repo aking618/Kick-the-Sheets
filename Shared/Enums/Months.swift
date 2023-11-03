@@ -5,13 +5,13 @@
 //  Created by Ayren King on 9/1/23.
 //
 
-enum MonthPosition {
+public enum MonthPosition {
     case previous
     case current
     case next
 }
 
-enum Months: Int, CustomStringConvertible, Identifiable, CaseIterable {
+public enum Months: Int, CustomStringConvertible, Identifiable, CaseIterable {
     case january
     case february
     case march
@@ -25,11 +25,11 @@ enum Months: Int, CustomStringConvertible, Identifiable, CaseIterable {
     case november
     case december
 
-    var id: Int {
+    public var id: Int {
         hashValue
     }
 
-    var description: String {
+    public var description: String {
         switch self {
         case .january:
             return "January"

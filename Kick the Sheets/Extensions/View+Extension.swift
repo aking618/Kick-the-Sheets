@@ -5,6 +5,7 @@
 //  Created by Ayren King on 1/26/23.
 //
 
+import Shared
 import SwiftUI
 
 extension View {

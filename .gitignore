@@ -97,3 +97,5 @@ iOSInjectionProject/
 !*.xcworkspace/contents.xcworkspacedata
 !*.xcworkspace/xcshareddata/
 project.pbxproj
+
+signingConfig.yml

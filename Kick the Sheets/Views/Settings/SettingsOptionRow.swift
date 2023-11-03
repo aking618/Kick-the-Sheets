@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Shared
 import SwiftUI
 
 struct SettingsOptionRow: View {

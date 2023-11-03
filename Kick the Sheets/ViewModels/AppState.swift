@@ -5,6 +5,7 @@
 //  Created by Ayren King on 7/19/23.
 //
 
+import Services
 import SwiftUI
 
 class AppState: ObservableObject {
@@ -46,7 +47,7 @@ class AppState: ObservableObject {
     }
 
     private func createDayIfNeeded() {
-        if let currentDayId = todoService.insertDay() {
+        if let currentDayId = todoService.insertDay(date: .now) {
             self.currentDayId = currentDayId
             todosForToday = []
         }

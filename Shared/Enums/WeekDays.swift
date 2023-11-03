@@ -5,7 +5,7 @@
 //  Created by Ayren King on 9/1/23.
 //
 
-enum WeekDays: String, Identifiable, CaseIterable {
+public enum WeekDays: String, Identifiable, CaseIterable {
     case sunday = "Sun"
     case monday = "Mon"
     case tuesday = "Tue"
@@ -14,7 +14,7 @@ enum WeekDays: String, Identifiable, CaseIterable {
     case friday = "Fri"
     case saturday = "Sat"
 
-    var id: Int {
+    public var id: Int {
         hashValue
     }
 }

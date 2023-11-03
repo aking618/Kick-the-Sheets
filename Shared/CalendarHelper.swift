@@ -7,11 +7,13 @@
 
 import Foundation
 
-class CalendarHelper {
+public class CalendarHelper {
     let calendar = Calendar.current
 
+    public init() {}
+
     /// Returns the first day of the month for the given date
-    func getFirstDayOfMonth(for date: Date) -> Date {
+    public func getFirstDayOfMonth(for date: Date) -> Date {
         guard let firstDayOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: date)) else {
             fatalError("Unable to calculate the first day of the month for \(date)")
         }
@@ -19,7 +21,7 @@ class CalendarHelper {
     }
 
     /// Returns the last day of the month for the given date
-    func getLastDayOfMonth(for date: Date) -> Date {
+    public func getLastDayOfMonth(for date: Date) -> Date {
         guard let lastDayOfMonth = calendar.date(byAdding: DateComponents(month: 1, day: -1), to: getFirstDayOfMonth(for: date)) else {
             fatalError("Unable to calculate the last day of the month for \(date)")
         }
@@ -53,7 +55,7 @@ class CalendarHelper {
     }
 
     /// Returns the calendar grid for the given date
-    func getCalendarGrid(for date: Date) -> [Date] {
+    public func getCalendarGrid(for date: Date) -> [Date] {
         let extraDaysFromPreviousMonth = getExtraDaysFromPreviousMonth(for: date)
         let extraDaysFromNextMonth = getExtraDaysFromNextMonth(for: date)
         let previousMonthEndDate = getPreviousMonthEndDate(for: date)
