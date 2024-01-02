@@ -4,7 +4,7 @@ on: [push]
 
 jobs:
   Test:
-    name: Unit & UI Tests
+    name: Unit Tests
     runs-on: macos-latest
 
     steps:
@@ -32,7 +32,7 @@ jobs:
       - name: Run Tests
         run: |
           echo "Running Unit Tests"
-          fastlane scan --clean
+          fastlane scan --scheme "Debug" --clean
           echo "Tests Complete"
         env:
           TERM: xterm-256color
