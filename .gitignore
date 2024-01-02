@@ -91,6 +91,7 @@ iOSInjectionProject/
 
 # All Projects
 
+KTS.xcodeproj
 **/*.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
