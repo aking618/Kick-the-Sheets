@@ -23,15 +23,8 @@ jobs:
 
       - name: Run Tests
         run: |
-          RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.event.after}} | grep -c "UITests")
-          if [ $RUN_UI_TESTS -gt 0 ];
-          then
-            echo "Running UI Tests"
-            fastlane scan --scheme "UITests" --clean
-          else
-            echo "Running Unit Tests"
-            fastlane scan --scheme "Kick the Sheets" --clean
-          fi
+          echo "Running Unit Tests"
+          fastlane scan --clean
           echo "Tests Complete"
         env:
           TERM: xterm-256color
