@@ -32,7 +32,7 @@ jobs:
       - name: Run Tests
         run: |
           echo "Running Unit Tests"
-          cd "Kick the Sheets"
+          cd "KTS"
           fastlane scan --clean
           echo "Tests Complete"
         env:
