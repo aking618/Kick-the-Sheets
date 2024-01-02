@@ -1,9 +1,16 @@
-name: Kick the Sheets
+name: KTS
 include:
   - signingConfig.yml
 options:
-  deploymentTarget: "16.0"
+  deploymentTarget: 
+    iOS: "16.0"
   bundleIdPrefix: com.ayrenking
+settings:
+  base:
+    ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+configs:
+  Debug: debug
+  Release: release
 packages:
   SQLite:
     url: https://github.com/stephencelis/SQLite.swift.git
@@ -12,18 +19,20 @@ targets:
   KTS:
     type: application
     platform: iOS
-    sources: ["Kick the Sheets"]
+    sources: [KTS]
     settings:
       base:
-        INFOPLIST_FILE: Kick the Sheets/Info.plist
-        PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kick-the-Sheets
+        INFOPLIST_FILE: KTS/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kicking-the-Sheets
         PRODUCT_NAME: KTS
         CURRENT_PROJECT_VERSION: 3
         MARKETING_VERSION: 2
-        PRODUCT_MODULE_NAME: KTS
+        LD_RUNPATH_SEARCH_PATHS: $(inherited) @executable_path/Frameworks
     dependencies:
       - framework: Services.framework
+        implicit: true
       - framework: Shared.framework
+        implicit: true
       - target: DailyProgressWidget
   
   Services:
@@ -48,7 +57,7 @@ targets:
   KTSTests:
     type: bundle.unit-test
     platform: iOS
-    sources: ["Kick the SheetsTests"]
+    sources: [KTSTests]
     settings:
       configs:
     dependencies:
@@ -63,7 +72,7 @@ targets:
     type: bundle.ui-testing
     platform: iOS
     deploymentTarget: "16.0"
-    sources: ["Kick the SheetsUITests"]
+    sources: [KTSUITests]
     settings:
       configs:
     dependencies:
@@ -80,8 +89,48 @@ targets:
     deploymentTarget: "17.0"
     sources: [DailyProgressWidget]
     settings:
-      configs:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kicking-the-Sheets.DailyProgressWidget
     dependencies:
-      - framework: Services.framework
-      - framework: Shared.framework
-      
+      - target: Services
+      - target: Shared
+
+schemes:
+  Debug:
+    templates:
+    - Default
+    run:
+      config: Debug
+
+  Release:
+    templates:
+    - Default
+    run:
+      config: Release
+
+  DailyProgressWidget:
+    build:
+      targets:
+        DailyProgressWidget: all
+
+schemeTemplates:
+  Default:
+    build:
+      targets:
+        KTS: all
+        KTSTests: [test]
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - KTS
+      targets:
+        - name: KTSTests
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+      revealArchiveOrganizer: false

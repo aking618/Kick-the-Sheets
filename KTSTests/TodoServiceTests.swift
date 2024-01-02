@@ -7,7 +7,8 @@
 
 import XCTest
 
-@testable import Kick_the_Sheets
+@testable import KTS
+@testable import Services
 
 final class TodoServiceTests: XCTestCase {
     var todoService: TodoService!
