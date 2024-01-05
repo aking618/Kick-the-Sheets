@@ -1,0 +1,136 @@
+name: KTS
+include:
+  - signingConfig.yml
+options:
+  deploymentTarget: 
+    iOS: "16.0"
+  bundleIdPrefix: com.ayrenking
+settings:
+  base:
+    ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+configs:
+  Debug: debug
+  Release: release
+packages:
+  SQLite:
+    url: https://github.com/stephencelis/SQLite.swift.git
+    branch: master
+targets:
+  KTS:
+    type: application
+    platform: iOS
+    sources: [KTS]
+    settings:
+      base:
+        INFOPLIST_FILE: KTS/Info.plist
+        PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kicking-the-Sheets
+        PRODUCT_NAME: KTS
+        CURRENT_PROJECT_VERSION: 3
+        MARKETING_VERSION: 2
+        LD_RUNPATH_SEARCH_PATHS: $(inherited) @executable_path/Frameworks
+    dependencies:
+      - framework: Services.framework
+        implicit: true
+      - framework: Shared.framework
+        implicit: true
+      - target: DailyProgressWidget
+  
+  Services:
+    type: framework
+    platform: iOS
+    sources: [Services]
+    settings:
+      configs:
+    dependencies:
+      - package: SQLite
+
+  Shared:
+    type: framework
+    platform: iOS
+    sources: [Shared]
+    settings:
+      configs:
+    dependencies:
+      - framework: Services.framework
+
+  
+  KTSTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources: [KTSTests]
+    settings:
+      configs:
+    dependencies:
+      - target: KTS
+        type: regular
+        optional: true
+      - package: SQLite
+        type: regular
+        optional: true
+
+  KTSUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "16.0"
+    sources: [KTSUITests]
+    settings:
+      configs:
+    dependencies:
+      - target: KTS
+        type: regular
+        optional: true
+      - package: SQLite
+        type: regular
+        optional: true
+
+  DailyProgressWidget:
+    type: app-extension
+    platform: iOS
+    deploymentTarget: "17.0"
+    sources: [DailyProgressWidget]
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kicking-the-Sheets.DailyProgressWidget
+    dependencies:
+      - target: Services
+      - target: Shared
+
+schemes:
+  Debug:
+    templates:
+    - Default
+    run:
+      config: Debug
+
+  Release:
+    templates:
+    - Default
+    run:
+      config: Release
+
+  DailyProgressWidget:
+    build:
+      targets:
+        DailyProgressWidget: all
+
+schemeTemplates:
+  Default:
+    build:
+      targets:
+        KTS: all
+        KTSTests: [test]
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - KTS
+      targets:
+        - name: KTSTests
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+      revealArchiveOrganizer: false
