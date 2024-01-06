@@ -13,33 +13,33 @@ enum Tab: Int, CaseIterable {
     var title: String {
         switch self {
         case .home:
-            return "My Tasks"
+            "My Tasks"
         case .calendar:
-            return "Calendar"
+            "Calendar"
         case .settings:
-            return "Settings"
+            "Settings"
         }
     }
 
     var iconName: String {
         switch self {
         case .home:
-            return "list.bullet"
+            "list.bullet"
         case .calendar:
-            return "calendar"
+            "calendar"
         case .settings:
-            return "gearshape"
+            "gearshape"
         }
     }
 
     var accessiblityID: String {
         switch self {
         case .home:
-            return "todoView"
+            "todoView"
         case .calendar:
-            return "homeView"
+            "homeView"
         case .settings:
-            return "settingsView"
+            "settingsView"
         }
     }
 }

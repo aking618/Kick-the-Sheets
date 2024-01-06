@@ -30,12 +30,12 @@ public class CalendarHelper {
 
     /// Returns the number of extra days to be shown from the previous month
     private func getExtraDaysFromPreviousMonth(for date: Date) -> Int {
-        return calendar.component(.weekday, from: getFirstDayOfMonth(for: date)) - 1
+        calendar.component(.weekday, from: getFirstDayOfMonth(for: date)) - 1
     }
 
     /// Returns the number of extra days to be shown from the next month
     private func getExtraDaysFromNextMonth(for date: Date) -> Int {
-        return 7 - calendar.component(.weekday, from: getLastDayOfMonth(for: date))
+        7 - calendar.component(.weekday, from: getLastDayOfMonth(for: date))
     }
 
     /// Returns the previous month end date for the given date

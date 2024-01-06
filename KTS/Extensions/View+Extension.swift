@@ -9,10 +9,10 @@ import Shared
 import SwiftUI
 
 extension View {
-    func placeholder<Content: View>(
+    func placeholder(
         when shouldShow: Bool,
         alignment: Alignment = .leading,
-        @ViewBuilder placeholder: () -> Content
+        @ViewBuilder placeholder: () -> some View
     ) -> some View {
         ZStack(alignment: alignment) {
             placeholder().opacity(shouldShow ? 1 : 0)
@@ -45,7 +45,7 @@ extension Color {
 
 extension View {
     @ViewBuilder
-    func applyIf<T: View>(_ condition: Bool, apply: (Self) -> T) -> some View {
+    func applyIf(_ condition: Bool, apply: (Self) -> some View) -> some View {
         if condition {
             apply(self)
         } else {

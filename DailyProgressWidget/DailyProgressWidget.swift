@@ -36,7 +36,7 @@ struct DailyProgressProvider: TimelineProvider {
             }
         }
 
-        let entry = DailyProgressEntry(date: entryDate, entity: .init(todoCount: todos.count, todosCompleted: todos.filter { $0.status }.count))
+        let entry = DailyProgressEntry(date: entryDate, entity: .init(todoCount: todos.count, todosCompleted: todos.filter(\.status).count))
 
         let timeline = Timeline(
             entries: [entry],

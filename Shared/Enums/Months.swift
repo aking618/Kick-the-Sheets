@@ -32,29 +32,29 @@ public enum Months: Int, CustomStringConvertible, Identifiable, CaseIterable {
     public var description: String {
         switch self {
         case .january:
-            return "January"
+            "January"
         case .february:
-            return "February"
+            "February"
         case .march:
-            return "March"
+            "March"
         case .april:
-            return "April"
+            "April"
         case .may:
-            return "May"
+            "May"
         case .june:
-            return "June"
+            "June"
         case .july:
-            return "July"
+            "July"
         case .august:
-            return "August"
+            "August"
         case .september:
-            return "September"
+            "September"
         case .october:
-            return "October"
+            "October"
         case .november:
-            return "November"
+            "November"
         case .december:
-            return "December"
+            "December"
         }
     }
 }

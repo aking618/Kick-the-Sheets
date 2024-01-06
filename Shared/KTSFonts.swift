@@ -30,28 +30,28 @@ public struct KTSFont: ViewModifier {
     private var fontName: String {
         switch textStyle {
         case .title, .title2, .title3:
-            return "Andika-Bold"
+            "Andika-Bold"
         case .body, .button:
-            return "Andika"
+            "Andika"
         case .caption:
-            return "Andika-BoldItalic"
+            "Andika-BoldItalic"
         case .italic:
-            return "Andika-Italic"
+            "Andika-Italic"
         }
     }
 
     private var size: CGFloat {
         switch textStyle {
         case .title:
-            return 26
+            26
         case .title2:
-            return 22
+            22
         case .title3, .button:
-            return 18
+            18
         case .body, .italic:
-            return 16
+            16
         case .caption:
-            return 14
+            14
         }
     }
 }

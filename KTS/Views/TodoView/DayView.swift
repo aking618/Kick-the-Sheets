@@ -109,7 +109,7 @@ extension DayView {
 
 extension DayView {
     var filteredTodos: [Int] {
-        return searchText.isEmpty ? appState.todosForToday.enumerated().map { i, _ in i } : appState.todosForToday.enumerated().compactMap { index, todo in
+        searchText.isEmpty ? appState.todosForToday.enumerated().map { i, _ in i } : appState.todosForToday.enumerated().compactMap { index, todo in
             todo.description.caseInsensitiveContains(searchText) ? index : nil
         }
     }

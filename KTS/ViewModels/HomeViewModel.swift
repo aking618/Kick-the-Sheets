@@ -24,7 +24,7 @@ class HomeViewModel: ObservableObject {
     func getStreakCount() -> Int {
         guard !days.isEmpty else { return 0 }
 
-        let sortedDays = days.sorted(by: { $0.value.date > $1.value.date }).dropFirst().map { $0.value }
+        let sortedDays = days.sorted(by: { $0.value.date > $1.value.date }).dropFirst().map(\.value)
         let calendar = Calendar.current
         let yesterday = calendar.date(byAdding: .day, value: -1, to: Date())!
         var consecutiveDays = 0
