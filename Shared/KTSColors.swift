@@ -30,7 +30,7 @@ public enum KTSColors {
         case .text:
             .text
         case .placeholderText:
-            .placeholderText
+            .placeholder
         case .iconBorder:
             .iconBorder
         case .charcoal:

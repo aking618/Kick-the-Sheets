@@ -12,11 +12,11 @@ import WidgetKit
 
 struct DailyProgressProvider: TimelineProvider {
     func placeholder(in _: Context) -> DailyProgressEntry {
-        DailyProgressEntry(date: Date(), entity: .init(todoCount: 3, todosCompleted: 7))
+        DailyProgressEntry(date: Date(), entity: .init(todoCount: 7, todosCompleted: 3))
     }
 
     func getSnapshot(in _: Context, completion: @escaping (DailyProgressEntry) -> Void) {
-        let entry = DailyProgressEntry(date: Date(), entity: .init(todoCount: 3, todosCompleted: 7))
+        let entry = DailyProgressEntry(date: Date(), entity: .init(todoCount: 7, todosCompleted: 3))
         completion(entry)
     }
 
@@ -29,10 +29,9 @@ struct DailyProgressProvider: TimelineProvider {
         var todos = [Todo]()
         let days = service.retrieveDays()
         if let currenDay = days[Date().key] {
-            todos =
-                service.retrieveTodos(for: currenDay.id)
+            todos = service.retrieveTodos(for: currenDay.id)
         } else {
-            if let currentDayId = service.insertDay() {
+            if let _ = service.insertDay() {
                 todos = []
             }
         }
@@ -64,8 +63,8 @@ struct DailyProgressWidgetEntryView: View {
     var body: some View {
         VStack {
             CircularProgressView(
-                progress: entry.entity.todoCount,
-                total: entry.entity.todosCompleted
+                progress: entry.entity.todosCompleted,
+                total: entry.entity.todoCount
             )
         }
     }

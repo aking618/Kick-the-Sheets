@@ -57,8 +57,6 @@ public class CalendarHelper {
     /// Returns the calendar grid for the given date
     public func getCalendarGrid(for date: Date) -> [Date] {
         let extraDaysFromPreviousMonth = getExtraDaysFromPreviousMonth(for: date)
-        let extraDaysFromNextMonth = getExtraDaysFromNextMonth(for: date)
-        let previousMonthEndDate = getPreviousMonthEndDate(for: date)
         let nextMonthStartDate = getNextMonthStartDate(for: date)
 
         let calendarGrid = (0 ..< 42).map { dayOffset -> Date in
