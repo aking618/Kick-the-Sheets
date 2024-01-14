@@ -26,8 +26,8 @@ targets:
         INFOPLIST_FILE: KTS/Info.plist
         PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kicking-the-Sheets
         PRODUCT_NAME: KTS
-        CURRENT_PROJECT_VERSION: 3
-        MARKETING_VERSION: 2
+        CURRENT_PROJECT_VERSION: 4
+        MARKETING_VERSION: 2.1
         LD_RUNPATH_SEARCH_PATHS: $(inherited) @executable_path/Frameworks
         CODE_SIGN_ENTITLEMENTS: KTS/KTS.entitlements
         ENABLE_USER_SCRIPT_SANDBOXING: true
