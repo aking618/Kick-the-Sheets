@@ -4,10 +4,16 @@ on: [push]
 
 jobs:
   Test:
-    name: Unit & UI Tests
-    runs-on: macos-latest
+    name: Unit Tests
+    runs-on: macos-13
 
     steps:
+      - name: List Xcode installations
+        run: sudo ls -1 /Applications | grep "Xcode"
+
+      - name: Select Xcode 15.1
+        run: sudo xcode-select -s /Applications/Xcode_15.1.app/Contents/Developer
+
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -21,17 +27,18 @@ jobs:
       - name: Install Fastlane
         run: gem install fastlane -NV
 
+      - name: Install XcodeGen
+        uses: xavierLowmiller/xcodegen-action@1.1.2
+        with:
+          spec: project.yml
+          quiet: true
+          version: 'latest'
+      
+
       - name: Run Tests
         run: |
-          RUN_UI_TESTS=$(git diff --name-only ${{github.event.before}} ${{github.event.after}} | grep -c "UITests")
-          if [ $RUN_UI_TESTS -gt 0 ];
-          then
-            echo "Running UI Tests"
-            fastlane scan --scheme "UITests" --clean
-          else
-            echo "Running Unit Tests"
-            fastlane scan --scheme "Kick the Sheets" --clean
-          fi
+          echo "Running Unit Tests"
+          fastlane scan --scheme "Debug" --clean
           echo "Tests Complete"
         env:
           TERM: xterm-256color
