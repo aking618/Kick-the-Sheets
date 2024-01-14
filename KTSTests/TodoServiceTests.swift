@@ -28,7 +28,7 @@ final class TodoServiceTests: XCTestCase {
     }
 
     func testInit() {
-        if let docDir = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first {
+        if let docDir = fileManager.containerURL(forSecurityApplicationGroupIdentifier: "group.ayrenking.KTS") {
             let dbPath = docDir
                 .appending(path: DIR_TASK_DB)
                 .appending(path: STORE_NAME)

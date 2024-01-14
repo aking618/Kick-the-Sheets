@@ -134,6 +134,8 @@ schemeTemplates:
       gatherCoverageData: true
       coverageTargets:
         - KTS
+        - Shared
+        - Services
       targets:
         - name: KTSTests
           randomExecutionOrder: true
