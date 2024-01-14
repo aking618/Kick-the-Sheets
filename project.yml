@@ -31,6 +31,7 @@ targets:
         LD_RUNPATH_SEARCH_PATHS: $(inherited) @executable_path/Frameworks
         CODE_SIGN_ENTITLEMENTS: KTS/KTS.entitlements
         ENABLE_USER_SCRIPT_SANDBOXING: true
+        INFOPLIST_KEY_UILaunchStoryboardName: LaunchScreen.storyboard
     dependencies:
       - framework: Services.framework
         implicit: true
