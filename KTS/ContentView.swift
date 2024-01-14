@@ -8,8 +8,10 @@
 import Services
 import Shared
 import SwiftUI
+import WidgetKit
 
 struct ContentView: View {
+    @Environment(\.scenePhase) var scenePhase
     @EnvironmentObject var appState: AppState
 
     var body: some View {
@@ -30,6 +32,11 @@ struct ContentView: View {
                 appState.updateAppState()
             }
             Button("Cancel", role: .cancel) {}
+        }
+        .onChange(of: scenePhase) { newPhase in
+            if case ScenePhase.background = newPhase {
+                WidgetCenter.shared.reloadAllTimelines()
+            }
         }
     }
 }

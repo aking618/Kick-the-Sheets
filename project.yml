@@ -1,6 +1,4 @@
 name: KTS
-include:
-  - signingConfig.yml
 options:
   deploymentTarget: 
     iOS: "16.0"
@@ -8,6 +6,9 @@ options:
 settings:
   base:
     ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS: YES
+    DEVELOPMENT_TEAM: P649CF844Y
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: iPhone Developer
 configs:
   Debug: debug
   Release: release
@@ -28,6 +29,8 @@ targets:
         CURRENT_PROJECT_VERSION: 3
         MARKETING_VERSION: 2
         LD_RUNPATH_SEARCH_PATHS: $(inherited) @executable_path/Frameworks
+        CODE_SIGN_ENTITLEMENTS: KTS/KTS.entitlements
+        ENABLE_USER_SCRIPT_SANDBOXING: true
     dependencies:
       - framework: Services.framework
         implicit: true
@@ -40,7 +43,10 @@ targets:
     platform: iOS
     sources: [Services]
     settings:
-      configs:
+      base:
+        ENABLE_MODULE_VERIFIER: true
+        MODULE_VERIFIER_SUPPORTED_LANGUAGES: objective-c objective-c++
+        MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS: gnu11 gnu++14
     dependencies:
       - package: SQLite
 
@@ -49,7 +55,10 @@ targets:
     platform: iOS
     sources: [Shared]
     settings:
-      configs:
+      base:
+        ENABLE_MODULE_VERIFIER: true
+        MODULE_VERIFIER_SUPPORTED_LANGUAGES: objective-c objective-c++
+        MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS: gnu11 gnu++14
     dependencies:
       - framework: Services.framework
 
@@ -91,6 +100,7 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.ayrenking.Kicking-the-Sheets.DailyProgressWidget
+        CODE_SIGN_ENTITLEMENTS: DailyProgressWidget/DailyProgressWidget.entitlements
     dependencies:
       - target: Services
       - target: Shared
@@ -124,6 +134,8 @@ schemeTemplates:
       gatherCoverageData: true
       coverageTargets:
         - KTS
+        - Shared
+        - Services
       targets:
         - name: KTSTests
           randomExecutionOrder: true

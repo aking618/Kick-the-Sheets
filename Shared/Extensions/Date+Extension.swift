@@ -36,19 +36,19 @@ public extension Date {
     }
 
     func isSameDay(as date: Date) -> Bool {
-        return Calendar.current.isDate(self, inSameDayAs: date)
+        Calendar.current.isDate(self, inSameDayAs: date)
     }
 
     var dateNumber: Int {
-        return Calendar.current.component(.day, from: self)
+        Calendar.current.component(.day, from: self)
     }
 
     var month: Months {
-        return Months(rawValue: Calendar.current.component(.month, from: self) - 1)!
+        Months(rawValue: Calendar.current.component(.month, from: self) - 1)!
     }
 
     var year: Int {
-        return Calendar.current.component(.year, from: self)
+        Calendar.current.component(.year, from: self)
     }
 
     func getMonthPosition(relativeTo date: Date) -> MonthPosition {

@@ -36,7 +36,7 @@ public class GeneralTodoService: TodoService {
     // MARK: - Initializer
 
     public init(directory: String = "TaskDB", store: String = "task.sqlite3") {
-        if let docDir = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first {
+        if let docDir = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.ayrenking.KTS") {
             let dirPath = docDir.appendingPathComponent(directory)
 
             do {
@@ -288,7 +288,7 @@ extension GeneralTodoService {
             )
 
             do {
-                let rowID = try database.run(insert)
+                _ = try database.run(insert)
             } catch {
                 print(error)
                 return
