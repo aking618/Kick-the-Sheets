@@ -10,7 +10,7 @@ import SQLite
 
 struct DbDay {
     let table = Table("days")
-    let id = Expression<Int64>("id")
-    let status = Expression<Bool>("status")
-    let day = Expression<Date>("day")
+    let id = SQLite.Expression<Int64>("id")
+    let status = SQLite.Expression<Bool>("status")
+    let day = SQLite.Expression<Date>("day")
 }

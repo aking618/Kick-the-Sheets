@@ -1,7 +1,7 @@
 name: KTS
 options:
   deploymentTarget: 
-    iOS: "16.0"
+    iOS: "26.0"
   bundleIdPrefix: com.ayrenking
 settings:
   base:
@@ -96,7 +96,7 @@ targets:
   DailyProgressWidget:
     type: app-extension
     platform: iOS
-    deploymentTarget: "17.0"
+    deploymentTarget: "26.0"
     sources: [DailyProgressWidget]
     settings:
       base:
